@@ -580,4 +580,10 @@ zstyle ':completion:*:other-accounts' users-hosts $other_accounts
 #    . $HOME/.zshrc-$(hostname -d)
 #fi
 
+# Only for Linux
+if [[ $('uname') == 'Linux' ]]; then
+
+# Archey
+archey
+fi
 
