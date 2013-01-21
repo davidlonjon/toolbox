@@ -1,3 +1,6 @@
+#! /bin/bash
+sleep 15
+
 dropboxes=".dropbox_perso .dropbox_enswers"
 for dropbox in $dropboxes
   do
