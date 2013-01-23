@@ -53,8 +53,24 @@ source $ZSH/oh-my-zsh.sh
 
 if [[ $('uname') == 'Linux' ]]; then
   export PATH=/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/var/lib/gems/1.8/bin
+  # AMAZON AWS TOOL PATH AND VARIABLE DEFINITION
+  # This assumes that Java > 1.6 is installed
+  # Also that the AWS tool are installed in /usr/local/aws
+  # and that the credentials are set in $HOME/.aws-default
+  export JAVA_HOME=/usr
+  export EC2_HOME=/usr/local/aws/ec2
+  export PATH=$PATH:$EC2_HOME/bin
+  export AWS_CREDENTIAL_FILE=$HOME/.aws-default/aws-credential-file.txt
+  # Example taken from https://gist.github.com/4177779
+  export AWS_ACCESS_KEY=$( awk -F= '/AccessKey/ {print $2}' $AWS_CREDENTIAL_FILE )
+  export AWS_SECRET_KEY=$( awk -F= '/SecretKey/ {print $2}' $AWS_CREDENTIAL_FILE )
 elif  [[ $('uname') == 'Darwin' ]]; then
   export PATH=/opt/local/bin:/opt/local/sbin:/library/PostgreSQL/9.1/bin:/Users/lucky/.rvm/gems/ruby-1.9.2-p290/bin:/Users/lucky/.rvm/gems/ruby-1.9.2-p290@global/bin:/Users/lucky/.rvm/rubies/ruby-1.9.2-p290/bin:/Users/lucky/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin:/opt/local/binfi
+fi
+
+
+if [ -d $HOME/scripts ]; then
+    PATH=$PATH:$HOME/scripts
 fi
 
 # -------------------------------------------------------------------
