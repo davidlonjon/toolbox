@@ -350,17 +350,17 @@ alias ....='cd ../../../'
 #alias htop="sudo htop d 1"
 
 # Play safe!
-alias 'rm=rm -i'
-alias 'mv=mv -i'
-alias 'cp=cp -i'
+alias 'rm=nocorrect rm -i'
+alias 'mv=nocorrect mv -i'
+alias 'cp=nocorrect cp -i'
 alias 'cpd=cp -ri'
 
 # For convenience
-alias 'mkdir=mkdir -p'
+alias 'mkdir=nocorrect mkdir -p'
 alias 'dus=du -sckxh * | sort -nr'
 
 # Remove directories
-alias rmd='rm -rfi'
+alias rmd='nocorrect rm -rfi'
 
 # Typing errors...
 alias 'cd..=cd ..'
