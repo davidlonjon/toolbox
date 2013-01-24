@@ -8,7 +8,7 @@
 # ----------------------------------------------------------------------------------------------------
 
 # Get the OS
-os=$( uname | tr '[:upper:]' ':[lower:]')
+os=$( uname | tr '[:upper:]' '[:lower:]')
 
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
@@ -52,8 +52,8 @@ source $ZSH/oh-my-zsh.sh
 # Common aliases to all OS
 . $HOME/toolbox/dotfiles/zsh/aliases/.aliases-common
 
-if [[ -f "$HOME/toolbox/dotfiles/zsh/aliases/.aliases-${OS}" ]]; then
-  . $HOME/toolbox/dotfiles/zsh/aliases/.aliases-${OS}
+if [[ -f "$HOME/toolbox/dotfiles/zsh/aliases/.aliases-${os}" ]]; then
+  . $HOME/toolbox/dotfiles/zsh/aliases/.aliases-${os}
 fi
 #. $HOME/.environment_variables-${OS}
 
