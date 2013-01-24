@@ -2,10 +2,13 @@
 #
 # @file         .zshrc
 # @description  Configuration file for zsh
-# @author       David Lonjon (david.lonjon@gmail.com)
-# @version      20120912
+# @author       David Lonjon
+# @version      20120124
 #
 # ----------------------------------------------------------------------------------------------------
+
+# Get the OS
+os=$( uname | tr '[:upper:]' ':[lower:]')
 
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
@@ -15,10 +18,6 @@ ZSH=$HOME/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 #ZSH_THEME="robbyrussell"
-
-# Example aliases
-alias zshconfig="vi ~/.zshrc"
-alias ohmyzsh="vi ~/.oh-my-zsh/oh-my-zsh.sh"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -38,20 +37,31 @@ alias ohmyzsh="vi ~/.oh-my-zsh/oh-my-zsh.sh"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-if [[ $('uname') == 'Linux' ]]; then
+if [[ $os == 'linux' ]]; then
   plugins=(git autojump)
-elif  [[ $('uname') == 'Darwin' ]]; then
+elif  [[ $os == 'darwin' ]]; then
   plugins=(git OSX)
 fi
 
 source $ZSH/oh-my-zsh.sh
 
+# -------------------------------------------------------------------
+# ALIASES
+# -------------------------------------------------------------------
+
+# Common aliases to all OS
+. $HOME/toolbox/dotfiles/zsh/aliases/.aliases-common
+
+if [[ -f "$HOME/toolbox/dotfiles/zsh/aliases/.aliases-${OS}" ]]; then
+  . $HOME/toolbox/dotfiles/zsh/aliases/.aliases-${OS}
+fi
+#. $HOME/.environment_variables-${OS}
 
 # -------------------------------------------------------------------
 # PATH
 # -------------------------------------------------------------------
 
-if [[ $('uname') == 'Linux' ]]; then
+if [[ $os == 'linux' ]]; then
   export PATH=/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/var/lib/gems/1.8/bin
   # AMAZON AWS TOOL PATH AND VARIABLE DEFINITION
   # This assumes that Java > 1.6 is installed
@@ -64,7 +74,7 @@ if [[ $('uname') == 'Linux' ]]; then
   # Example taken from https://gist.github.com/4177779
   export AWS_ACCESS_KEY=$( awk -F= '/AccessKey/ {print $2}' $AWS_CREDENTIAL_FILE )
   export AWS_SECRET_KEY=$( awk -F= '/SecretKey/ {print $2}' $AWS_CREDENTIAL_FILE )
-elif  [[ $('uname') == 'Darwin' ]]; then
+elif  [[ $os == 'darwin' ]]; then
   export PATH=/opt/local/bin:/opt/local/sbin:/library/PostgreSQL/9.1/bin:/Users/lucky/.rvm/gems/ruby-1.9.2-p290/bin:/Users/lucky/.rvm/gems/ruby-1.9.2-p290@global/bin:/Users/lucky/.rvm/rubies/ruby-1.9.2-p290/bin:/Users/lucky/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin:/opt/local/binfi
 fi
 
@@ -292,277 +302,6 @@ setopt NOCLOBBER
 
 
 # -------------------------------------------------------------------
-# GLOBAL ALIASESi
-# Some aliases found from http://www.cyberciti.biz/tips/bash-aliases-mac-centos-linux-unix.html
-# -------------------------------------------------------------------
-# global aliases, dont have to be at the beginning of # a line
-alias -g H='| head'
-alias -g T='| tail'
-alias -g G='| grep'
-alias -g L="| less"
-alias -g M="| most"
-alias -g LL="2>&1 | less"
-alias -g CA="2>&1 | cat -A"
-alias -g NE="2> /dev/null"
-alias -g NUL="> /dev/null 2>&1"
-
-
-# -------------------------------------------------------------------
-# TERM RESIZING ALIASES
-# -------------------------------------------------------------------
-
-alias hide='echo -en "\033]50;nil2\007"'
-alias tiny='echo -en "\033]50;-misc-fixed-medium-r-normal--8-80-75-75-c-50-iso10646-1\007"'
-alias small='echo -en "\033]50;6x10\007"'
-alias default='echo -e "\033]50;-misc-fixed-medium-r-semicondensed--13-*-*-*-*-*-iso10646-1\007"'
-alias medium='echo -en "\033]50;-misc-fixed-medium-r-normal--13-120-75-75-c-80-iso10646-1\007"'
-alias large='echo -en "\033]50;-misc-fixed-medium-*-*-*-15-*-*-*-*-*-iso10646-1\007"'
-# This is a large font that has a corresponding double-width font for
-# CJK and other characters, useful for full-on utf-8 goodness.
-alias larger='echo -en "\033]50;-misc-fixed-medium-r-normal--18-*-*-*-*-*-iso10646-1\007"'
-alias huge='echo -en "\033]50;-misc-fixed-medium-r-normal--20-200-75-75-c-100-iso10646-1\007"'
-alias normal=default
-if [ "$TERM" = "xterm" ] && [ "$LINES" -ge 50 ] && [ "$COLUMNS" -ge 100 ]; then
-  large
-fi
-
-# -------------------------------------------------------------------
-# GENERAL ALIASES
-# -------------------------------------------------------------------
-
-# if user is not root, pass all commands via sudo #
-if [ $UID -ne 0 ]; then
-
-   # reboot / halt / poweroff
-  alias reboot='sudo /sbin/reboot'
-  alias poweroff='sudo /sbin/poweroff'
-  alias halt='sudo /sbin/halt'
-  alias shutdown='sudo /sbin/shutdown'
-   # become root #
-   alias root='sudo -i'
-   alias su='sudo -i'
-fi
-
-#size,show type,human readable
-alias l='ls --color=auto -lFh'
-
-#long list,show almost all,show type,human readable
-alias la='ls -lAFh'
-alias ll='ls -lAFh'
-
-#sorted by date,recursive,show type,human readable
-alias lr='ls -tRFh'
-
-#long list,sorted by date,show type,human readable
-alias lt='ls -ltFh'
-
-alias ldot='ls -ld .*'
-
-## a quick way to get out of current directory ##
-alias ..='cd ..'
-alias ...='cd ../../../'
-alias ....='cd ../../../../'
-alias .....='cd ../../../../'
-
-# Found on http://www.cyberciti.biz/tips/bash-aliases-mac-centos-linux-unix.html
-dotSlash=""
-for i in 1 2 3 4
-do
-    dotSlash=${dotSlash}'../';
-    baseName=".${i}"
-    alias $baseName="cd ${dotSlash}"
-done
-
-#alias .4='cd ../../../../'
-#alias .5='cd ../../../../..'
-
-## Colorize the grep command output for ease of use (good for log files)##
-alias grep='grep --color=auto'
-alias egrep='egrep --color=auto'
-alias fgrep='fgrep --color=auto'
-
-# This is an enhance version of top
-# alias htop="sudo htop d 1"
-
-# Play safe!
-# the nocorrect is inspired from 
-# http://dotfiles.org/~atom/.zshrc
-alias 'rm=nocorrect rm -i --preserve-root'
-alias 'mv=nocorrect mv -i'
-alias 'cp=nocorrect cp -i'
-alias 'cpd=cp -ri'
-
-# Parenting changing perms on / #
-alias chown='chown --preserve-root'
-alias chmod='chmod --preserve-root'
-alias chgrp='chgrp --preserve-root'
-
-# For convenience
-alias 'mkdir=nocorrect mkdir -pv'
-alias 'dus=du -sckxh * | sort -nr'
-
-# Remove directories
-alias rmd='nocorrect rm -rfi'
-
-# Typing errors...
-alias 'cd..=cd ..'
-
-alias df='df -h -x none'
-alias free='free -m'
-alias cls=clear
-
-alias f='find . -name'
-alias fd='find . -type d -name'
-alias ff='find . -type f -name'
-
-## Other handy commands
-alias h='history'
-alias path='echo -e ${PATH//:/\\n}'
-alias now='date +"%T'
-alias nowtime=now
-alias nowdate='date +"%d-%m-%Y"'
-
-# Stop after sending count ECHO_REQUEST packets #
-alias ping='ping -c 5'
-# Do not wait interval 1 second, go fast #
-alias fastping='ping -c 100 -s.2'
-
-# Show open ports
-alias ports='netstat -tulanp'
-
-# -------------------------------------------------------------------
-# VIM  ALIASES
-# -------------------------------------------------------------------
-alias vi=vim
-alias svi='sudo vi'
-alias vis='vim "+set si"'
-alias edit='vim'
-
-# -------------------------------------------------------------------
-# GIT ALIASES
-# -------------------------------------------------------------------
-alias g='git'
-alias ga='git add'
-alias gp='git push'
-alias gl='git pull'
-alias glg='git log'
-alias glgs='git log --stat --max-count=5'
-alias glgg='git log --graph --max-count=5'
-alias gst='git status'
-alias gss='git status -s'
-alias gd='git diff'
-alias gm='git merge'
-alias gma='git commit -am'
-alias gb='git branch'
-alias gba='git branch -a'
-alias gco='git checkout'
-alias gcm='git checkout master'
-alias gra='git remote add'
-alias grr='git remote rm'
-alias gpu='git pull'
-alias gcl='git clone'
-alias gta='git tag -a -m'
-alias gf='git reflog'
-alias grhh='git reset HEAD --hard'
-alias ggpull='git pull origin $(current_branch)'
-alias ggpush='git push origin $(current_branch)'
-
-
-# -------------------------------------------------------------------
-# LINUX SPECIFIC 
-# -------------------------------------------------------------------
-if [[ $('uname') == 'Linux' ]]; then
-
-	# distro specific  - Debian / Ubuntu and friends #
-	# install with apt-get
-	alias apt-get="sudo apt-get"
-	alias apt-get-y="sudo apt-get --yes"
-	 
-	# update on one command 
-	alias update='sudo apt-get update && sudo apt-get upgrade'
-
-	## shortcut  for iptables and pass it via sudo#
-	alias ipt='sudo /sbin/iptables'
- 
-	# display all rules #
-	alias iptlist='sudo /sbin/iptables -L -n -v --line-numbers'
-	alias iptlistin='sudo /sbin/iptables -L INPUT -n -v --line-numbers'
-	alias iptlistout='sudo /sbin/iptables -L OUTPUT -n -v --line-numbers'
-	alias iptlistfw='sudo /sbin/iptables -L FORWARD -n -v --line-numbers'
-	alias firewall=iptlist
-
-	alias iftop='sudo iftop -i eth0'
-	alias tcpdump='sudo tcpdump -i eth0'
-
-	## pass options to free ## 
-	alias meminfo='free -m -l -t'
-	 
-	## get top process eating memory
-	alias psmem='ps auxf | sort -nr -k 4'
-	alias psmem10='ps auxf | sort -nr -k 4 | head -10'
-	 
-	## get top process eating cpu ##
-	alias pscpu='ps auxf | sort -nr -k 3'
-	alias pscpu10='ps auxf | sort -nr -k 3 | head -10'
- 
-	## Get server cpu info ##
-	alias cpuinfo='lscpu'
-	 
-	## older system use /proc/cpuinfo ##
-	##alias cpuinfo='less /proc/cpuinfo' ##
- 
-	## get GPU ram on desktop / laptop## 
-	alias gpumeminfo='grep -i --color memory /var/log/Xorg.0.log'
-fi
-
-# get web server headers #
-alias header='curl -I'
- 
-# find out if remote server supports gzip / mod_deflate or not #
-alias headerc='curl -I --compress'
-
-## Resume wget ##
-alias wget='wget -c'
-
-## Memcached server status  ##
-#alias mcdstats='/usr/bin/memcached-tool 10.10.27.11:11211 stats'
-#alias mcdshow='/usr/bin/memcached-tool 10.10.27.11:11211 display'
- 
-## quickly flush out memcached server ##
-#alias flushmcd='echo "flush_all" | nc 10.10.27.11 11211'
-
-# Found on http://www.cyberciti.biz/tips/bash-aliases-mac-centos-linux-unix.html
-alias nocomment='grep -Ev '\''^(#|$)'\'''
-
-alias mount='mount |column -t'
-
-#Grabs the disk usage in the current directory
-alias hddusage='du -ch 2> /dev/null |tail -1'
-
-#Gets the total disk usage on your machine
-alias hddtotalusage='df -hl --total | grep total'
-
-#Shows the individual partition usages without the temporary memory values
-alias hddpartusage='df -hlT --exclude-type=tmpfs --exclude-type=devtmpfs'
-
-#Gives you what is using the most space. Both directories and files. Varies on
-#current directory
-alias hddmostspace='du -hsx * | sort -rh | head -10'
-
-# -------------------------------------------------------------------
-# SSH ALIASES
-# -------------------------------------------------------------------
-
-# SSH aliases - short cuts to ssh to a host
-#alias -g shost='ssh -p 9999 user@host.com'
-
-# Screen aliases - add a new screen , or entire session, name it, then ssh to the host
-#alias sshost='screen -t HOST shost'
-
-# Alias to AWS SSH tool
-alias ec2ssh='ec2ssh.sh'
-
-# -------------------------------------------------------------------
 # FUNCTIONS
 # -------------------------------------------------------------------
 
@@ -591,7 +330,7 @@ precmd () {
 # MAC SPECIFIC FUNCTIONS
 # -------------------------------------------------------------------
 
-if [[ $('uname') == 'Darwin' ]]; then
+if [[ $os == 'darwin' ]]; then
 
   # turn hidden files on/off in Finder
   function hiddenOn() { defaults write com.apple.Finder AppleShowAllFiles YES ; }
@@ -745,10 +484,9 @@ zstyle ':completion:*:other-accounts' users-hosts $other_accounts
 #fi
 
 # -------------------------------------------------------------------
-# LINUX SPECIFIC 
+# LINUX SPECIFIC
 # -------------------------------------------------------------------
-if [[ $('uname') == 'Linux' ]]; then
-	# Archey
-	archey
+if [[ $os == 'linux' ]]; then
+  # Archey
+  archey
 fi
-
