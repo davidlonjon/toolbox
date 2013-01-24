@@ -1,0 +1,104 @@
+## -------------------------------------------------------------------
+## LINUX SPECIFIC GLOBAL ALIASES
+## -------------------------------------------------------------------
+
+## -------------------------------------------------------------------
+## NAVIGATION & LISTING ALIASES
+## -------------------------------------------------------------------
+
+## Size,show type,human readable
+alias l='ls --color=auto -lFh'
+
+## -------------------------------------------------------------------
+## PLAY SAFE ALIASES
+## -------------------------------------------------------------------
+## the nocorrect is inspired from
+## http://dotfiles.org/~atom/.zshrc
+
+## Remove directories
+alias rm='nocorrect rm -i --preserve-root'
+alias rmd='nocorrect rm -rfi --preserve-root'
+
+## Parenting changing perms on / #
+alias chown='chown --preserve-root'
+alias chmod='chmod --preserve-root'
+alias chgrp='chgrp --preserve-root'
+
+## -------------------------------------------------------------------
+## UPDATE ALIASES
+## -------------------------------------------------------------------
+
+alias apt-get="sudo apt-get"
+alias apt-get-y="sudo apt-get --yes"
+
+## Update on one command
+alias update='sudo apt-get update && sudo apt-get upgrade'
+
+## -------------------------------------------------------------------
+## FIREWALL ALIASES
+## -------------------------------------------------------------------
+
+## Shortcut  for iptables and pass it via sudo#
+alias ipt='sudo /sbin/iptables'
+
+## Display all rules #
+alias iptlist='sudo /sbin/iptables -L -n -v --line-numbers'
+alias iptlistin='sudo /sbin/iptables -L INPUT -n -v --line-numbers'
+alias iptlistout='sudo /sbin/iptables -L OUTPUT -n -v --line-numbers'
+alias iptlistfw='sudo /sbin/iptables -L FORWARD -n -v --line-numbers'
+alias firewall=iptlist
+
+## -------------------------------------------------------------------
+## NETWORKING ALIASES
+## -------------------------------------------------------------------
+alias iftop='sudo iftop -i eth0'
+alias tcpdump='sudo tcpdump -i eth0'
+
+## Show open ports
+alias ports='netstat -tulanp'
+
+## Do not wait interval 1 second, go fast #
+alias fastping='ping -c 100 -s.2'
+
+## -------------------------------------------------------------------
+## RESOURCES MONITORING ALIASES
+## -------------------------------------------------------------------
+
+alias df='df -h -x none'
+
+## Grabs the disk usage in the current directory
+alias hddusage='du -ch 2> /dev/null |tail -1'
+
+## Gets the total disk usage on your machine
+alias hddtotalusage='df -hl --total | grep total'
+
+## Shows the individual partition usages without the temporary memory values
+alias hddpartusage='df -hlT --exclude-type=tmpfs --exclude-type=devtmpfs'
+
+## Gives you what is using the most space. Both directories and files. Varies on
+## current directory
+alias hddmostspace='du -hsx * | sort -rh | head -10'
+
+## This is an enhance version of top
+## alias htop="sudo htop d 1"
+
+## Memory Info
+alias meminfo='free -m -l -t'
+alias free='free -m'
+
+## Get top process eating memory
+alias psmem='ps auxf | sort -nr -k 4'
+alias psmem10='ps auxf | sort -nr -k 4 | head -10'
+
+## Get top process eating cpu ##
+alias pscpu='ps auxf | sort -nr -k 3'
+alias pscpu10='ps auxf | sort -nr -k 3 | head -10'
+
+## Get server cpu info ##
+alias cpuinfo='lscpu'
+
+## Older system use /proc/cpuinfo ##
+#alias cpuinfo='less /proc/cpuinfo' ##
+
+## Get GPU ram on desktop / laptop##
+alias gpumeminfo='grep -i --color memory /var/log/Xorg.0.log'
