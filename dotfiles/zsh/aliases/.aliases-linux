@@ -66,8 +66,13 @@ alias fastping='ping -c 100 -s.2'
 
 alias df='df -h -x none'
 
+## Note the alias name can be a bit long but since we are using autocomplete
+## it is kind of ok
 ## Grabs the disk usage in the current directory
 alias hddusage='du -ch 2> /dev/null |tail -1'
+
+# list folders by size in current directory
+alias hddusagel="du -h --max-depth=1 | sort -rh"
 
 ## Gets the total disk usage on your machine
 alias hddtotalusage='df -hl --total | grep total'
