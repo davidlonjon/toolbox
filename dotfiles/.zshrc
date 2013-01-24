@@ -69,8 +69,8 @@ elif  [[ $('uname') == 'Darwin' ]]; then
 fi
 
 
-if [ -d $HOME/scripts ]; then
-    PATH=$PATH:$HOME/scripts
+if [ -d $HOME/toolbox/scripts ]; then
+    PATH=$PATH:$HOME/toolbox/scripts
 fi
 
 # -------------------------------------------------------------------
