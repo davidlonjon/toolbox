@@ -111,7 +111,14 @@ alias cpuinfo='lscpu'
 alias gpumeminfo='grep -i --color memory /var/log/Xorg.0.log'
 
 ## -------------------------------------------------------------------
+## XCLIP ALIASES
+## -------------------------------------------------------------------
+alias "c=xclip"
+alias "v=xclip -o"
+
+## -------------------------------------------------------------------
 ## GENERAL ALIASES
 ## -------------------------------------------------------------------
 #turn screen off
 alias screenoff="xset dpms force off"
+
