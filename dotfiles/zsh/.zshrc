@@ -343,6 +343,10 @@ up()
     cd "$dir";
 }
 
+function mkdircd () {
+  mkdir -p "$@" && eval cd "\"\$$#\"";
+}
+
 
 ## -------------------------------------------------------------------
 ## MAC SPECIFIC FUNCTIONS
