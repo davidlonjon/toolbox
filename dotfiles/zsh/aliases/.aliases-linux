@@ -30,6 +30,8 @@ alias chgrp='chgrp --preserve-root'
 
 alias apt-get="sudo apt-get"
 alias apt-get-y="sudo apt-get --yes"
+alias apt-get-up="sudo apt-get update && sudo apt-get"
+alias apt-get-up-y="sudo apt-get update && sudo apt-get --yes"
 
 ## Update on one command
 alias update='sudo apt-get update && sudo apt-get upgrade'
