@@ -17,4 +17,13 @@ instance_name=$1
 echo "Obtaining the instance address..."
 instance_address=`ec2-describe-instances  --filter "tag:Name=${instance_name}" | grep INSTANCE | awk '{print $4}'`
 echo "Done. Instance address: ${instance_address}"
-ssh -i $HOME/.ssh/soompi.pem ubuntu@${instance_address}
+
+pem_key=''
+echo "Instance Name: ${instance_name}"
+# get the PEM key
+case "${instance_name}" in
+    *ima*) pem_key="${HOME}/.ssh/enswersAmerica.pem" ;;
+    *soo*) pem_key="${HOME}/.ssh/soompi.pem" ;;
+    *) echo "Error: A pem key could not be found."; exit 1;;
+esac
+ssh -i ${pem_key} ubuntu@${instance_address}
