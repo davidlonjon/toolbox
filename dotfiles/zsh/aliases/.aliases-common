@@ -80,9 +80,13 @@ alias g='git'
 alias ga='git add'
 alias gp='git push'
 alias gl='git pull'
-alias glg='git log'
-alias glgs='git log --stat --max-count=5'
-alias glgg='git log --graph --max-count=5'
+alias glg="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
+alias glgs="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --max-count=5"
+alias glgn="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --no-merges"
+alias glgns="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --no-merges --max-count=5"
+#alias glg='git log'
+#alias glgs='git log --stat --max-count=5'
+#alias glgg='git log --graph --max-count=5'
 alias gst='git status'
 alias gss='git status -s'
 alias gd='git diff'
