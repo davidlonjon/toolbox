@@ -75,9 +75,9 @@ if [[ $os == 'linux' ]]; then
   export AWS_ACCESS_KEY=$( awk -F= '/AccessKey/ {print $2}' $AWS_CREDENTIAL_FILE )
   export AWS_SECRET_KEY=$( awk -F= '/SecretKey/ {print $2}' $AWS_CREDENTIAL_FILE )
 elif  [[ $os == 'darwin' ]]; then
-  export PATH=/opt/local/bin:/opt/local/sbin:/library/PostgreSQL/9.1/bin:/Users/lucky/.rvm/gems/ruby-1.9.2-p290/bin:/Users/lucky/.rvm/gems/ruby-1.9.2-p290@global/bin:/Users/lucky/.rvm/rubies/ruby-1.9.2-p290/bin:/Users/lucky/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin:/opt/local/binfi
+  export PATH=$PATH:/opt/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin:/opt/local/binfi
+  export MANPATH="/opt/local/share/man:$MANPATH"
 fi
-
 
 if [ -d $HOME/toolbox/scripts ]; then
     PATH=$PATH:$HOME/toolbox/scripts
@@ -511,4 +511,13 @@ zstyle ':completion:*:other-accounts' users-hosts $other_accounts
 if [[ $os == 'linux' ]]; then
   ## Archey
   archey
+fi
+if [[ $os == 'darwin' ]]; then
+  PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+  [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+fi
+
+# Path for Vagrant
+if [[ $os == 'darwin' ]]; then
+  PATH=$PATH:/opt/vagrant/bin
 fi
