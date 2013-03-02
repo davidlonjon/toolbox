@@ -40,7 +40,7 @@ ZSH=$HOME/.oh-my-zsh
 if [[ $os == 'linux' ]]; then
   plugins=(git autojump vagrant)
 elif  [[ $os == 'darwin' ]]; then
-  plugins=(git OSX)
+  plugins=(git OSX vagrant)
 fi
 
 source $ZSH/oh-my-zsh.sh
