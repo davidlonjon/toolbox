@@ -1,0 +1,16 @@
+host enswersgitrepo
+        HostName rnd.enswer.net
+        Port 2345
+        User scm
+
+host damrestrecordapi
+        hostname 61.106.15.144
+        User enswer
+
+host ccrdamserver
+        hostname 204.11.241.204
+        User enswer
+
+host ccrmediaserver
+        hostname 204.11.241.205
+        User enswer
