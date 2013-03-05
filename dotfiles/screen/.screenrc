@@ -1,0 +1,28 @@
+# Bind F11 and F12 (NOT F1 and F2) to previous and next screen window
+bindkey -k F1 prev
+bindkey -k F1 next
+
+# Messages ####################################################################
+startup_message off     # turn off start message
+msgwait 2               # default message display is too long
+version                 # echo version on startup, 'cause it's nice to know
+
+# From Stephen Shirley
+# Don't block command output if the terminal stops responding
+# (like if the ssh connection times out for example).
+nonblock on
+
+# Allow editors etc. to restore display on exit
+# rather than leaving existing text in place
+altscreen on
+
+# Window list at the bottom.
+#hardstatus alwayslastline
+#hardstatus string "%-w%{= BW}%50>%n %t%{-}%+w%<"
+
+hardstatus alwayslastline "%{wk}%?%-Lw%?%{bw}%n*%f %t%?(%u)%?%{wk}%?%+Lw %= %{mk}@%H %{ck}%Y-%m-%d %{yk}%D %{gk}%0c %{bk}%l"
+
+# Create windows on startup ###################################################
+# screen -t main
+# screen -t work
+# select 0
