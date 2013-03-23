@@ -378,6 +378,10 @@ if [[ $os == 'darwin' ]]; then
   ## Displays mounted drive information in a nicely formatted manner
   function nicemount() { (echo "DEVICE PATH TYPE FLAGS" && mount | awk '$2="";1') | column -t ; }
 
+  function chromecanary () {
+    /Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary -disable-prompt-on-repost 2>&1 &
+  # /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome $* 2>&1 &
+  }
 fi
 
 ## -------------------------------------------------------------------
