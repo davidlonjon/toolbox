@@ -523,6 +523,10 @@ if [[ $os == 'linux' ]]; then
   ## Archey
   archey
 fi
+
+## -------------------------------------------------------------------
+## MAC SPECIFIC
+## -------------------------------------------------------------------
 if [[ $os == 'darwin' ]]; then
   PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
   [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
