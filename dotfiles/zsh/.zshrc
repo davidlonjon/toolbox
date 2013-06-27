@@ -38,9 +38,9 @@ ZSH=$HOME/.oh-my-zsh
 ## Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 ## Example format: plugins=(rails git textmate ruby lighthouse)
 if [[ $os == 'linux' ]]; then
-  plugins=(git autojump vagrant screen gem tmux tmuxinator sublime)
+  plugins=(git autojump vagrant screen gem tmux tmuxinator sublime git-extras)
 elif  [[ $os == 'darwin' ]]; then
-  plugins=(git OSX vagrant screen gem tmux tmuxinator sublime)
+  plugins=(git OSX vagrant screen gem tmux tmuxinator sublime git-extras)
 fi
 
 source $ZSH/oh-my-zsh.sh
@@ -378,6 +378,10 @@ if [[ $os == 'darwin' ]]; then
   ## Displays mounted drive information in a nicely formatted manner
   function nicemount() { (echo "DEVICE PATH TYPE FLAGS" && mount | awk '$2="";1') | column -t ; }
 
+  function chromecanary () {
+    /Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary -disable-prompt-on-repost 2>&1 &
+  # /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome $* 2>&1 &
+  }
 fi
 
 ## -------------------------------------------------------------------
