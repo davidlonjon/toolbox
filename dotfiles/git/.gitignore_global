@@ -59,3 +59,23 @@ Desktop.ini
 
 # NPM
 .npmignore
+
+# Files that might appear on external disks
+.Spotlight-V100
+.Trashes
+
+# Always-ignore extensions
+*~
+*.diff
+*.err
+*.log
+*.orig
+*.rej
+*.sw?
+*.vi
+
+# Python
+*.pyc
+
+# Sass
+*.sass-cache
