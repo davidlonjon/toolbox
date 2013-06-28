@@ -9,3 +9,13 @@
 	diff = auto
 	interactive = auto
 	status = auto
+
+[apply]
+    # Taken from https://github.com/mathiasbynens/dotfiles/blob/master/.gitconfig
+    # Detect whitespace errors when applying a patch
+    whitespace = fix
+
+[merge]
+    # Taken from https://github.com/mathiasbynens/dotfiles/blob/master/.gitconfig
+    # Include summaries of merged commits in newly created merge commit messages
+    log = true
