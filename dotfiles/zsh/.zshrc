@@ -8,7 +8,7 @@
 ## ----------------------------------------------------------------------------------------------------
 
 ## Get the OS
-os=$( uname | tr '[:upper:]' '[:lower:]')
+OSTYPE=$( uname | tr '[:upper:]' '[:lower:]')
 
 ## Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
@@ -37,9 +37,9 @@ ZSH=$HOME/.oh-my-zsh
 ## Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 ## Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 ## Example format: plugins=(rails git textmate ruby lighthouse)
-if [[ $os == 'linux' ]]; then
+if [[ $OSTYPE == 'linux' ]]; then
   plugins=(git autojump vagrant screen gem tmux tmuxinator sublime git-extras)
-elif  [[ $os == 'darwin' ]]; then
+elif  [[ $OSTYPE == 'darwin' ]]; then
   plugins=(git OSX vagrant screen gem tmux tmuxinator sublime git-extras)
 fi
 
@@ -61,7 +61,7 @@ fi
 ## PATH
 ## -------------------------------------------------------------------
 
-if [[ $os == 'linux' ]]; then
+if [[ $OSTYPE == 'linux' ]]; then
   export PATH=/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/var/lib/gems/1.8/bin
   ## AMAZON AWS TOOL PATH AND VARIABLE DEFINITION
   ## This assumes that Java > 1.6 is installed
@@ -74,7 +74,7 @@ if [[ $os == 'linux' ]]; then
   ## Example taken from https://gist.github.com/4177779
   export AWS_ACCESS_KEY=$( awk -F= '/AccessKey/ {print $2}' $AWS_CREDENTIAL_FILE )
   export AWS_SECRET_KEY=$( awk -F= '/SecretKey/ {print $2}' $AWS_CREDENTIAL_FILE )
-elif  [[ $os == 'darwin' ]]; then
+elif  [[ $OSTYPE == 'darwin' ]]; then
   export PATH=$PATH:/opt/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin:/opt/local/binfi
   export MANPATH="/opt/local/share/man:$MANPATH"
 fi
@@ -359,7 +359,7 @@ function mkdircd () {
 ## MAC SPECIFIC FUNCTIONS
 ## -------------------------------------------------------------------
 
-if [[ $os == 'darwin' ]]; then
+if [[ $OSTYPE == 'darwin' ]]; then
 
   ## Turn hidden files on/off in Finder
   function hiddenOn() { defaults write com.apple.Finder AppleShowAllFiles YES ; }
@@ -519,7 +519,7 @@ zstyle ':completion:*:other-accounts' users-hosts $other_accounts
 ## -------------------------------------------------------------------
 ## LINUX SPECIFIC
 ## -------------------------------------------------------------------
-if [[ $os == 'linux' ]]; then
+if [[ $OSTYPE == 'linux' ]]; then
   ## Archey
   archey
 fi
@@ -527,13 +527,13 @@ fi
 ## -------------------------------------------------------------------
 ## MAC SPECIFIC
 ## -------------------------------------------------------------------
-if [[ $os == 'darwin' ]]; then
+if [[ $OSTYPE == 'darwin' ]]; then
   PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
   [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 fi
 
 # Path for Vagrant
-if [[ $os == 'darwin' ]]; then
+if [[ $OSTYPE == 'darwin' ]]; then
   PATH=$PATH:/opt/vagrant/bin
 fi
 
