@@ -49,11 +49,10 @@ source $ZSH/oh-my-zsh.sh
 ## ALIASES
 ## -------------------------------------------------------------------
 
-## Common aliases to all OS
 . $HOME/toolbox/dotfiles/zsh/aliases/.aliases-common
+. $HOME/toolbox/dotfiles/zsh/aliases/.aliases-darwin
+. $HOME/toolbox/dotfiles/zsh/aliases/.aliases-linux
 
-if [[ -f "$HOME/toolbox/dotfiles/zsh/aliases/.aliases-${os}" ]]; then
-  . $HOME/toolbox/dotfiles/zsh/aliases/.aliases-${os}
 fi
 #. $HOME/.environment_variables-${OS}
 
