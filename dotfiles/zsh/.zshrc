@@ -52,8 +52,9 @@ source $ZSH/oh-my-zsh.sh
 . $HOME/toolbox/dotfiles/zsh/aliases/.aliases-common
 . $HOME/toolbox/dotfiles/zsh/aliases/.aliases-darwin
 . $HOME/toolbox/dotfiles/zsh/aliases/.aliases-linux
+. $HOME/toolbox/dotfiles/zsh/aliases/.aliases-git
 
-fi
+
 #. $HOME/.environment_variables-${OS}
 
 ## -------------------------------------------------------------------
