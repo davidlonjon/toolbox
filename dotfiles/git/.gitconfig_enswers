@@ -10,6 +10,10 @@
 	interactive = auto
 	status = auto
 
+[advice]
+    # Remove the hint when doing a git status
+    # statusHints = false
+
 [apply]
     # Taken from https://github.com/mathiasbynens/dotfiles/blob/master/.gitconfig
     # Detect whitespace errors when applying a patch
