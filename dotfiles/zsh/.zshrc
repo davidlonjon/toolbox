@@ -313,7 +313,7 @@ setopt NOCLOBBER
 ## -------------------------------------------------------------------
 
 ## cd + ls  ... and dont forget to add that to completion
-cdl() { cd $@; l }
+cdl() { cd $@; ls -lha }
 compdef _cd cdl
 
 ## Quick find
