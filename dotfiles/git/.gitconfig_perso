@@ -23,3 +23,8 @@
     # Taken from https://github.com/mathiasbynens/dotfiles/blob/master/.gitconfig
     # Include summaries of merged commits in newly created merge commit messages
     log = true
+
+[rerere]
+  # Remember my merges
+  # http://gitfu.wordpress.com/2008/04/20/git-rerere-rereremember-what-you-did-last-time/
+  enabled = true
