@@ -28,3 +28,11 @@
   # Remember my merges
   # http://gitfu.wordpress.com/2008/04/20/git-rerere-rereremember-what-you-did-last-time/
   enabled = true
+
+# Push and pull the current branch to its tracking branch
+# the usual default is to push all branches
+[pull]
+  default = matching
+
+[push]
+  default = matching
