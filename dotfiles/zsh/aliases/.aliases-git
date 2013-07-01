@@ -1,85 +1,29 @@
-## -------------------------------------------------------------------
-## GLOBAL ALIASES
-## Inspired from
-## from http://www.cyberciti.biz/tips/bash-aliases-mac-centos-linux-unix.html
-## -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# GIT ALIASES
+# Inspired from
+# from http://www.cyberciti.biz/tips/bash-aliases-mac-centos-linux-unix.html
+# https://github.com/skwp/dotfiles/blob/master/git/gitconfig
+# -------------------------------------------------------------------
 
-## -------------------------------------------------------------------
-## ZSH ALIASES
-### -------------------------------------------------------------------
-alias zshconfig='vi ~/.zshrc'
-alias ohmyzsh='vi ~/.oh-my-zsh/oh-my-zsh.sh'
-
-## -------------------------------------------------------------------
-## TERM RESIZING ALIASES
-## -------------------------------------------------------------------
-alias hide='echo -en "\033]50;nil2\007"'
-alias tiny='echo -en "\033]50;-misc-fixed-medium-r-normal--8-80-75-75-c-50-iso10646-1\007"'
-alias small='echo -en "\033]50;6x10\007"'
-alias default='echo -e "\033]50;-misc-fixed-medium-r-semicondensed--13-*-*-*-*-*-iso10646-1\007"'
-alias medium='echo -en "\033]50;-misc-fixed-medium-r-normal--13-120-75-75-c-80-iso10646-1\007"'
-alias large='echo -en "\033]50;-misc-fixed-medium-*-*-*-15-*-*-*-*-*-iso10646-1\007"'
-## This is a large font that has a corresponding double-width font for
-## CJK and other characters, useful for full-on utf-8 goodness.
-alias larger='echo -en "\033]50;-misc-fixed-medium-r-normal--18-*-*-*-*-*-iso10646-1\007"'
-alias huge='echo -en "\033]50;-misc-fixed-medium-r-normal--20-200-75-75-c-100-iso10646-1\007"'
-alias normal=default
-if [ "$TERM" = "xterm" ] && [ "$LINES" -ge 50 ] && [ "$COLUMNS" -ge 100 ]; then
-  large
-fi
-
-## -------------------------------------------------------------------
-## NAVIGATION & LISTING ALIASES
-## -------------------------------------------------------------------
-
-## Long list,show almost all,show type,human readable
-alias la='ls -lAFh'
-alias ll='ls -lAFh'
-
-## Sorted by date,recursive,show type,human readable
-alias lr='ls -tRFh'
-
-## Long list,sorted by date,show type,human readable
-alias lt='ls -ltFh'
-
-alias ldot='ls -ld .*'
-
-## A quick way to get out of current directory ##
-# alias ..='cd ..'
-# alias ...='cd ../../../'
-# alias ....='cd ../../../../'
-# alias .....='cd ../../../../'
-# alias .4='cd ../../../../'
-# alias .5='cd ../../../../..'
-
-## Found on http://www.cyberciti.biz/tips/bash-aliases-mac-centos-linux-unix.html
-dotSlash=""
-for i in 1 2 3 4
-do
-    dotSlash=${dotSlash}'../';
-    baseName=".${i}"
-    alias $baseName="cd ${dotSlash}"
-done
-
-## Typing errors...
-alias 'cd..=cd ..'
-alias 'cd~=cd ~'
-
-## -------------------------------------------------------------------
-## VIM  ALIASES
-## -------------------------------------------------------------------
-alias vi=vim
-alias svi='sudo vi'
-alias vis='vim "+set si"'
-alias edit='vim'
-
-## -------------------------------------------------------------------
-## GIT ALIASES
-## -------------------------------------------------------------------
 alias g='git'
+
+# Add
 alias ga='git add'
-alias gp='git push'
+alias gap='git add --patch' # stage commits chunk by chunk
+# Add untracked, remove deleted, and show status
+alias gadda="git add -A && git status"
+
+# Push and pull
+alias gp='git push origin HEAD'
 alias gl='git pull'
+alias gpu='git pull'
+alias ggpull='git pull origin $(current_branch)'
+alias ggpush='git push origin $(current_branch)'
+# Taken from https://github.com/mathiasbynens/dotfiles/blob/master/.gitconfig
+# Pull in remote changes for the current repository and all its submodules
+alias ggpullr="git pull origin $(current_branch); git submodule foreach git pull origin master"
+
+# Log
 alias glg="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
 alias glgs="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --max-count=5"
 alias glgn="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --no-merges"
@@ -87,131 +31,106 @@ alias glgns="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Crese
 #alias glg='git log'
 #alias glgs='git log --stat --max-count=5'
 #alias glgg='git log --graph --max-count=5'
+
+# Status
 alias gst='git status'
 alias gss='git status -s'
+
+# Diff
 alias gd='git diff'
+alias gdc='git diff --cached'
+alias gdst='git diff --stat' # Diff overview
+#alias gdl='git diff HEAD'
+# Show the diff between the latest commit and the current state
+alias gdl='git diff-index --quiet HEAD -- || clear; git diff --patch-with-stat'
+# Taken from https://github.com/mathiasbynens/dotfiles/blob/master/.gitconfig
+# `gdi $number` shows the diff between the state `$number` revisions ago and the current state
+alias gdi="!d() { git diff --patch-with-stat HEAD~$1; }; git diff-index --quiet HEAD -- || clear; d"
+
+# Merge
 alias gm='git merge'
-alias gma='git commit -am'
-alias gb='git branch'
-alias gba='git branch -a'
+alias gmnff='git merge --no-ff'
+
+# Commit
+alias gc='git commit'
+alias gcm='git commit -m'
+alias gca='git commit -am'
+alias gcaa='git add -A && git commit -am' # Commit all the changes
+alias gcamend='git commit --amend'
+# Taken from
+# https://github.com/mathiasbynens/dotfiles/blob/master/.gitconfig
+# # Credit an author on the latest commit
+alias gccredit="!c() { git commit --amend --author \"$1 <$2>\" -C HEAD; }; c"
+
+# Checkout
 alias gco='git checkout'
-alias gcm='git checkout master'
-alias gcd='git checkout develop'
+alias gcob='git checkout -b' # create and switch to a new branch
+alias gcom='git checkout master'
+alias gcod='git checkout develop'
+
+# Branch
+alias gb='git branch'
+alias gbv='git branch -v'  # branch (verbose)
+alias gba='git branch -a' # branch all
+alias gbav='git branch -av' # branch all (verbose)
+
+# Tag
+alias gtl='git tag -l'
+alias gta='git tag -a -m'
+
+# Remote
+alias grv='git remote -v' #verbose
 alias gra='git remote add'
 alias grr='git remote rm'
-alias gpu='git pull'
+
+# Rebase
+alias grc='git rebase --continue'
+alias grs='git rebase --skip'
+# Interactive rebase with the given number of latest commits
+# Taken from https://github.com/mathiasbynens/dotfiles/blob/master/.gitconfig
+alias greb="!r() { git rebase -i HEAD~$1; }; r"
+
+# Reset
+alias gus='git reset HEAD' # remove files from index (tracking)
+alias guc='git reset --soft HEAD^' # go back before last commit, with files in uncommitted state
+alias grh='git reset HEAD --hard'
+
+ # Stash
+alias gsh='git stash' # stash changes
+alias gshp='git stash pop' # pop last stash
+alias gshl='git stash list' # list stashes
+alias gsha='git stash apply' # apply stash (restore changes)
+alias gshd='git stash drop ' # drop stashes (destroy changes)
+# Taken from http://blog.apiaxle.com/post/handy-git-tips-to-stop-you-getting-fired/
+# alias gccredit="!f() { git commit --amend --author \"$1 <$2>\" -C HEAD; }; f"
+# alias gshs="s() { git stash save \"snapshot: $(date) $1\"; }; s"
+#alias gshs='git stash save "snapshot: $(date)" && git stash apply "stash@{0}"'
+alias gshsl='git stash list --grep snapshot'
+
+# Clone
 alias gcl='git clone'
-alias gta='git tag -a -m'
+alias gcr='git clone --recursive' # Clone a repository including all submodules
+
+# Config
+alias gconf='git config'
+alias gconfg='git config --global'
+alias gconfl='git config --list'
+
+# Assume
+# Taken from http://blog.apiaxle.com/post/handy-git-tips-to-stop-you-getting-fired/
+alias gassume='git update-index --assume-unchanged'
+alias gunassume='git update-index --no-assume-unchanged'
+alias gassumed='git ls-files -v | grep -w h | cut -c 3-'
+
+# Misc
+alias gcp='git cherry-pick -x' # grab a change from a branch
 alias gf='git reflog'
-alias grhh='git reset HEAD --hard'
-alias ggpull='git pull origin $(current_branch)'
-alias ggpush='git push origin $(current_branch)'
 
-## -------------------------------------------------------------------
-## GENERAL ROOT ALIASES
-## -------------------------------------------------------------------
-## If user is not root, pass all commands via sudo
-if [ $UID -ne 0 ]; then
+# Find out who is currently active on the repository
+# Displays committers in descending order of number of commits
+# Taken from https://github.com/necolas/dotfiles/blob/master/git/gitconfig
+alias gwho='git shortlog --numbered --summary --email --no-merges --since="3 months"'
 
-  ## Reboot / halt / poweroff
-  alias reboot='sudo /sbin/reboot'
-  alias poweroff='sudo /sbin/poweroff'
-  alias halt='sudo /sbin/halt'
-  alias shutdown='sudo /sbin/shutdown'
-  ## Become root #
-  alias root='sudo -i'
-  alias su='sudo -i'
-fi
-
-## -------------------------------------------------------------------
-## PLAY SAFE ALIASES
-## -------------------------------------------------------------------
-## the nocorrect is inspired from
-## http://dotfiles.org/~atom/.zshrc
-alias 'mv=nocorrect mv -i'
-alias 'cp=nocorrect cp -i'
-alias 'cpd=cp -ri'
-
-## For convenience
-alias 'mkdir=nocorrect mkdir -pv'
-alias 'dus=du -sckxh * | sort -nr'
-
-## -------------------------------------------------------------------
-## NETWORKING ALIASES
-## -------------------------------------------------------------------
-## Stop after sending count ECHO_REQUEST packets #
-alias ping='ping -c 5'
-
-## -------------------------------------------------------------------
-## MEMCACHED ALIASES
-## -------------------------------------------------------------------
-## Memcached server status  ##
-## alias mcdstats='/usr/bin/memcached-tool 10.10.27.11:11211 stats'
-## alias mcdshow='/usr/bin/memcached-tool 10.10.27.11:11211 display'
-
-## quickly flush out memcached server ##
-## alias flushmcd='echo "flush_all" | nc 10.10.27.11 11211'
-
-## -------------------------------------------------------------------
-## SSH ALIASES
-## -------------------------------------------------------------------
-
-## SSH aliases - short cuts to ssh to a host
-## alias -g shost='ssh -p 9999 user@host.com'
-
-## Screen aliases - add a new screen , or entire session, name it, then ssh to the host
-## alias sshost='screen -t HOST shost'
-
-## -------------------------------------------------------------------
-## AWS COMMAND LINE TOOL SPECIAL ALIASES
-## -------------------------------------------------------------------
-## Alias to AWS SSH tool
-alias ec2ssh='ec2ssh.sh'
-
-## -------------------------------------------------------------------
-## GENERAL ALIASES
-## -------------------------------------------------------------------
-alias -g H='| head'
-alias -g T='| tail'
-alias -g G='| grep'
-alias -g L="| less"
-alias -g M="| most"
-alias -g LL="2>&1 | less"
-alias -g CA="2>&1 | cat -A"
-alias -g NE="2> /dev/null"
-alias -g NUL="> /dev/null 2>&1"
-
-## Colorize the grep command output for ease of use (good for log files)
-alias grep='grep --color=auto'
-alias egrep='egrep --color=auto'
-alias fgrep='fgrep --color=auto'
-
-alias cls='clear'
-
-alias f='find . -name'
-alias fd='find . -type d -name'
-alias ff='find . -type f -name'
-
-alias h='history'
-alias path='echo -e ${PATH//:/\\n}'
-alias now='date +"%T'
-alias nowtime=now
-alias nowdate='date +"%d-%m-%Y"'
-
-## get web server headers #
-alias header='curl -I'
-
-## find out if remote server supports gzip / mod_deflate or not #
-alias headerc='curl -I --compress'
-
-## Resume wget ##
-alias wget='wget -c'
-
-## Found on http://www.cyberciti.biz/tips/bash-aliases-mac-centos-linux-unix.html
-alias nocomment='grep -Ev '\''^(#|$)'\'''
-
-alias mount='mount |column -t'
-
-# https://github.com/jbleuzen/dotfiles/blob/master/zsh/aliases.zsh
-# Get current public IP
-alias ip='dig +short myip.opendns.com @resolver1.opendns.com'
+# Taken from https://github.com/holman/dotfiles/blob/master/git/aliases.zsh
+alias grm="git status | grep deleted | awk '{\$1=\$2=\"\"; print \$0}' | \
+           sed 's/^[ \t]*//' | sed 's/ /\\\\ /g' | xargs git rm"
