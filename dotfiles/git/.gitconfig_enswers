@@ -46,6 +46,7 @@
 # Better merge messages
 [merge]
     summary=true
+    stat = true
 
 [diff]
     tool = vimdiff
