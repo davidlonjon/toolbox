@@ -29,6 +29,10 @@
     log = true
     # No fast forward merges
     ff = no
+    summary=true
+    stat = true
+    tool = vimdiff
+
 
 [rerere]
     # Remember my merges
@@ -42,11 +46,6 @@
 
 [push]
     default = matching
-
-# Better merge messages
-[merge]
-    summary=true
-    stat = true
 
 [diff]
     tool = vimdiff
