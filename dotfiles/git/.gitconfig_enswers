@@ -1,14 +1,18 @@
 [user]
-	name = David Lonjon
-	email = david.lonjon@enswer.net
+    name = David Lonjon
+    email = david.lonjon@enswer.net
+
 [core]
-	editor = vi
-            excludesfile = ~/.gitignore_global
+    editor = vi
+    excludesfile = ~/.gitignore_global
+    # Taken from http://nuclearsquid.com/writings/git-tricks-tips-workflows/
+    whitespace = trailing-space,space-before-tab
+
 [color]
-	branch = auto
-	diff = auto
-	interactive = auto
-	status = auto
+    branch = auto
+    diff = auto
+    interactive = auto
+    status = auto
 
 [advice]
     # Remove the hint when doing a git status
@@ -25,6 +29,10 @@
     log = true
     # No fast forward merges
     ff = no
+    summary=true
+    stat = true
+    tool = vimdiff
+
 
 [rerere]
     # Remember my merges
@@ -39,12 +47,10 @@
 [push]
     default = matching
 
-# Better merge messages
-[merge]
-    summary=true
-
 [diff]
     tool = vimdiff
     # Git diff will use (i)ndex, (w)ork tree, (c)ommit and (o)bject
     # instead of a/b/c/d as prefixes for patches
     mnemonicprefix = true
+    # Taken from http://nuclearsquid.com/writings/git-tricks-tips-workflows/
+    renames = copies
