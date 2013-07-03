@@ -13,7 +13,7 @@ alias gap='git add --patch' # stage commits chunk by chunk
 # Add untracked, remove deleted, and show status
 alias gaas="git add -A && git status"
 alias gad="git add ."
-alias gads='git add && git status'
+alias gads='git add . && git status'
 
 # Push and pull
 alias gp='git push origin HEAD'
@@ -33,6 +33,11 @@ alias glgns="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Crese
 #alias glg='git log'
 #alias glgs='git log --stat --max-count=5'
 #alias glgg='git log --graph --max-count=5'
+
+# Find out who is currently active on the repository
+# Displays committers in descending order of number of commits
+# Taken from https://github.com/necolas/dotfiles/blob/master/git/gitconfig
+alias gwho='git shortlog --numbered --summary --email --no-merges --since="3 months"'
 
 # Status
 alias gst='git status'
@@ -108,7 +113,7 @@ alias gshl='git stash list' # list stashes
 alias gsha='git stash apply' # apply stash (restore changes)
 alias gshd='git stash drop ' # drop stashes (destroy changes)
 # Taken from http://blog.apiaxle.com/post/handy-git-tips-to-stop-you-getting-fired/
-alias gshs='git stash save "snapshot: $(date)" && git stash apply "stash@{0}'
+alias gshs="git stash save \"snapshot: $(date)\" && git stash apply \"stash@{0}\""
 alias gshsl='git stash list --grep snapshot'
 
 # Clone
@@ -129,11 +134,6 @@ alias gassumed='git ls-files -v | grep -w h | cut -c 3-'
 # Misc
 alias gcp='git cherry-pick -x' # grab a change from a branch
 alias gf='git reflog'
-
-# Find out who is currently active on the repository
-# Displays committers in descending order of number of commits
-# Taken from https://github.com/necolas/dotfiles/blob/master/git/gitconfig
-alias gwho='git shortlog --numbered --summary --email --no-merges --since="3 months"'
 
 # Taken from https://github.com/holman/dotfiles/blob/master/git/aliases.zsh
 alias grm="git status | grep deleted | awk '{\$1=\$2=\"\"; print \$0}' | \
