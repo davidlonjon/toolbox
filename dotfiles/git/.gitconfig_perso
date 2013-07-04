@@ -7,6 +7,8 @@
     excludesfile = ~/.gitignore_global
     # Taken from http://nuclearsquid.com/writings/git-tricks-tips-workflows/
     whitespace = trailing-space,space-before-tab
+    # Taken from https://help.github.com/articles/dealing-with-line-endings
+    autocrlf = input
 
 [color]
     branch = auto
