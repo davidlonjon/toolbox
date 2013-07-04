@@ -385,8 +385,11 @@ fi
 ## MISC
 ## -------------------------------------------------------------------
 
+
 # This is at the end to avoid messing up the color highligting
 # Taken from https://github.com/matijs/dotfiles/blob/master/.bash_profile
 # remove duplicates from the path
 export PATH=`awk -F: '{for(i=1;i<=NF;i++){if(!($i in a)){a[$i];printf s$i;s=":"}}}'<<<$PATH`;
+
+
 
