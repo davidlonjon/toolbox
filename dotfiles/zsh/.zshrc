@@ -49,10 +49,10 @@ source $ZSH/oh-my-zsh.sh
 ## ALIASES
 ## -------------------------------------------------------------------
 
-. $HOME/toolbox/dotfiles/zsh/aliases/.aliases-common
-. $HOME/toolbox/dotfiles/zsh/aliases/.aliases-darwin
-. $HOME/toolbox/dotfiles/zsh/aliases/.aliases-linux
-. $HOME/toolbox/dotfiles/zsh/aliases/.aliases-git
+[ -f "$HOME/toolbox/dotfiles/zsh/aliases/.aliases-common" ] && source $HOME/toolbox/dotfiles/zsh/aliases/.aliases-common
+[ -f "$HOME/toolbox/dotfiles/zsh/aliases/.aliases-darwin" ] && source $HOME/toolbox/dotfiles/zsh/aliases/.aliases-darwin
+[ -f "$HOME/toolbox/dotfiles/zsh/aliases/.aliases-linux" ] && source $HOME/toolbox/dotfiles/zsh/aliases/.aliases-linux
+[ -f "$HOME/toolbox/dotfiles/zsh/aliases/.aliases-git" ] && source $HOME/toolbox/dotfiles/zsh/aliases/.aliases-git
 
 
 #. $HOME/.environment_variables-${OS}
@@ -83,13 +83,14 @@ fi
 export WORKON_HOME=~/.virtualenvs
 source /usr/local/bin/virtualenvwrapper.sh
 
-if [ -d $HOME/toolbox/scripts ]; then
-    PATH=$PATH:$HOME/toolbox/scripts
-fi
+# set extra path:
+# check whether the Haskell binary directory exists and if so add it to the PATH
+[ -d "$HOME/toolbox/scripts" ] && export PATH=$PATH:$HOME/toolbox/scripts
+[ -d "$HOME/toolbox/bin" ] && export PATH=$PATH:$HOME/toolbox/bin
 
-if [ -d $HOME/toolbox/bin ]; then
-    PATH=$PATH:$HOME/toolbox/bin
-fi
+# Taken from https://github.com/matijs/dotfiles/blob/master/.bash_profile
+# remove duplicates from the path
+export PATH=`awk -F: '{for(i=1;i<=NF;i++){if(!($i in a)){a[$i];printf s$i;s=":"}}}'<<<$PATH`;
 
 ## -------------------------------------------------------------------
 ## PROMPT
