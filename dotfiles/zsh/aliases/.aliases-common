@@ -10,6 +10,9 @@
 alias zshconfig='vi ~/.zshrc'
 alias ohmyzsh='vi ~/.oh-my-zsh/oh-my-zsh.sh'
 
+# https://github.com/skwp/dotfiles/blob/master/zsh/aliases.zsh
+alias zr='source ~/.zshrc'
+
 ## -------------------------------------------------------------------
 ## TERM RESIZING ALIASES
 ## -------------------------------------------------------------------
@@ -43,6 +46,10 @@ alias lr='ls -tRFh'
 alias lt='ls -ltFh'
 
 alias ldot='ls -ld .*'
+
+# https://github.com/skwp/dotfiles/blob/master/zsh/aliases.zsh
+# show me files matching "ls grep"
+alias lsg='ll | grep'
 
 ## A quick way to get out of current directory ##
 # alias ..='cd ..'
@@ -246,3 +253,7 @@ alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.ar
 # PS
 alias psa="ps aux"
 alias psg="ps aux | grep "
+
+# https://github.com/skwp/dotfiles/blob/master/zsh/aliases.zsh
+# Gem install
+alias sgi='sudo gem install --no-ri --no-rdoc'
