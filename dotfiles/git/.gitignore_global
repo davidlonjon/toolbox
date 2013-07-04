@@ -77,5 +77,6 @@ Desktop.ini
 *.sass-cache
 
 # Ctags
-*.tags
-*.tags_sorted_by_file
+.tags
+.tags_sorted_by_file
+.gemtags
