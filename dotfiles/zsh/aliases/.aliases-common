@@ -215,3 +215,13 @@ alias mount='mount |column -t'
 # https://github.com/jbleuzen/dotfiles/blob/master/zsh/aliases.zsh
 # Get current public IP
 alias ip='dig +short myip.opendns.com @resolver1.opendns.com'
+
+# IP addresses
+# Taken from https://github.com/mathiasbynens/dotfiles/blob/master/.aliases
+alias localip="ipconfig getifaddr en1"
+alias ips="ifconfig -a | grep -o 'inet6\? \(\([0-9]\+\.[0-9]\+\.[0-9]\+\.[0-9]\+\)\|[a-fA-F0-9:]\+\)' | sed -e 's/inet6* //'"
+
+# Taken from https://github.com/mathiasbynens/dotfiles/blob/master/.aliases
+# Gzip-enabled `curl`
+alias gurl='curl --compressed'
+
