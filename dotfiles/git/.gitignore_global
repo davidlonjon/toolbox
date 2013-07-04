@@ -80,3 +80,6 @@ Desktop.ini
 .tags
 .tags_sorted_by_file
 .gemtags
+
+# Vagrant Ignore
+.vagrant
