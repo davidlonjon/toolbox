@@ -110,9 +110,11 @@ then
     fi
 fi
 
+# https://github.com/skwp/dotfiles/blob/master/zsh/vi-mode.zsh
 ## Set Vim as the default editor
+set -o vi
 export EDITOR="vim"
-
+export VISUAL='vim'
 ## Say how long a command took, if it took more than 30 seconds
 export REPORTTIME=30
 
