@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+# Taken from https://github.com/mathiasbynens/dotfiles/blob/master/bin/httpcompression
 # Test if HTTP compression (RFC 2616 + SDCH) is enabled for a given URL
 
 declare -r hUA="Mozilla/5.0 Gecko"
