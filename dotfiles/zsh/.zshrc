@@ -87,8 +87,9 @@ if [ -d $HOME/toolbox/scripts ]; then
     PATH=$PATH:$HOME/toolbox/scripts
 fi
 
-
-
+if [ -d $HOME/toolbox/bin ]; then
+    PATH=$PATH:$HOME/toolbox/bin
+fi
 
 ## -------------------------------------------------------------------
 ## PROMPT
