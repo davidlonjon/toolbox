@@ -10,6 +10,9 @@
 alias zshconfig='vi ~/.zshrc'
 alias ohmyzsh='vi ~/.oh-my-zsh/oh-my-zsh.sh'
 
+# https://github.com/skwp/dotfiles/blob/master/zsh/aliases.zsh
+alias zr='source ~/.zshrc'
+
 ## -------------------------------------------------------------------
 ## TERM RESIZING ALIASES
 ## -------------------------------------------------------------------
@@ -43,6 +46,10 @@ alias lr='ls -tRFh'
 alias lt='ls -ltFh'
 
 alias ldot='ls -ld .*'
+
+# https://github.com/skwp/dotfiles/blob/master/zsh/aliases.zsh
+# show me files matching "ls grep"
+alias lsg='ll | grep'
 
 ## A quick way to get out of current directory ##
 # alias ..='cd ..'
@@ -215,3 +222,38 @@ alias mount='mount |column -t'
 # https://github.com/jbleuzen/dotfiles/blob/master/zsh/aliases.zsh
 # Get current public IP
 alias ip='dig +short myip.opendns.com @resolver1.opendns.com'
+
+# IP addresses
+# Taken from https://github.com/mathiasbynens/dotfiles/blob/master/.aliases
+alias localip="ipconfig getifaddr en1"
+alias ips="ifconfig -a | grep -o 'inet6\? \(\([0-9]\+\.[0-9]\+\.[0-9]\+\.[0-9]\+\)\|[a-fA-F0-9:]\+\)' | sed -e 's/inet6* //'"
+
+# Taken from https://github.com/mathiasbynens/dotfiles/blob/master/.aliases
+# Gzip-enabled `curl`
+alias gurl='curl --compressed'
+
+# Taken from https://github.com/mathiasbynens/dotfiles/blob/master/.aliases
+# Enhanced WHOIS lookups
+alias whois="whois -h whois-servers.net"
+
+# Taken from https://github.com/mathiasbynens/dotfiles/blob/master/.aliases
+# View HTTP traffic
+alias sniff="sudo ngrep -d 'en1' -t '^(GET|POST) ' 'tcp and port 80'"
+alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
+
+# Taken from https://github.com/mathiasbynens/dotfiles/blob/master/.aliases
+# Trim new lines and copy to clipboard
+alias c="tr -d '\n' | pbcopy"
+
+# Taken from https://github.com/mathiasbynens/dotfiles/blob/master/.aliases
+# URL-encode strings
+alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);"'
+
+# https://github.com/skwp/dotfiles/blob/master/zsh/aliases.zsh
+# PS
+alias psa="ps aux"
+alias psg="ps aux | grep "
+
+# https://github.com/skwp/dotfiles/blob/master/zsh/aliases.zsh
+# Gem install
+alias sgi='sudo gem install --no-ri --no-rdoc'

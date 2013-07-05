@@ -1,3 +1,7 @@
 - ctags
 
 - ctags for sublime text 2 (https://github.com/SublimeText/CTags)
+
+ngrep
+tcpdump
+pbcopy
