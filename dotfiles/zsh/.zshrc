@@ -156,77 +156,9 @@ setopt NOCLOBBER
 # FUNCTIONS
 # -------------------------------------------------------------------
 
-# cd + ls  ... and dont forget to add that to completion
-cdl() { cd $@; ls -lha }
-compdef _cd cdl
+[ -f "$HOME/toolbox/dotfiles/zsh/functions/.functions-common" ] && source $HOME/toolbox/dotfiles/zsh/functions/.functions-common
+[ -f "$HOME/toolbox/dotfiles/zsh/functions/.functions-darwin" ] && source $HOME/toolbox/dotfiles/zsh/functions/.functions-darwin
 
-# Quick find
-qf() {
-    echo "find . -iname \"*$1*\""
-    find . -iname "*$1*"
-}
-
-# Set Term title
-precmd () {
-  [[ -t 1 ]] || return
-  case $TERM in
-    *xterm*|rxvt|urxvt|rxvt-256color|rxvt-unicode|(dt|k|E|a)term) print -Pn "\e]2;%n@%m:%~\a"
-    ;;
-    screen*) print -Pn "\e\"%n@%m:%~\e\134"
-  esac
-}
-
-# Allow eaiser navigation
-# e.g., up -> go up 1 directory
-# up 4 -> go up 4 directories
-up()
-{
-    dir=""
-    if [[ $1 =~ ^[0-9]+$ ]]; then
-        x=0
-        while [ $x -lt ${1:-1} ]; do
-            dir=${dir}../
-            x=$(($x+1))
-        done
-    else
-         dir=..
-    fi
-    cd "$dir";
-}
-
-function mkdircd () {
-  mkdir -p "$@" && eval cd "\"\$$#\"";
-}
-
-
-# -------------------------------------------------------------------
-# MAC SPECIFIC FUNCTIONS
-# -------------------------------------------------------------------
-
-if [[ $OSTYPE == 'darwin' ]]; then
-
-  # Turn hidden files on/off in Finder
-  function hiddenOn() { defaults write com.apple.Finder AppleShowAllFiles YES ; }
-  function hiddenOff() { defaults write com.apple.Finder AppleShowAllFiles NO ; }
-
-  # myIP address
-  function myip() {
-    ifconfig lo0 | grep 'inet ' | sed -e 's/:/ /' | awk '{print "lo0       : " $2}'
-    ifconfig en0 | grep 'inet ' | sed -e 's/:/ /' | awk '{print "en0 (IPv4): " $2 " " $3 " " $4 " " $5 " " $6}'
-    ifconfig en0 | grep 'inet6 ' | sed -e 's/ / /' | awk '{print "en0 (IPv6): " $2 " " $3 " " $4 " " $5 " " $6}'
-    ifconfig en1 | grep 'inet ' | sed -e 's/:/ /' | awk '{print "en1 (IPv4): " $2 " " $3 " " $4 " " $5 " " $6}'
-    ifconfig en1 | grep 'inet6 ' | sed -e 's/ / /' | awk '{print "en1 (IPv6): " $2 " " $3 " " $4 " " $5 " " $6}'
-  }
-
-  # Nice mount (http://catonmat.net/blog/another-ten-one-liners-from-commandlingfu-explained)
-  # Displays mounted drive information in a nicely formatted manner
-  function nicemount() { (echo "DEVICE PATH TYPE FLAGS" && mount | awk '$2="";1') | column -t ; }
-
-  function chromecanary () {
-    /Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary -disable-prompt-on-repost 2>&1 &
-  # /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome $* 2>&1 &
-  }
-fi
 
 # -------------------------------------------------------------------
 # KEYS BINDING

@@ -1,0 +1,41 @@
+# cd + ls  ... and dont forget to add that to completion
+cdl() { cd $@; ls -lha }
+compdef _cd cdl
+
+# Quick find
+qf() {
+    echo "find . -iname \"*$1*\""
+    find . -iname "*$1*"
+}
+
+# Set Term title
+precmd () {
+  [[ -t 1 ]] || return
+  case $TERM in
+    *xterm*|rxvt|urxvt|rxvt-256color|rxvt-unicode|(dt|k|E|a)term) print -Pn "\e]2;%n@%m:%~\a"
+    ;;
+    screen*) print -Pn "\e\"%n@%m:%~\e\134"
+  esac
+}
+
+# Allow eaiser navigation
+# e.g., up -> go up 1 directory
+# up 4 -> go up 4 directories
+up()
+{
+    dir=""
+    if [[ $1 =~ ^[0-9]+$ ]]; then
+        x=0
+        while [ $x -lt ${1:-1} ]; do
+            dir=${dir}../
+            x=$(($x+1))
+        done
+    else
+         dir=..
+    fi
+    cd "$dir";
+}
+
+function mkdircd () {
+  mkdir -p "$@" && eval cd "\"\$$#\"";
+}
