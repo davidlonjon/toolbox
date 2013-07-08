@@ -126,3 +126,8 @@ function gi() {
   local IFS=,
   eval npm install --save-dev grunt-{"$*"}
 }
+
+# DNS lookup
+function digga () {
+  dig +nocmd $1 any +multiline +noall +answer
+}
