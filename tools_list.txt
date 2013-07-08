@@ -5,3 +5,11 @@
 ngrep
 tcpdump
 pbcopy
+
+http://www.paulhammond.org/webkit2png/
+
+For mac maybe:
+http://www.kaleidoscopeapp.com/
+
+editorconfig
+https://github.com/sindresorhus/editorconfig-sublime
