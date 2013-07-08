@@ -1,0 +1,17 @@
+bindkey '\e[A'  up-line-or-history
+bindkey '\e[B'  down-line-or-history
+bindkey '\e[C'  forward-char
+bindkey '\e[D'  backward-char
+bindkey '\eOA'  up-line-or-history
+bindkey '\eOB'  down-line-or-history
+bindkey '\eOC'  forward-char
+bindkey '\eOD'  backward-char
+
+bindkey "^?" backward-delete-char
+bindkey '^[OH' beginning-of-line
+bindkey '^[OF' end-of-line
+bindkey '^[[5~' up-line-or-history
+bindkey '^[[6~' down-line-or-history
+bindkey "^r" history-incremental-search-backward
+bindkey ' ' magic-space    # also do history expansion on space
+bindkey '^I' complete-word # complete on tab, leave expansion to _expand

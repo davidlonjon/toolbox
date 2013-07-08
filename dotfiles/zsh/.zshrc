@@ -55,8 +55,6 @@ source $ZSH/oh-my-zsh.sh
 [ -f "$HOME/toolbox/dotfiles/zsh/aliases/.aliases-git" ] && source $HOME/toolbox/dotfiles/zsh/aliases/.aliases-git
 
 
-#. $HOME/.environment_variables-${OS}
-
 # -------------------------------------------------------------------
 # PATH
 # -------------------------------------------------------------------
@@ -87,6 +85,19 @@ source /usr/local/bin/virtualenvwrapper.sh
 # check whether the Haskell binary directory exists and if so add it to the PATH
 [ -d "$HOME/toolbox/scripts" ] && export PATH=$PATH:$HOME/toolbox/scripts
 [ -d "$HOME/toolbox/bin" ] && export PATH=$PATH:$HOME/toolbox/bin
+
+# -------------------------------------------------------------------
+# MAC SPECIFIC
+# -------------------------------------------------------------------
+if [[ $OSTYPE == 'darwin' ]]; then
+  PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+  [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+fi
+
+# Path for Vagrant
+if [[ $OSTYPE == 'darwin' ]]; then
+  PATH=$PATH:/opt/vagrant/bin
+fi
 
 # -------------------------------------------------------------------
 # PROMPT
@@ -164,23 +175,7 @@ setopt NOCLOBBER
 # KEYS BINDING
 # -------------------------------------------------------------------
 
-bindkey '\e[A'  up-line-or-history
-bindkey '\e[B'  down-line-or-history
-bindkey '\e[C'  forward-char
-bindkey '\e[D'  backward-char
-bindkey '\eOA'  up-line-or-history
-bindkey '\eOB'  down-line-or-history
-bindkey '\eOC'  forward-char
-bindkey '\eOD'  backward-char
-
-bindkey "^?" backward-delete-char
-bindkey '^[OH' beginning-of-line
-bindkey '^[OF' end-of-line
-bindkey '^[[5~' up-line-or-history
-bindkey '^[[6~' down-line-or-history
-bindkey "^r" history-incremental-search-backward
-bindkey ' ' magic-space    # also do history expansion on space
-bindkey '^I' complete-word # complete on tab, leave expansion to _expand
+[ -f "$HOME/toolbox/dotfiles/zsh/.keys_binding" ] && source $HOME/toolbox/dotfiles/zsh/.keys_binding
 
 
 # -------------------------------------------------------------------
@@ -196,19 +191,6 @@ bindkey '^I' complete-word # complete on tab, leave expansion to _expand
 if [[ $OSTYPE == 'linux' ]]; then
   # Archey
   archey
-fi
-
-# -------------------------------------------------------------------
-# MAC SPECIFIC
-# -------------------------------------------------------------------
-if [[ $OSTYPE == 'darwin' ]]; then
-  PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-  [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-fi
-
-# Path for Vagrant
-if [[ $OSTYPE == 'darwin' ]]; then
-  PATH=$PATH:/opt/vagrant/bin
 fi
 
 # -------------------------------------------------------------------
