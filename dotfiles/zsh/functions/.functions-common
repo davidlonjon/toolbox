@@ -36,10 +36,17 @@ up()
     cd "$dir";
 }
 
+# Create a new directory and enter it
 function mkdircd () {
   mkdir -p "$@" && eval cd "\"\$$#\"";
 }
 
+# Create a new directory and enter it
+function mkd () {
+  mkdir -p "$@" && eval cd "\"\$$#\"";
+}
+
+# https://github.com/mathiasbynens/dotfiles/blob/master/.functions#L25
 # Create a .tar.gz archive, using `zopfli`, `pigz` or `gzip` for compression
 function targz() {
   local tmpFile="${@%/}.tar"
