@@ -40,7 +40,7 @@ ZSH=$HOME/.oh-my-zsh
 if [[ $OSTYPE == 'linux' ]]; then
   plugins=(git autojump vagrant screen gem tmux tmuxinator sublime git-extras)
 elif  [[ $OSTYPE == 'darwin' ]]; then
-  plugins=(git OSX vagrant screen gem tmux tmuxinator sublime git-extras)
+  plugins=(git OSX vagrant screen gem tmux tmuxinator sublime git-extras brew)
 fi
 
 source $ZSH/oh-my-zsh.sh
