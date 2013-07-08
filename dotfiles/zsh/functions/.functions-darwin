@@ -22,3 +22,9 @@ function chromecanary () {
 /Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary -disable-prompt-on-repost 2>&1 &
 # /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome $* 2>&1 &
 }
+
+# Taken from https://github.com/mathiasbynens/dotfiles/blob/master/.functions#L25
+# Change working directory to the top-most Finder window location
+function cdf() { # short for `cdfinder`
+    cd "$(osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)')"
+}
