@@ -38,9 +38,9 @@ ZSH=$HOME/.oh-my-zsh
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 if [[ $OSTYPE == 'linux' ]]; then
-  plugins=(git autojump vagrant screen gem tmux tmuxinator sublime git-extras)
+  plugins=(git autojump vagrant screen gem tmux tmuxinator sublime git-extras virtualenvwrapper virtualenv)
 elif  [[ $OSTYPE == 'darwin' ]]; then
-  plugins=(git OSX vagrant screen gem tmux tmuxinator sublime git-extras)
+  plugins=(git OSX vagrant screen gem tmux tmuxinator sublime git-extras brew virtualenvwrapper virtualenv)
 fi
 
 source $ZSH/oh-my-zsh.sh
@@ -54,8 +54,6 @@ source $ZSH/oh-my-zsh.sh
 [ -f "$HOME/toolbox/dotfiles/zsh/aliases/.aliases-linux" ] && source $HOME/toolbox/dotfiles/zsh/aliases/.aliases-linux
 [ -f "$HOME/toolbox/dotfiles/zsh/aliases/.aliases-git" ] && source $HOME/toolbox/dotfiles/zsh/aliases/.aliases-git
 
-
-#. $HOME/.environment_variables-${OS}
 
 # -------------------------------------------------------------------
 # PATH
@@ -87,6 +85,19 @@ source /usr/local/bin/virtualenvwrapper.sh
 # check whether the Haskell binary directory exists and if so add it to the PATH
 [ -d "$HOME/toolbox/scripts" ] && export PATH=$PATH:$HOME/toolbox/scripts
 [ -d "$HOME/toolbox/bin" ] && export PATH=$PATH:$HOME/toolbox/bin
+
+# -------------------------------------------------------------------
+# MAC SPECIFIC
+# -------------------------------------------------------------------
+if [[ $OSTYPE == 'darwin' ]]; then
+  PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+  [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+fi
+
+# Path for Vagrant
+if [[ $OSTYPE == 'darwin' ]]; then
+  PATH=$PATH:/opt/vagrant/bin
+fi
 
 # -------------------------------------------------------------------
 # PROMPT
@@ -156,209 +167,23 @@ setopt NOCLOBBER
 # FUNCTIONS
 # -------------------------------------------------------------------
 
-# cd + ls  ... and dont forget to add that to completion
-cdl() { cd $@; ls -lha }
-compdef _cd cdl
+[ -f "$HOME/toolbox/dotfiles/zsh/functions/.functions-common" ] && source $HOME/toolbox/dotfiles/zsh/functions/.functions-common
+[ -f "$HOME/toolbox/dotfiles/zsh/functions/.functions-darwin" ] && source $HOME/toolbox/dotfiles/zsh/functions/.functions-darwin
 
-# Quick find
-qf() {
-    echo "find . -iname \"*$1*\""
-    find . -iname "*$1*"
-}
-
-# Set Term title
-precmd () {
-  [[ -t 1 ]] || return
-  case $TERM in
-    *xterm*|rxvt|urxvt|rxvt-256color|rxvt-unicode|(dt|k|E|a)term) print -Pn "\e]2;%n@%m:%~\a"
-    ;;
-    screen*) print -Pn "\e\"%n@%m:%~\e\134"
-  esac
-}
-
-# Allow eaiser navigation
-# e.g., up -> go up 1 directory
-# up 4 -> go up 4 directories
-up()
-{
-    dir=""
-    if [[ $1 =~ ^[0-9]+$ ]]; then
-        x=0
-        while [ $x -lt ${1:-1} ]; do
-            dir=${dir}../
-            x=$(($x+1))
-        done
-    else
-         dir=..
-    fi
-    cd "$dir";
-}
-
-function mkdircd () {
-  mkdir -p "$@" && eval cd "\"\$$#\"";
-}
-
-
-# -------------------------------------------------------------------
-# MAC SPECIFIC FUNCTIONS
-# -------------------------------------------------------------------
-
-if [[ $OSTYPE == 'darwin' ]]; then
-
-  # Turn hidden files on/off in Finder
-  function hiddenOn() { defaults write com.apple.Finder AppleShowAllFiles YES ; }
-  function hiddenOff() { defaults write com.apple.Finder AppleShowAllFiles NO ; }
-
-  # myIP address
-  function myip() {
-    ifconfig lo0 | grep 'inet ' | sed -e 's/:/ /' | awk '{print "lo0       : " $2}'
-    ifconfig en0 | grep 'inet ' | sed -e 's/:/ /' | awk '{print "en0 (IPv4): " $2 " " $3 " " $4 " " $5 " " $6}'
-    ifconfig en0 | grep 'inet6 ' | sed -e 's/ / /' | awk '{print "en0 (IPv6): " $2 " " $3 " " $4 " " $5 " " $6}'
-    ifconfig en1 | grep 'inet ' | sed -e 's/:/ /' | awk '{print "en1 (IPv4): " $2 " " $3 " " $4 " " $5 " " $6}'
-    ifconfig en1 | grep 'inet6 ' | sed -e 's/ / /' | awk '{print "en1 (IPv6): " $2 " " $3 " " $4 " " $5 " " $6}'
-  }
-
-  # Nice mount (http://catonmat.net/blog/another-ten-one-liners-from-commandlingfu-explained)
-  # Displays mounted drive information in a nicely formatted manner
-  function nicemount() { (echo "DEVICE PATH TYPE FLAGS" && mount | awk '$2="";1') | column -t ; }
-
-  function chromecanary () {
-    /Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary -disable-prompt-on-repost 2>&1 &
-  # /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome $* 2>&1 &
-  }
-fi
 
 # -------------------------------------------------------------------
 # KEYS BINDING
 # -------------------------------------------------------------------
 
-bindkey '\e[A'  up-line-or-history
-bindkey '\e[B'  down-line-or-history
-bindkey '\e[C'  forward-char
-bindkey '\e[D'  backward-char
-bindkey '\eOA'  up-line-or-history
-bindkey '\eOB'  down-line-or-history
-bindkey '\eOC'  forward-char
-bindkey '\eOD'  backward-char
-
-bindkey "^?" backward-delete-char
-bindkey '^[OH' beginning-of-line
-bindkey '^[OF' end-of-line
-bindkey '^[[5~' up-line-or-history
-bindkey '^[[6~' down-line-or-history
-bindkey "^r" history-incremental-search-backward
-bindkey ' ' magic-space    # also do history expansion on space
-bindkey '^I' complete-word # complete on tab, leave expansion to _expand
+[ -f "$HOME/toolbox/dotfiles/zsh/.keys_binding" ] && source $HOME/toolbox/dotfiles/zsh/.keys_binding
 
 
 # -------------------------------------------------------------------
 # COMPLETION
 # -------------------------------------------------------------------
 
-LS_COLORS='no=00:fi=00:di=01;34:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.gz=01;31:*.bz2=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.avi=01;35:*.fli=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.ogg=01;35:*.mp3=01;35:*.wav=01;35:';
-export LS_COLORS
+[ -f "$HOME/toolbox/dotfiles/zsh/.completion" ] && source $HOME/toolbox/dotfiles/zsh/.completion
 
-
-# The big tab completion game:
-# Completion, color
-#zstyle ':completion:*' completer _complete
-autoload -U compinit
-compinit
-ZLS_COLORS=$LS_COLORS
-zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-
-
-zstyle ':completion:*' list-colors no=00 fi=00 di=01\;34 pi=33 so=01\;35 bd=00\;35 cd=00\;34 or=00\;41 mi=00\;45 ex=01\;32
-
-# Enable advanced completions
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
-
-# General completion technique
-zstyle ':completion:*' completer _complete _correct _approximate _prefix
-#zstyle ':completion:*' completer _complete _prefix
-zstyle ':completion::prefix-1:*' completer _complete
-zstyle ':completion:incremental:*' completer _complete _correct
-zstyle ':completion:predict:*' completer _complete
-
-# Completion caching
-zstyle ':completion::complete:*' use-cache 1
-zstyle ':completion::complete:*' cache-path ~/.zsh/cache/$HOST
-
-# Expand partial paths
-zstyle ':completion:*' expand 'yes'
-zstyle ':completion:*' squeeze-slashes 'yes'
-# Don't complete backup files as executables
-zstyle ':completion:*:complete:-command-::commands' ignored-patterns '*\~'
-
-# Separate matches into groups
-zstyle ':completion:*:matches' group 'yes'
-
-# Describe each match group.
-zstyle ':completion:*:descriptions' format "%B---- %d%b"
-
-# Messages/warnings format
-zstyle ':completion:*:messages' format '%B%U---- %d%u%b'
-zstyle ':completion:*:warnings' format '%B%U---- no match for: %d%u%b'
-
-# Describe options in full
-zstyle ':completion:*:options' description 'yes'
-zstyle ':completion:*:options' auto-description '%d'
-
-zstyle ':completion:*:history-words' stop yes
-zstyle ':completion:*:history-words' remove-all-dups yes
-zstyle ':completion:*:history-words' list false
-zstyle ':completion:*:history-words' menu yes
-
-# Kill
-zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
-
-# Menu for kill
-zstyle ':completion:*:*:kill:*' menu yes select
-zstyle ':completion:*:kill:*' force-list always
-
-# Kill menu extension!
-zstyle ':completion:*:processes' command 'ps --forest -U $(whoami) | sed "/ps/d"'
-#zstyle ':completion:*:processes' command 'ps -U $(whoami) | sed "/ps/d"'
-
-#zstyle ':completion:*:*:kill:*:processes' command 'ps --forest -A -o pid,user,cmd'
-zstyle ':completion:*:processes' insert-ids menu yes select
-# Case insensitivity, partial matching, substitution
-zstyle ':completion:*' matcher-list 'm:{A-Z}={a-z}' 'm:{a-z}={A-Z}' 'r:|[._-]=** r:|=**' 'l:|=* r:|=*'
-
-# Remove uninteresting users
-zstyle ':completion:*:*:*:users' ignored-patterns \
-   adm alias apache at bin cron cyrus daemon ftp games gdm guest \
-   haldaemon halt mail man messagebus mysql named news nobody nut \
-   lp operator portage postfix postgres postmaster qmaild qmaill \
-   qmailp qmailq qmailr qmails shutdown smmsp squid sshd sync \
-   uucp vpopmail xfs
-
-zstyle ':completion:*' hosts $ssh_hosts
-
-zstyle ':completion:*:my-accounts' users-hosts $my_accounts
-zstyle ':completion:*:other-accounts' users-hosts $other_accounts
-
-
-
-# -------------------------------------------------------------------
-# Add host/domain specific zshrc
-# -------------------------------------------------------------------
-#to investigate further
-
-#if [ -f $HOME/.zshrc-$HOST ]
-#then
-#    . $HOME/.zshrc-$HOST
-#fi
-
-#if [ -f $HOME/.zshrc-$(hostname -f) ]
-#then
-#    . $HOME/.zshrc-$(hostname -f)
-#fi
-
-#if [ -f $HOME/.zshrc-$(hostname -d) ]
-#then
-#    . $HOME/.zshrc-$(hostname -d)
-#fi
 
 # -------------------------------------------------------------------
 # LINUX SPECIFIC
@@ -366,19 +191,6 @@ zstyle ':completion:*:other-accounts' users-hosts $other_accounts
 if [[ $OSTYPE == 'linux' ]]; then
   # Archey
   archey
-fi
-
-# -------------------------------------------------------------------
-# MAC SPECIFIC
-# -------------------------------------------------------------------
-if [[ $OSTYPE == 'darwin' ]]; then
-  PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-  [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-fi
-
-# Path for Vagrant
-if [[ $OSTYPE == 'darwin' ]]; then
-  PATH=$PATH:/opt/vagrant/bin
 fi
 
 # -------------------------------------------------------------------

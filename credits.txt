@@ -2,3 +2,7 @@ This is the list of all the people who should be credited
 for their ingeniosity and hard effort in making awesome setups, scripts and plenty of other stuff
 
 https://github.com/mathiasbynens/dotfiles
+https://github.com/cowboy/dotfiles/blob/master/init/10_osx.sh
+https://github.com/holman/dotfiles/blob/master/bin/dot
+https://github.com/gf3/dotfiles/blob/master/.functions
+# https://gist.github.com/andsens/3034376

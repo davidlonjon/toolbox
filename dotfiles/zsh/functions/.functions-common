@@ -1,0 +1,151 @@
+# cd + ls  ... and dont forget to add that to completion
+cdl() { cd $@; ls -lha }
+compdef _cd cdl
+
+# Quick find
+qf() {
+    echo "find . -iname \"*$1*\""
+    find . -iname "*$1*"
+}
+
+# Set Term title
+precmd () {
+  [[ -t 1 ]] || return
+  case $TERM in
+    *xterm*|rxvt|urxvt|rxvt-256color|rxvt-unicode|(dt|k|E|a)term) print -Pn "\e]2;%n@%m:%~\a"
+    ;;
+    screen*) print -Pn "\e\"%n@%m:%~\e\134"
+  esac
+}
+
+# Allow eaiser navigation
+# e.g., up -> go up 1 directory
+# up 4 -> go up 4 directories
+up()
+{
+    dir=""
+    if [[ $1 =~ ^[0-9]+$ ]]; then
+        x=0
+        while [ $x -lt ${1:-1} ]; do
+            dir=${dir}../
+            x=$(($x+1))
+        done
+    else
+         dir=..
+    fi
+    cd "$dir";
+}
+
+# Create a new directory and enter it
+function mkdircd () {
+  mkdir -p "$@" && eval cd "\"\$$#\"";
+}
+
+# Create a new directory and enter it
+function mkd () {
+  mkdir -p "$@" && eval cd "\"\$$#\"";
+}
+
+# https://github.com/mathiasbynens/dotfiles/blob/master/.functions
+# Create a .tar.gz archive, using `zopfli`, `pigz` or `gzip` for compression
+function targz() {
+  local tmpFile="${@%/}.tar"
+  tar -cvf "${tmpFile}" --exclude=".DS_Store" "${@}" || return 1
+
+  size=$(
+    stat -f"%z" "${tmpFile}" 2> /dev/null; # OS X `stat`
+    stat -c"%s" "${tmpFile}" 2> /dev/null # GNU `stat`
+  )
+
+  local cmd=""
+  if (( size < 52428800 )) && hash zopfli 2> /dev/null; then
+    # the .tar file is smaller than 50 MB and Zopfli is available; use it
+    cmd="zopfli"
+  else
+    if hash pigz 2> /dev/null; then
+      cmd="pigz"
+    else
+      cmd="gzip"
+    fi
+  fi
+
+  echo "Compressing .tar using \`${cmd}\`…"
+  "${cmd}" -v "${tmpFile}" || return 1
+  [ -f "${tmpFile}" ] && rm "${tmpFile}"
+  echo "${tmpFile}.gz created successfully."
+}
+
+# https://github.com/mathiasbynens/dotfiles/blob/master/.functions
+# Determine size of a file or total size of a directory
+function fs() {
+  if du -b /dev/null > /dev/null 2>&1; then
+    local arg=-sbh
+  else
+    local arg=-sh
+  fi
+  if [[ -n "$@" ]]; then
+    du $arg -- "$@"
+  else
+    du $arg .[^.]* *
+  fi
+}
+
+# https://github.com/mathiasbynens/dotfiles/blob/master/.functions
+# Create a data URL from a file
+function dataurl() {
+  local mimeType=$(file -b --mime-type "$1")
+  if [[ $mimeType == text/* ]]; then
+    mimeType="${mimeType};charset=utf-8"
+  fi
+  echo "data:${mimeType};base64,$(openssl base64 -in "$1" | tr -d '\n')"
+}
+
+# https://github.com/mathiasbynens/dotfiles/blob/master/.functions
+# Start an HTTP server from a directory, optionally specifying the port
+function server() {
+  local port="${1:-8000}"
+  sleep 1 && open "http://localhost:${port}/" &
+  # Set the default Content-Type to `text/plain` instead of `application/octet-stream`
+  # And serve everything as UTF-8 (although not technically correct, this doesn’t break anything for binary files)
+  python -c $'import SimpleHTTPServer;\nmap = SimpleHTTPServer.SimpleHTTPRequestHandler.extensions_map;\nmap[""] = "text/plain";\nfor key, value in map.items():\n\tmap[key] = value + ";charset=UTF-8";\nSimpleHTTPServer.test();' "$port"
+}
+
+# https://github.com/mathiasbynens/dotfiles/blob/master/.functions
+# Start a PHP server from a directory, optionally specifying the port
+# (Requires PHP 5.4.0+.)
+function phpserver() {
+  local port="${1:-4000}"
+  local ip=$(ipconfig getifaddr en1)
+  sleep 1 && open "http://${ip}:${port}/" &
+  php -S "${ip}:${port}"
+}
+
+# Install Grunt plugins and add them as `devDependencies` to `package.json`
+# Usage: `gi contrib-watch contrib-uglify zopfli`
+function gi() {
+  local IFS=,
+  eval npm install --save-dev grunt-{"$*"}
+}
+
+# https://github.com/gf3/dotfiles/blob/master/.functions
+# DNS lookup
+function digga () {
+  dig +nocmd $1 any +multiline +noall +answer
+}
+
+# https://github.com/gf3/dotfiles/blob/master/.functions
+# Copy w/ progress
+cp_p () {
+  rsync -WavP --human-readable --progress $1 $2
+}
+
+# https://github.com/gf3/dotfiles/blob/master/.functions
+# Pretty print JSON
+cjson () {
+  local url=$(echo $1)
+  if [[ "http" == $url[0,4] ]] ; then
+    curl --silent $url | python -mjson.tool | pygmentize -O style=monokai -f console256 -g
+  else
+    cat $url | python -mjson.tool | pygmentize -O style=monokai -f console256 -g
+  fi
+}
