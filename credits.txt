@@ -5,4 +5,10 @@ https://github.com/mathiasbynens/dotfiles
 https://github.com/cowboy/dotfiles/blob/master/init/10_osx.sh
 https://github.com/holman/dotfiles/blob/master/bin/dot
 https://github.com/gf3/dotfiles/blob/master/.functions
-# https://gist.github.com/andsens/3034376
+https://gist.github.com/andsens/3034376
+https://github.com/thoughtbot/dotfiles/blob/master/tmux.conf
+https://gist.github.com/gazoombo/1690749
+https://github.com/davidbrewer/tmux-conf/blob/master/tmux.conf
+http://justinlilly.com/dotfiles/tmux.html
+
+
