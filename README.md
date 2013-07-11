@@ -2,3 +2,26 @@ toolbox
 =======
 
 This repo contains all scripts, hacks, dotfiles, etc to improve my productivity
+
+Credits
+=======
+This is the list of all the people who should be credited
+for their ingeniosity and hard effort in making awesome setups, scripts and plenty of other stuff
+
+https://github.com/mathiasbynens/dotfiles
+https://github.com/cowboy/dotfiles/
+https://github.com/holman/dotfiles/
+https://github.com/gf3/dotfiles/
+https://gist.github.com/andsens/3034376
+https://github.com/thoughtbot/dotfiles/
+https://gist.github.com/gazoombo/1690749
+https://github.com/davidbrewer/tmux-conf/
+http://justinlilly.com/dotfiles/tmux.html
+https://github.com/rdegges/dotfiles/
+https://github.com/chrishunt/dot-files/
+https://github.com/whiteinge/dotfiles/
+https://raymii.org/s/snippets/Get_uptime_load_and_users_with_grep_sed_and_awk.html
+https://github.com/milomouse/dotfiles/
+
+ctags from
+https://github.com/myfreeweb/dotfiles/blob/master/ctags
