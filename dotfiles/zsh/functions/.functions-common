@@ -149,3 +149,54 @@ cjson () {
     cat $url | python -mjson.tool | pygmentize -O style=monokai -f console256 -g
   fi
 }
+
+# https://github.com/milomouse/dotfiles/blob/master/zsh/zsh-functions
+# copy and follow file(s) to new dir:
+function cpf {
+  if [[ -d $*[-1] ]]; then
+    cp $* && cd $*[-1]
+  elif [[ -d ${*[-1]%/*} ]]; then
+    cp $* && cd ${*[-1]%/*}
+  fi
+}
+
+# https://github.com/milomouse/dotfiles/blob/master/zsh/zsh-functions
+# move and follow file(s) to new dir:
+function mvf {
+  if [[ -d $*[-1] ]]; then
+    mv $* && cd $*[-1]
+  elif [[ -d ${*[-1]%/*} ]]; then
+    mv $* && cd ${*[-1]%/*}
+  fi
+}
+
+function weekly_summary() {
+  LAST_WEEK=$(date -v-7d +%m/%d)
+
+  STATS=$(
+    git log --since=1.week --oneline |
+    tail -n 1                        |
+    awk '{ print $1 }'               |
+    xargs git diff --shortstat
+  )
+
+  FEATURES=$(
+    git log --since=1.week --oneline |
+    egrep "Merge (pull|branch) "
+  )
+
+  FEATURES_COUNT=$(
+    echo "$FEATURES" |
+    sed '/^\s*$/d'   |
+    wc -l            |
+    awk '{ print $1 }'
+  )
+
+  echo "Stats ($LAST_WEEK - Today)"
+  echo "---------------------"
+  echo "$STATS"
+  echo
+  echo "Features ($FEATURES_COUNT)"
+  echo "-------------"
+  echo "$FEATURES"
+}

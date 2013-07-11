@@ -13,3 +13,6 @@ http://www.kaleidoscopeapp.com/
 
 editorconfig
 https://github.com/sindresorhus/editorconfig-sublime
+
+Git-auth Pair Programming
+https://github.com/chrishunt/github-auth

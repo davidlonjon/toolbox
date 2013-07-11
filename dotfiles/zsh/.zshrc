@@ -203,5 +203,22 @@ fi
 # remove duplicates from the path
 export PATH=`awk -F: '{for(i=1;i<=NF;i++){if(!($i in a)){a[$i];printf s$i;s=":"}}}'<<<$PATH`;
 
+# https://github.com/chrishunt/dot-files/blob/master/.zshrc
+# Always work in a tmux session if tmux is installed
+if which tmux 2>&1 >/dev/null; then
+  if [ $TERM != "screen-256color" ] && [  $TERM != "screen" ]; then
+    tmux attach -t hack || tmux new -s hack; exit
+  fi
+fi
 
+# https://wiki.archlinux.org/index.php/Tmux#Changing_the_configuration_with_tmux_started
+# if which tmux 2>&1 >/dev/null; then
+#     # if no session is started, start a new session
+#     test -z ${TMUX} && tmux
+
+#     # when quitting tmux, try to attach
+#     while test -z ${TMUX}; do
+#         tmux attach || break
+#     done
+# fi
 
