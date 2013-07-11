@@ -173,7 +173,7 @@ function mvf {
 # https://github.com/chrishunt/dot-files/blob/master/.githelpers
 function git_weekly_summary() {
 
-  if [[ '$OSTYPE' =~ ^darwin ]]; then
+  if [[ "$OSTYPE" != 'darwin' ]]; then
     LAST_WEEK=$(date -d '-7day' +%m/%d)
   else
     LAST_WEEK=$(date -v-7d +%m/%d)
