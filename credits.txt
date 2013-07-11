@@ -16,5 +16,6 @@ https://github.com/chrishunt/dot-files/blob/master/bin/battery
 https://github.com/whiteinge/dotfiles/blob/master/bin/toggle-maximize.sh
 https://github.com/whiteinge/dotfiles/blob/master/.gitconfig
 https://raymii.org/s/snippets/Get_uptime_load_and_users_with_grep_sed_and_awk.html
+https://github.com/milomouse/dotfiles/blob/master/zsh/zsh-functions
 
 
