@@ -103,17 +103,17 @@ alias grbi="!r() { git rebase -i HEAD~$1; }; r"
 
 # Reset
 alias gus='git reset HEAD' # remove files from index (tracking)
-alias guc='git reset --soft HEAD^' # go back before last commit, with files in uncommitted state
-alias grh='git reset HEAD --hard'
+alias guc='git reset --soft "HEAD^"' # go back before last commit, with files in uncommitted state
+alias guch='git reset --hard "HEAD^"' # go back before last commit, and destroy changes
 
-#Cleanup
+# Cleanup
 # `git remote prune origin`: remove remote-tracking branches that were deleted from the remote repo
 # `git gc`: cleanup unnecessary files and optimize the local repository
 # `git clean -df`: remove untracked files and directories from the working tree
 alias gtrim='git remote prune origin && git gc'
 alias gcleanup='git clean -df && git stash clear'
 
- # Stash
+# Stash
 alias gsh='git stash' # stash changes
 alias gshs='git stash save' # stash changes using save
 alias gshp='git stash pop' # pop last stash
