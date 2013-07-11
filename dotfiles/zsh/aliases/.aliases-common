@@ -126,16 +126,6 @@ alias ping='ping -c 5'
 ## alias flushmcd='echo "flush_all" | nc 10.10.27.11 11211'
 
 ## -------------------------------------------------------------------
-## SSH ALIASES
-## -------------------------------------------------------------------
-
-## SSH aliases - short cuts to ssh to a host
-## alias -g shost='ssh -p 9999 user@host.com'
-
-## Screen aliases - add a new screen , or entire session, name it, then ssh to the host
-## alias sshost='screen -t HOST shost'
-
-## -------------------------------------------------------------------
 ## AWS COMMAND LINE TOOL SPECIAL ALIASES
 ## -------------------------------------------------------------------
 ## Alias to AWS SSH tool
