@@ -171,7 +171,12 @@ function mvf {
 }
 
 function weekly_summary() {
-  LAST_WEEK=$(date -v-7d +%m/%d)
+
+  if [[ '$OSTYPE' =~ ^darwin ]]; then
+    LAST_WEEK=$(date -d '-7day' +%m/%d)
+  else
+    LAST_WEEK=$(date -v-7d +%m/%d)
+  fi
 
   STATS=$(
     git log --since=1.week --oneline |
