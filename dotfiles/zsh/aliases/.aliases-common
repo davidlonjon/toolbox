@@ -81,40 +81,6 @@ alias vis='vim "+set si"'
 alias edit='vim'
 
 ## -------------------------------------------------------------------
-## GIT ALIASES
-## -------------------------------------------------------------------
-alias g='git'
-alias ga='git add'
-alias gp='git push'
-alias gl='git pull'
-alias glg="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
-alias glgs="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --max-count=5"
-alias glgn="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --no-merges"
-alias glgns="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --no-merges --max-count=5"
-#alias glg='git log'
-#alias glgs='git log --stat --max-count=5'
-#alias glgg='git log --graph --max-count=5'
-alias gst='git status'
-alias gss='git status -s'
-alias gd='git diff'
-alias gm='git merge'
-alias gma='git commit -am'
-alias gb='git branch'
-alias gba='git branch -a'
-alias gco='git checkout'
-alias gcm='git checkout master'
-alias gcd='git checkout develop'
-alias gra='git remote add'
-alias grr='git remote rm'
-alias gpu='git pull'
-alias gcl='git clone'
-alias gta='git tag -a -m'
-alias gf='git reflog'
-alias grhh='git reset HEAD --hard'
-alias ggpull='git pull origin $(current_branch)'
-alias ggpush='git push origin $(current_branch)'
-
-## -------------------------------------------------------------------
 ## GENERAL ROOT ALIASES
 ## -------------------------------------------------------------------
 ## If user is not root, pass all commands via sudo
