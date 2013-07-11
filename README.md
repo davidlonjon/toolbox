@@ -24,4 +24,5 @@ https://raymii.org/s/snippets/Get_uptime_load_and_users_with_grep_sed_and_awk.ht
 https://github.com/milomouse/dotfiles/
 
 ctags from
-https://github.com/myfreeweb/dotfiles/blob/master/ctags
+https://github.com/myfreeweb/dotfiles/
+https://github.com/whiteinge/dotfiles/
