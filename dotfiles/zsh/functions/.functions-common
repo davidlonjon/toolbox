@@ -170,7 +170,8 @@ function mvf {
   fi
 }
 
-function weekly_summary() {
+# https://github.com/chrishunt/dot-files/blob/master/.githelpers
+function git_weekly_summary() {
 
   if [[ '$OSTYPE' =~ ^darwin ]]; then
     LAST_WEEK=$(date -d '-7day' +%m/%d)
@@ -204,4 +205,24 @@ function weekly_summary() {
   echo "Features ($FEATURES_COUNT)"
   echo "-------------"
   echo "$FEATURES"
+}
+
+# https://github.com/chrishunt/dot-files/blob/master/.githelpers
+function git_delete_local_merged_branches() {
+  git branch --merged master | grep -v master | xargs git branch -d
+}
+
+# https://github.com/chrishunt/dot-files/blob/master/.githelpers
+function git_delete_remote_merged_branches() {
+  git fetch origin
+  git remote prune origin
+
+  for BRANCH in `git branch -r --merged origin/master |\
+                 egrep "^\s*origin/"                  |\
+                 grep -v master                       |\
+                 grep chrishunt                       |\
+                 cut -d/ -f2-`
+  do
+    git push origin :$BRANCH
+  done
 }
