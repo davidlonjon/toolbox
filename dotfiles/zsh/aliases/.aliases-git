@@ -103,7 +103,7 @@ alias grbi="!r() { git rebase -i HEAD~$1; }; r"
 
 # Reset
 alias gus='git reset HEAD' # remove files from index (tracking)
-alias guc='git reset --soft HEAD^' # go back before last commit, with files in uncommitted state
+alias guc='git reset --soft HEAD~1' # go back before last commit, with files in uncommitted state
 alias grh='git reset HEAD --hard'
 
 #Cleanup
