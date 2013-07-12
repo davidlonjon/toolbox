@@ -26,3 +26,6 @@ https://github.com/milomouse/dotfiles/
 ctags from
 https://github.com/myfreeweb/dotfiles/
 https://github.com/whiteinge/dotfiles/
+
+Git Scripts
+https://git.wiki.kernel.org/index.php/ExampleScripts
