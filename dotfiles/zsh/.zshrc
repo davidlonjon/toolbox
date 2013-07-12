@@ -38,9 +38,9 @@ ZSH=$HOME/.oh-my-zsh
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 if [[ $OSTYPE == 'linux' ]]; then
-  plugins=(git autojump vagrant screen gem tmux tmuxinator sublime git-extras virtualenvwrapper virtualenv)
+  plugins=(git autojump vagrant screen tmux tmuxinator sublime git-extras virtualenvwrapper virtualenv)
 elif  [[ $OSTYPE == 'darwin' ]]; then
-  plugins=(git OSX vagrant screen gem tmux tmuxinator sublime git-extras brew virtualenvwrapper virtualenv)
+  plugins=(git OSX vagrant screen tmux tmuxinator sublime git-extras brew virtualenvwrapper virtualenv)
 fi
 
 source $ZSH/oh-my-zsh.sh
@@ -205,11 +205,11 @@ export PATH=`awk -F: '{for(i=1;i<=NF;i++){if(!($i in a)){a[$i];printf s$i;s=":"}
 
 # https://github.com/chrishunt/dot-files/blob/master/.zshrc
 # Always work in a tmux session if tmux is installed
-if which tmux 2>&1 >/dev/null; then
-  if [ $TERM != "screen-256color" ] && [  $TERM != "screen" ]; then
-    tmux attach -t hack || tmux new -s hack; exit
-  fi
-fi
+# if which tmux 2>&1 >/dev/null; then
+#   if [ $TERM != "screen-256color" ] && [  $TERM != "screen" ]; then
+#     tmux attach -t hack || tmux new -s hack; exit
+#   fi
+# fi
 
 # https://wiki.archlinux.org/index.php/Tmux#Changing_the_configuration_with_tmux_started
 # if which tmux 2>&1 >/dev/null; then

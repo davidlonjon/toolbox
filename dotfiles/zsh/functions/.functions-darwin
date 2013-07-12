@@ -1,5 +1,5 @@
 # OSX-only stuff. Abort if not OSX.
-[[ "$OSTYPE" =~ ^darwin ]] || return 1
+[[ '$OSTYPE' =~ ^darwin ]] || return 1
 
 # Turn hidden files on/off in Finder
 function hiddenOn() { defaults write com.apple.Finder AppleShowAllFiles YES ; }
