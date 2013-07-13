@@ -6,6 +6,11 @@ ngrep
 tcpdump
 pbcopy
 
+tar
+
+transmission (Mac)
+Synergy (mac)
+
 http://www.paulhammond.org/webkit2png/
 
 For mac maybe:
