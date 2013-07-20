@@ -1,6 +1,5 @@
 # OSX-only stuff. Abort if not OSX.
 [[ $OSTYPE =~ ^darwin ]] || return 1
-echo 'test'
 ## -------------------------------------------------------------------
 ## MAC SPECIFIC GLOBAL ALIASES
 ## -------------------------------------------------------------------
