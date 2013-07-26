@@ -58,7 +58,6 @@ source $ZSH/oh-my-zsh.sh
 # -------------------------------------------------------------------
 # PATH
 # -------------------------------------------------------------------
-
 if [[ $OSTYPE == 'linux' ]]; then
   export PATH=/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/var/lib/gems/1.8/bin
   # AMAZON AWS TOOL PATH AND VARIABLE DEFINITION
@@ -73,8 +72,9 @@ if [[ $OSTYPE == 'linux' ]]; then
   export AWS_ACCESS_KEY=$( awk -F= '/AccessKey/ {print $2}' $AWS_CREDENTIAL_FILE )
   export AWS_SECRET_KEY=$( awk -F= '/SecretKey/ {print $2}' $AWS_CREDENTIAL_FILE )
 elif  [[ $OSTYPE == 'darwin' ]]; then
-  export PATH=$PATH:/opt/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin:/opt/local/binfi
+  export PATH=$PATH:/opt/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/usr/X11/bin:/opt/local/binfi
   export MANPATH="/opt/local/share/man:$MANPATH"
+  export DYLD_LIBRARY_PATH="$HOME/source/boost_install/lib:${DYLD_LIBRARY_PATH}"
 fi
 
 # virtualenvwrapper setup
@@ -86,17 +86,30 @@ source /usr/local/bin/virtualenvwrapper.sh
 [ -d "$HOME/toolbox/scripts" ] && export PATH=$PATH:$HOME/toolbox/scripts
 [ -d "$HOME/toolbox/bin" ] && export PATH=$PATH:$HOME/toolbox/bin
 
-# -------------------------------------------------------------------
-# MAC SPECIFIC
-# -------------------------------------------------------------------
+# MAC specific path
 if [[ $OSTYPE == 'darwin' ]]; then
   PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
   [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+  PATH=$PATH:/opt/vagrant/bin
+
+  export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
 fi
 
-# Path for Vagrant
+# -------------------------------------------------------------------
+# SET EDITOR
+# -------------------------------------------------------------------
+
 if [[ $OSTYPE == 'darwin' ]]; then
-  PATH=$PATH:/opt/vagrant/bin
+  export EDITOR='subl'
+fi
+
+if [[ $OSTYPE == 'linux' ]]; then
+
+  # https://github.com/skwp/dotfiles/blob/master/zsh/vi-mode.zsh
+  # Set Vim as the default editor
+  set -o vi
+  export EDITOR="vim"
+  export VISUAL='vim'
 fi
 
 # -------------------------------------------------------------------
@@ -121,11 +134,7 @@ then
     fi
 fi
 
-# https://github.com/skwp/dotfiles/blob/master/zsh/vi-mode.zsh
-# Set Vim as the default editor
-set -o vi
-export EDITOR="vim"
-export VISUAL='vim'
+
 # Say how long a command took, if it took more than 30 seconds
 export REPORTTIME=30
 
