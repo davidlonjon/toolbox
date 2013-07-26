@@ -5,7 +5,8 @@
 ngrep
 tcpdump
 pbcopy
-
+gawk
+grc (color everythink in terminal)
 tar
 
 transmission (Mac)
