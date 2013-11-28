@@ -2,12 +2,19 @@
 
 - ctags for sublime text 2 (https://github.com/SublimeText/CTags)
 
+- homebrew cask (https://github.com/phinze/homebrew-cask)
 ngrep
 tcpdump
 pbcopy
 gawk
 grc (color everythink in terminal)
 tar
+wget
+
+brew install reattach-to-user-namespace
+
+install apacheconf  file syntax highlighting for sublime text 2
+(http://www.sublimetext.com/forum/viewtopic.php?f=5&t=856)
 
 transmission (Mac)
 Synergy (mac)
@@ -22,3 +29,8 @@ https://github.com/sindresorhus/editorconfig-sublime
 
 Git-auth Pair Programming
 https://github.com/chrishunt/github-auth
+
+For Vagrant:
+ install addiotional plugins:
+ - vagrant-dnsmasq
+ - vagrant-vbguest
