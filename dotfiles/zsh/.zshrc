@@ -74,7 +74,12 @@ if [[ $OSTYPE == 'linux' ]]; then
 elif  [[ $OSTYPE == 'darwin' ]]; then
   export PATH=$PATH:/opt/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/usr/X11/bin:/opt/local/binfi
   export MANPATH="/opt/local/share/man:$MANPATH"
-  export DYLD_LIBRARY_PATH="$HOME/source/boost_install/lib:${DYLD_LIBRARY_PATH}"
+  # export DYLD_LIBRARY_PATH="$HOME/source/boost_install/lib:${DYLD_LIBRARY_PATH}"
+  export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+  [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+  # export PATH=$PATH:/opt/vagrant/bin
+
+  export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
 fi
 
 # virtualenvwrapper setup
@@ -88,11 +93,6 @@ source /usr/local/bin/virtualenvwrapper.sh
 
 # MAC specific path
 if [[ $OSTYPE == 'darwin' ]]; then
-  PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-  [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-  PATH=$PATH:/opt/vagrant/bin
-
-  export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
 fi
 
 # -------------------------------------------------------------------
