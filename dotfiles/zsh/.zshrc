@@ -60,31 +60,40 @@ source $ZSH/oh-my-zsh.sh
 # -------------------------------------------------------------------
 if [[ $OSTYPE == 'linux' ]]; then
   export PATH=/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/var/lib/gems/1.8/bin
-  # AMAZON AWS TOOL PATH AND VARIABLE DEFINITION
-  # This assumes that Java > 1.6 is installed
-  # Also that the AWS tool are installed in /usr/local/aws
-  # and that the credentials are set in $HOME/.aws-default
-  export JAVA_HOME=/usr
-  export EC2_HOME=/usr/local/aws/ec2
-  export PATH=$PATH:$EC2_HOME/bin
-  export AWS_CREDENTIAL_FILE=$HOME/.aws-default/aws-credential-file.txt
-  # Example taken from https://gist.github.com/4177779
-  export AWS_ACCESS_KEY=$( awk -F= '/AccessKey/ {print $2}' $AWS_CREDENTIAL_FILE )
-  export AWS_SECRET_KEY=$( awk -F= '/SecretKey/ {print $2}' $AWS_CREDENTIAL_FILE )
+
+  if [[ -d "/usr/local/aws/ec2" ]]; then
+    # AMAZON AWS TOOL PATH AND VARIABLE DEFINITION
+    # This assumes that Java > 1.6 is installed
+    # Also that the AWS tool are installed in /usr/local/aws
+    # and that the credentials are set in $HOME/.aws-default
+    export JAVA_HOME=/usr
+    export EC2_HOME=/usr/local/aws/ec2
+    export PATH=$PATH:$EC2_HOME/bin
+    export AWS_CREDENTIAL_FILE=$HOME/.aws-default/aws-credential-file.txt
+    # Example taken from https://gist.github.com/4177779
+    export AWS_ACCESS_KEY=$( awk -F= '/AccessKey/ {print $2}' $AWS_CREDENTIAL_FILE )
+    export AWS_SECRET_KEY=$( awk -F= '/SecretKey/ {print $2}' $AWS_CREDENTIAL_FILE )
+  fi
+
 elif  [[ $OSTYPE == 'darwin' ]]; then
   export PATH=$PATH:/opt/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/usr/X11/bin:/opt/local/binfi
   export MANPATH="/opt/local/share/man:$MANPATH"
   # export DYLD_LIBRARY_PATH="$HOME/source/boost_install/lib:${DYLD_LIBRARY_PATH}"
-  export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-  [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-  # export PATH=$PATH:/opt/vagrant/bin
 
   export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
 fi
 
-# virtualenvwrapper setup
-export WORKON_HOME=~/.virtualenvs
-source /usr/local/bin/virtualenvwrapper.sh
+if [[ -e "/usr/local/bin/virtualenvwrapper.sh" ]]; then
+  # virtualenvwrapper setup
+  export WORKON_HOME=~/.virtualenvs
+  source /usr/local/bin/virtualenvwrapper.sh
+fi
+
+if [[ -d "$HOME/.rvm/bin" ]]; then
+  export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+  [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+fi
+# export PATH=$PATH:/opt/vagrant/bin
 
 # set extra path:
 # check whether the Haskell binary directory exists and if so add it to the PATH
@@ -198,8 +207,6 @@ setopt NOCLOBBER
 # LINUX SPECIFIC
 # -------------------------------------------------------------------
 if [[ $OSTYPE == 'linux' ]]; then
-  # Archey
-  archey
 fi
 
 # -------------------------------------------------------------------
