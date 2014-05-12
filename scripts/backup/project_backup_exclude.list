@@ -1,8 +1,0 @@
-### db dumps ###
-- **/db_dumps/**
-### tmp ###
-- **/tmp/**
-### wordpress upload directory ###
-- **/wp-content/uploads/**
-### wordpress static directory ###
-- **/wp-content/static/**
