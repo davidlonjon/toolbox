@@ -1,0 +1,1 @@
+This directory  contains the backup of the dotfiles before symlinks are created
