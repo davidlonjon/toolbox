@@ -10,13 +10,15 @@ dotfiles_dir="$HOME/toolbox/dotfiles"
 # old dotfiles backup directory
 dotfiles_backup_dir="$HOME/toolbox/dotfiles/_backup"
 
+e_header "Symlinking dotfiles"
+
 # .zshrc
 if [[ -f ~/.zshrc ]]; then
     echo "Moving zshrc dotfile from $HOME to $dotfiles_backup_dir"
     mv ~/.zshrc $dotfiles_backup_dir
 fi
 echo "Creating symlink to .zshrc in home directory."
-ln -s $dotfiles_dir/zsh/.zshrc ~/.zshrc
+ln -s -f $dotfiles_dir/zsh/.zshrc ~/.zshrc
 
 # .gitignore_global
 if [[ -f ~/.gitignore_global ]]; then
@@ -24,7 +26,7 @@ if [[ -f ~/.gitignore_global ]]; then
     mv ~/.gitignore_global $dotfiles_backup_dir
 fi
 echo "Creating symlink to .gitignore_global in home directory."
-ln -s $dotfiles_dir/git/.gitignore_global ~/.gitignore_global
+ln -s -f $dotfiles_dir/git/.gitignore_global ~/.gitignore_global
 
 # .gitconfig
 if [[ -f ~/.gitconfig ]]; then
@@ -32,7 +34,7 @@ if [[ -f ~/.gitconfig ]]; then
     mv ~/.gitconfig $dotfiles_backup_dir
 fi
 echo "Creating symlink to .gitconfig in home directory."
-ln -s $dotfiles_dir/git/.gitconfig ~/.gitconfig
+ln -s -f $dotfiles_dir/git/.gitconfig ~/.gitconfig
 
 # .gitattributes
 if [[ -f ~/.gitattributes ]]; then
@@ -40,7 +42,7 @@ if [[ -f ~/.gitattributes ]]; then
     mv ~/.gitattributes $dotfiles_backup_dir
 fi
 echo "Creating symlink to .gitattributes in home directory."
-ln -s $dotfiles_dir/git/.gitattributes ~/.gitattributes
+ln -s -f $dotfiles_dir/git/.gitattributes ~/.gitattributes
 
 # .ssh/config
 if [[ -f ~/.ssh/config ]]; then
@@ -48,7 +50,7 @@ if [[ -f ~/.ssh/config ]]; then
     mv ~/.ssh/config $dotfiles_backup_dir
 fi
 echo "Creating symlink to config in .ssh directory."
-ln -s $dotfiles_dir/ssh/config ~/.ssh/config
+ln -s -f $dotfiles_dir/ssh/config ~/.ssh/config
 
 # .wgetrc
 if [[ -f ~/.wgetrc ]]; then
@@ -56,7 +58,7 @@ if [[ -f ~/.wgetrc ]]; then
     mv ~/.wgetrc $dotfiles_backup_dir
 fi
 echo "Creating symlink to .wgetrc in home directory."
-ln -s $dotfiles_dir/wget/.wgetrc ~/.wgetrc
+ln -s -f $dotfiles_dir/wget/.wgetrc ~/.wgetrc
 
 # .tmux.conf
 if [[ -f ~/.tmux.conf ]]; then
@@ -64,7 +66,7 @@ if [[ -f ~/.tmux.conf ]]; then
     mv ~/.tmux.conf $dotfiles_backup_dir
 fi
 echo "Creating symlink to .tmux.conf in home directory."
-ln -s $dotfiles_dir/tmux/.tmux.conf ~/.tmux.conf
+ln -s -f $dotfiles_dir/tmux/.tmux.conf ~/.tmux.conf
 
 # .screenrc
 if [[ -f ~/.screenrc ]]; then
@@ -72,7 +74,7 @@ if [[ -f ~/.screenrc ]]; then
     mv ~/.screenrc $dotfiles_backup_dir
 fi
 echo "Creating symlink to .screenrc in home directory."
-ln -s $dotfiles_dir/tmux/.screenrc ~/.screenrc
+ln -s -f $dotfiles_dir/tmux/.screenrc ~/.screenrc
 
 # .ctags
 if [[ -f ~/.ctags ]]; then
@@ -80,4 +82,4 @@ if [[ -f ~/.ctags ]]; then
     mv ~/.ctags $dotfiles_backup_dir
 fi
 echo "Creating symlink to .ctags in home directory."
-ln -s $dotfiles_dir/ctags/.ctags ~/.ctags
+ln -s -f $dotfiles_dir/ctags/.ctags ~/.ctags
