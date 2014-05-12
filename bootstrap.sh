@@ -17,6 +17,13 @@ Usage: $(basename "$0")
 HELP
 exit; fi
 
+
+# Install .oh-my-zsh if not already there
+if [[ ! -f ~/.oh-my-zsh/oh-my-zsh.sh ]]; then
+    e_header "Installing .oh-my-zsh"
+    curl -L http://install.ohmyz.sh | sh
+fi
+
 # Create symblinks for dotfiles
 source ./scripts/bootstrap/common/symlink_dotfiles.sh
 
