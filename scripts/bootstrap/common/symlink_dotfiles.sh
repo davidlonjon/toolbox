@@ -74,7 +74,7 @@ if [[ -f ~/.screenrc ]]; then
     mv ~/.screenrc $dotfiles_backup_dir
 fi
 echo "Creating symlink to .screenrc in home directory."
-ln -s -f $dotfiles_dir/tmux/.screenrc ~/.screenrc
+ln -s -f $dotfiles_dir/screen/.screenrc ~/.screenrc
 
 # .ctags
 if [[ -f ~/.ctags ]]; then
