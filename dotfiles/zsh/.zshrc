@@ -86,6 +86,8 @@ fi
 if [[ -e "/usr/local/bin/virtualenvwrapper.sh" ]]; then
   # virtualenvwrapper setup
   export WORKON_HOME=~/.virtualenvs
+  # http://virtualenvwrapper.readthedocs.org/en/latest/tips.html
+  export PIP_VIRTUALENV_BASE=$WORKON_HOME
   source /usr/local/bin/virtualenvwrapper.sh
 fi
 
