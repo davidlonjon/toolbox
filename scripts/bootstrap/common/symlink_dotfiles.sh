@@ -4,6 +4,9 @@
 # This script creates symlinks from the home directory to any desired dotfiles in ~toolbox/dotfiles
 ############################
 
+# Get the OS
+OSTYPE=$( uname | tr '[:upper:]' '[:lower:]')
+
 # dotfiles directory
 dotfiles_dir="$HOME/toolbox/dotfiles"
 
@@ -66,8 +69,11 @@ if [[ -f ~/.tmux.conf ]]; then
     mv ~/.tmux.conf $dotfiles_backup_dir
 fi
 echo "Creating symlink to .tmux.conf in home directory."
-ln -s -f $dotfiles_dir/tmux/.tmux.conf ~/.tmux.conf
-
+if [[ $OSTYPE == 'linux' ]]; then
+    ln -s -f $dotfiles_dir/tmux/.tmux_linux.conf ~/.tmux.conf
+elif  [[ $OSTYPE == 'darwin' ]]; then
+    ln -s -f $dotfiles_dir/tmux/.tmux.conf ~/.tmux.conf
+fi
 # .screenrc
 if [[ -f ~/.screenrc ]]; then
     echo "Moving screenrc dotfile from $HOME to $dotfiles_backup_dir"

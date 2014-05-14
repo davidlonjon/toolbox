@@ -22,6 +22,7 @@ exit; fi
 if [[ ! -f ~/.oh-my-zsh/oh-my-zsh.sh ]]; then
     e_header "Installing .oh-my-zsh"
     curl -L http://install.ohmyz.sh | sh
+    chsh -s /bin/zsh
 fi
 
 # Create symblinks for dotfiles
