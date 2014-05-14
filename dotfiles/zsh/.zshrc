@@ -43,6 +43,8 @@ elif  [[ $OSTYPE == 'darwin' ]]; then
   plugins=(git OSX vagrant screen tmux tmuxinator sublime git-extras brew virtualenvwrapper virtualenv)
 fi
 
+ZSH_THEME="alanpeabody"
+
 source $ZSH/oh-my-zsh.sh
 
 # -------------------------------------------------------------------
@@ -127,7 +129,8 @@ fi
 # PROMPT
 # -------------------------------------------------------------------
 
-[ -f "$HOME/toolbox/dotfiles/zsh/.prompt" ] && source $HOME/toolbox/dotfiles/zsh/.prompt
+# Disabling prompt and use a them instead
+# [ -f "$HOME/toolbox/dotfiles/zsh/.prompt" ] && source $HOME/toolbox/dotfiles/zsh/.prompt
 
 # -------------------------------------------------------------------
 # GENERAL OPTIONS
