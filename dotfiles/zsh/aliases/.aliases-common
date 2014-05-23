@@ -131,11 +131,9 @@ alias ping='ping -c 5'
 ## Alias to AWS SSH tool
 alias ec2ssh='ec2ssh.sh'
 
-
 ## -------------------------------------------------------------------
 ## TMUX ALIASES
 ## -------------------------------------------------------------------
-
 alias tmux-new='tmux new-session -s'
 alias tmux-ls='tmux list-sessions'
 alias ta='tmux attach-session -t'
@@ -143,7 +141,6 @@ alias ta='tmux attach-session -t'
 ## -------------------------------------------------------------------
 ## VAGRANT ALIASES
 ## -------------------------------------------------------------------
-
 alias vup="vagrant up"
 alias vh="vagrant halt"
 alias vs="vagrant suspend"
@@ -152,7 +149,6 @@ alias vrld="vagrant reload"
 alias vssh="vagrant ssh"
 alias vstat="vagrant status"
 
-
 ## -------------------------------------------------------------------
 ## APACHE ALIASES
 ## -------------------------------------------------------------------
@@ -160,12 +156,18 @@ alias apache-restart='sudo /etc/init.d/apache2 restart'
 alias apache-start='sudo /etc/init.d/apache2 start'
 alias apache-stop='sudo /etc/init.d/apache2 stop'
 
- ## -------------------------------------------------------------------
+## -------------------------------------------------------------------
 ## MYSQL ALIASES
 ## -------------------------------------------------------------------
 alias mysql-start='sudo /etc/init.d/mysql start'
 alias mysql-stop='sudo /etc/init.d/mysql stop'
 alias mysql-restart='sudo /etc/init.d/mysql restart'
+
+## -------------------------------------------------------------------
+## SSH ALIASES
+## -------------------------------------------------------------------
+alias ssh-showkeys="tail +1 ~/.ssh/*.pub"
+alias ssl='ssh-add -l'
 
 ## -------------------------------------------------------------------
 ## GENERAL ALIASES
