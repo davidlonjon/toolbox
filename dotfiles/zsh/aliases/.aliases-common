@@ -152,6 +152,21 @@ alias vrld="vagrant reload"
 alias vssh="vagrant ssh"
 alias vstat="vagrant status"
 
+
+## -------------------------------------------------------------------
+## APACHE ALIASES
+## -------------------------------------------------------------------
+alias apache-restart='sudo /etc/init.d/apache2 restart'
+alias apache-start='sudo /etc/init.d/apache2 start'
+alias apache-stop='sudo /etc/init.d/apache2 stop'
+
+ ## -------------------------------------------------------------------
+## MYSQL ALIASES
+## -------------------------------------------------------------------
+alias mysql-start='sudo /etc/init.d/mysql start'
+alias mysql-stop='sudo /etc/init.d/mysql stop'
+alias mysql-restart='sudo /etc/init.d/mysql restart'
+
 ## -------------------------------------------------------------------
 ## GENERAL ALIASES
 ## -------------------------------------------------------------------
