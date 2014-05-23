@@ -131,6 +131,15 @@ alias ping='ping -c 5'
 ## Alias to AWS SSH tool
 alias ec2ssh='ec2ssh.sh'
 
+
+## -------------------------------------------------------------------
+## TMUX ALIASES
+## -------------------------------------------------------------------
+
+alias tmux-new='tmux new-session -s'
+alias tmux-ls='tmux list-sessions'
+alias ta='tmux attach-session -t'
+
 ## -------------------------------------------------------------------
 ## GENERAL ALIASES
 ## -------------------------------------------------------------------
