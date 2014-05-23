@@ -141,6 +141,18 @@ alias tmux-ls='tmux list-sessions'
 alias ta='tmux attach-session -t'
 
 ## -------------------------------------------------------------------
+## VAGRANT ALIASES
+## -------------------------------------------------------------------
+
+alias vup="vagrant up"
+alias vh="vagrant halt"
+alias vs="vagrant suspend"
+alias vr="vagrant resume"
+alias vrld="vagrant reload"
+alias vssh="vagrant ssh"
+alias vstat="vagrant status"
+
+## -------------------------------------------------------------------
 ## GENERAL ALIASES
 ## -------------------------------------------------------------------
 alias -g H='| head'
