@@ -226,3 +226,8 @@ function git_delete_remote_merged_branches() {
     git push origin :$BRANCH
   done
 }
+
+# For Vagrant, allow reverse port forwarding when ssh
+function vsshr () {
+  vagrant ssh -- -R $1\:localhost:$1
+}
