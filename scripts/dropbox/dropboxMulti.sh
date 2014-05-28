@@ -1,7 +1,7 @@
 #! /bin/bash
 sleep 15
 
-dropboxes=".dropbox_perso .dropbox_enswers"
+dropboxes=".dropbox_perso"
 for dropbox in $dropboxes
   do
 
@@ -11,6 +11,6 @@ for dropbox in $dropboxes
 		ln -s $HOME/.Xauthority $HOME/$dropbox/ #2> /dev/null
       	fi
 
-	HOME=$HOME/$dropbox 
+	HOME=$HOME/$dropbox
 	$HOME/.dropbox-dist/dropboxd & #2> /dev/null &
   done
