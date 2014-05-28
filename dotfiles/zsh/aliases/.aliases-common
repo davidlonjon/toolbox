@@ -153,8 +153,10 @@ alias vh="vagrant halt"
 alias vs="vagrant suspend"
 alias vr="vagrant resume"
 alias vrld="vagrant reload"
+alias vrldp="vagrant reload --provision"
 alias vssh="vagrant ssh"
 alias vstat="vagrant status"
+alias vp="vagrant provision"
 
 ## -------------------------------------------------------------------
 ## APACHE ALIASES
