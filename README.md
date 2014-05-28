@@ -22,6 +22,8 @@ https://github.com/chrishunt/dot-files/
 https://github.com/whiteinge/dotfiles/
 https://raymii.org/s/snippets/Get_uptime_load_and_users_with_grep_sed_and_awk.html
 https://github.com/milomouse/dotfiles/
+https://gist.github.com/focusaurus/3907446
+https://gist.github.com/dergachev/8259104
 
 ctags from
 https://github.com/myfreeweb/dotfiles/
