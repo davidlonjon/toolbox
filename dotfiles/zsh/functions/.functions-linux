@@ -1,0 +1,23 @@
+# Linux-only stuff. Abort if not Linux.
+[[ $OSTYPE =~ ^linux ]] || return 1
+
+# Using netcate for remote copy and paste
+# Inspired from
+# https://gist.github.com/focusaurus/3907446
+# and
+# https://gist.github.com/dergachev/8259104
+
+nc-send() {
+  nc -q0 localhost $1
+}
+
+remote-paste() {
+  while (true);
+  do
+    echo "Waiting..." ;
+    nc -l $1 | xclip -selection clipboard;
+    echo "Copied: ";
+    xclip -o | sed 's/^/  /';
+    sleep 1
+  done
+}

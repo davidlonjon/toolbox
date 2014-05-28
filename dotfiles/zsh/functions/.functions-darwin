@@ -7,11 +7,11 @@ function hiddenOff() { defaults write com.apple.Finder AppleShowAllFiles NO ; }
 
 # myIP address
 function myip() {
-ifconfig lo0 | grep 'inet ' | sed -e 's/:/ /' | awk '{print "lo0       : " $2}'
-ifconfig en0 | grep 'inet ' | sed -e 's/:/ /' | awk '{print "en0 (IPv4): " $2 " " $3 " " $4 " " $5 " " $6}'
-ifconfig en0 | grep 'inet6 ' | sed -e 's/ / /' | awk '{print "en0 (IPv6): " $2 " " $3 " " $4 " " $5 " " $6}'
-ifconfig en1 | grep 'inet ' | sed -e 's/:/ /' | awk '{print "en1 (IPv4): " $2 " " $3 " " $4 " " $5 " " $6}'
-ifconfig en1 | grep 'inet6 ' | sed -e 's/ / /' | awk '{print "en1 (IPv6): " $2 " " $3 " " $4 " " $5 " " $6}'
+    ifconfig lo0 | grep 'inet ' | sed -e 's/:/ /' | awk '{print "lo0       : " $2}'
+    ifconfig en0 | grep 'inet ' | sed -e 's/:/ /' | awk '{print "en0 (IPv4): " $2 " " $3 " " $4 " " $5 " " $6}'
+    ifconfig en0 | grep 'inet6 ' | sed -e 's/ / /' | awk '{print "en0 (IPv6): " $2 " " $3 " " $4 " " $5 " " $6}'
+    ifconfig en1 | grep 'inet ' | sed -e 's/:/ /' | awk '{print "en1 (IPv4): " $2 " " $3 " " $4 " " $5 " " $6}'
+    ifconfig en1 | grep 'inet6 ' | sed -e 's/ / /' | awk '{print "en1 (IPv6): " $2 " " $3 " " $4 " " $5 " " $6}'
 }
 
 # Nice mount (http://catonmat.net/blog/another-ten-one-liners-from-commandlingfu-explained)
@@ -19,8 +19,8 @@ ifconfig en1 | grep 'inet6 ' | sed -e 's/ / /' | awk '{print "en1 (IPv6): " $2 "
 function nicemount() { (echo "DEVICE PATH TYPE FLAGS" && mount | awk '$2="";1') | column -t ; }
 
 function chromecanary () {
-/Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary -disable-prompt-on-repost 2>&1 &
-# /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome $* 2>&1 &
+    /Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary -disable-prompt-on-repost 2>&1 &
+    # /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome $* 2>&1 &
 }
 
 # Taken from https://github.com/mathiasbynens/dotfiles/blob/master/.functions
@@ -35,4 +35,25 @@ function unquarantine() {
     for attribute in com.apple.metadata:kMDItemDownloadedDate com.apple.metadata:kMDItemWhereFroms com.apple.quarantine; do
         xattr -r -d "$attribute" "$@"
     done
+}
+
+# Using netcat for remote copy and paste
+# Inspired from
+# https://gist.github.com/focusaurus/3907446
+# and
+# https://gist.github.com/dergachev/8259104
+
+nc-send() {
+  nc localhost $1
+}
+
+remote-paste() {
+  while (true);
+  do
+    echo "Waiting..." ;
+    nc -l $1 | pbcopy;
+    echo "Copied: ";
+    pbpaste | sed 's/^/  /';
+    sleep 1
+  done
 }
