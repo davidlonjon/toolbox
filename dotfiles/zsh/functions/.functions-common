@@ -213,6 +213,7 @@ M-!   complete command name
 M-^   complete history
 EOF
 }
+
 # https://github.com/milomouse/dotfiles/blob/master/zsh/zsh-functions
 # move and follow file(s) to new dir:
 function mvf {
@@ -221,6 +222,15 @@ function mvf {
   elif [[ -d ${*[-1]%/*} ]]; then
     mv $* && cd ${*[-1]%/*}
   fi
+}
+
+# http://serverfault.com/questions/5249/useful-bash-aliases-and-generating-a-listing-of-your-most-used-commands
+function fawk {
+    first="awk '{print "
+    last="}' $2"
+    cmd="${first}\$${1}${last}"
+    echo $cmd
+    eval $cmd
 }
 
 # https://github.com/chrishunt/dot-files/blob/master/.githelpers
