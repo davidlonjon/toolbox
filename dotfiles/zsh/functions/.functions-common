@@ -233,6 +233,13 @@ function fawk {
     eval $cmd
 }
 
+# Copy public key to remote machine (dependency-less)
+# Taken from http://alias.sh/category/74
+function authme() {
+  ssh "$1" 'mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys' \
+    < ~/.ssh/id_rsa.pub
+}
+
 # https://github.com/chrishunt/dot-files/blob/master/.githelpers
 function git_weekly_summary() {
 
