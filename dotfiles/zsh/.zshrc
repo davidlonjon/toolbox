@@ -38,9 +38,9 @@ ZSH=$HOME/.oh-my-zsh
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 if [[ $OSTYPE == 'linux' ]]; then
-  plugins=(git autojump vagrant screen tmux tmuxinator sublime git-extras virtualenvwrapper virtualenv)
+  plugins=(git autojump vagrant screen tmux tmuxinator sublime git-extras virtualenvwrapper virtualenv history)
 elif  [[ $OSTYPE == 'darwin' ]]; then
-  plugins=(git OSX vagrant screen tmux tmuxinator sublime git-extras brew virtualenvwrapper virtualenv)
+  plugins=(git OSX vagrant screen tmux tmuxinator sublime git-extras brew virtualenvwrapper virtualenv history)
 fi
 
 ZSH_THEME="alanpeabody"

@@ -205,7 +205,7 @@ alias f='find . -name'
 alias fd='find . -type d -name'
 alias ff='find . -type f -name'
 
-alias h='history'
+# alias h='history'
 alias path='echo -e ${PATH//:/\\n}'
 alias now='date +"%T'
 alias nowtime=now
