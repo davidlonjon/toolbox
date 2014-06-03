@@ -1,5 +1,5 @@
 # Linux-only stuff. Abort if not Linux.
-[[ '$OSTYPE' =~ ^linux ]] || return 1
+[[ $OSTYPE =~ 'linux' ]] || return 1
 
 # Using netcate for remote copy and paste
 # Inspired from
