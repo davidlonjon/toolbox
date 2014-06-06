@@ -301,3 +301,9 @@ function git_delete_remote_merged_branches() {
 function vsshr () {
   vagrant ssh -- -R $1\:localhost:$1
 }
+
+# Search alias
+function salias
+{
+    alias | grep $*
+}
