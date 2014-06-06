@@ -81,6 +81,7 @@ alias gb='git branch'
 alias gbv='git branch -v'  # branch (verbose)
 alias gba='git branch -a' # branch all
 alias gbav='git branch -av' # branch all (verbose)
+alias gbavv='git branch -avv' # branch all (verbose)
 
 # Tag
 alias gtl='git tag -l'
