@@ -120,7 +120,7 @@ if [[ $OSTYPE == 'linux' ]]; then
 
   # https://github.com/skwp/dotfiles/blob/master/zsh/vi-mode.zsh
   # Set Vim as the default editor
-  set -o vi
+  # set -o vi # Disabling as causing an error in ssh session for some reasons
   export EDITOR="vim"
   export VISUAL='vim'
 fi
