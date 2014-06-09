@@ -1,4 +1,4 @@
-#!/bin/bash -f
+#! /usr/bin/env bash
 
 # https://github.com/whiteinge/dotfiles/blob/master/bin/toggle-maximize.sh
 # http://superuser.com/a/433702/112064
