@@ -83,3 +83,9 @@ Desktop.ini
 
 # Vagrant Ignore
 .vagrant
+
+# Version control ignore
+.git/
+.hg/
+.svn/
+CVS/
