@@ -69,11 +69,8 @@ if [[ -f ~/.tmux.conf ]]; then
     mv ~/.tmux.conf $dotfiles_backup_dir
 fi
 echo "Creating symlink to .tmux.conf in home directory."
-if [[ $OSTYPE == 'linux' ]]; then
-    ln -s -f $dotfiles_dir/tmux/.tmux_linux.conf ~/.tmux.conf
-elif  [[ $OSTYPE == 'darwin' ]]; then
-    ln -s -f $dotfiles_dir/tmux/.tmux.conf ~/.tmux.conf
-fi
+ln -s -f $dotfiles_dir/tmux/.tmux.conf ~/.tmux.conf
+
 # .screenrc
 if [[ -f ~/.screenrc ]]; then
     echo "Moving screenrc dotfile from $HOME to $dotfiles_backup_dir"
