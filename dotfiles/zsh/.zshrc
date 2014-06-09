@@ -191,6 +191,7 @@ setopt NOCLOBBER
 # -------------------------------------------------------------------
 
 [ -f "$HOME/toolbox/dotfiles/zsh/functions/.functions-common" ] && source $HOME/toolbox/dotfiles/zsh/functions/.functions-common
+[ -f "$HOME/toolbox/dotfiles/zsh/functions/.functions-common-path-helpers" ] && source $HOME/toolbox/dotfiles/zsh/functions/.functions-common-path-helpers
 [ -f "$HOME/toolbox/dotfiles/zsh/functions/.functions-darwin" ] && source $HOME/toolbox/dotfiles/zsh/functions/.functions-darwin
 [ -f "$HOME/toolbox/dotfiles/zsh/functions/.functions-linux" ] && source $HOME/toolbox/dotfiles/zsh/functions/.functions-linux
 
