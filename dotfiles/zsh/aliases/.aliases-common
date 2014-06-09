@@ -11,6 +11,15 @@
 # Quick access to my toolbox
 alias toolbox="cd ~/toolbox"
 
+# Quick access to my project
+alias projects="cd ~/projects"
+
+# Quick access to my dev www projects
+alias devwprojects="cd ~/projects/dev/shared/www"
+
+# Quick access to my www project on remote vagrant dev machine
+alias srvwww="cd /srv/www"
+
 ### -------------------------------------------------------------------
 ## ZSH ALIASES
 ### -------------------------------------------------------------------
