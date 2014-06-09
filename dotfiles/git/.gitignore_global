@@ -69,6 +69,7 @@ Desktop.ini
 *.rej
 *.sw?
 *.vi
+*.swp
 
 # Python
 *.pyc
