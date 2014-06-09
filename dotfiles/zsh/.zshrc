@@ -17,7 +17,7 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-#ZSH_THEME="robbyrussell"
+ZSH_THEME="alanpeabody"
 
 # Set to this to use case-sensitive completion
 #CASE_SENSITIVE="true"
@@ -42,8 +42,6 @@ if [[ $OSTYPE == 'linux' ]]; then
 elif  [[ $OSTYPE == 'darwin' ]]; then
   plugins=(git OSX vagrant screen tmux tmuxinator sublime git-extras brew virtualenvwrapper virtualenv history)
 fi
-
-ZSH_THEME="alanpeabody"
 
 source $ZSH/oh-my-zsh.sh
 
