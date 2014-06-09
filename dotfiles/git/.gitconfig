@@ -88,6 +88,9 @@
     llll = "!sh -c 'git lll $@ \
         | gvim - -R -v -c \"set ft=git\" -c \"set fdm=syntax\"' -"
 
+[github]
+    user = "davidlonjon"
+
 [url "git@github.com:"]
   insteadOf = gh://
 
