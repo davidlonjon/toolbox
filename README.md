@@ -25,6 +25,7 @@ for their ingeniosity and hard effort in making awesome setups, scripts and plen
 + https://gist.github.com/focusaurus/3907446
 + https://gist.github.com/dergachev/8259104
 + https://github.com/jimeh/
++ https://gist.github.com/jerrykrinock/6618003
 
 ctags from
 + https://github.com/myfreeweb/dotfiles/

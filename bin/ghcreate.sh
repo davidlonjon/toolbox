@@ -1,5 +1,6 @@
 #! /usr/bin/env bash
 
+# Taken from https://gist.github.com/jerrykrinock/6618003
 # This script create a new repo on github.com, then pushes to it the local repo from the current directory.
 
 # It is a fork of https://gist.github.com/robwierzbowski/5430952/.  Some of Rob's lines just didn't work for me, and to fix them I needed to make it more verbose so that a mere electrical engineer could understand it.
