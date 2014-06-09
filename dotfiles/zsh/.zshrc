@@ -191,6 +191,15 @@ setopt HIST_IGNORE_SPACE
 setopt HIST_REDUCE_BLANKS
 setopt HIST_VERIFY
 
+# Allow to browse history from up and down arrow keys
+# Taken from https://coderwall.com/p/jpj_6q
+autoload -U up-line-or-beginning-search
+autoload -U down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey "^[[A" up-line-or-beginning-search # Up
+bindkey "^[[B" down-line-or-beginning-search # Down
+
 # Don’t write over existing files with >, use >! instead
 setopt NOCLOBBER
 
