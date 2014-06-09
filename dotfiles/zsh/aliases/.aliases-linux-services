@@ -8,7 +8,7 @@
 ## -------------------------------------------------------------------
 
 ## -------------------------------------------------------------------
-## APACHE ALIASES
+## APACHE SERVICE ALIASES
 ## -------------------------------------------------------------------
 alias apache-restart='sudo service apache2 restart'
 alias apache-start='sudo service apache2 start'
@@ -16,9 +16,49 @@ alias apache-stop='sudo service apache2 stop'
 alias apache-status='sudo service apache2 status'
 
 ## -------------------------------------------------------------------
-## MYSQL ALIASES
+## NGINX SERVICE ALIASES
+## -------------------------------------------------------------------
+alias nginx-restart='sudo service nginx restart'
+alias nginx-start='sudo service nginx start'
+alias nginx-stop='sudo service nginx stop'
+alias nginx-status='sudo service nginx status'
+
+## -------------------------------------------------------------------
+## MYSQL SERVICE ALIASES
 ## -------------------------------------------------------------------
 alias mysql-start='sudo service mysql start'
 alias mysql-stop='sudo service mysql stop'
 alias mysql-restart='sudo service mysql restart'
 alias mysql-status='sudo service mysql status'
+
+## -------------------------------------------------------------------
+## POSTGRESQL SERVICE ALIASES
+## -------------------------------------------------------------------
+alias postgresql-start='sudo service postgresql start'
+alias postgresql-stop='sudo service postgresql stop'
+alias postgresql-restart='sudo service postgresql restart'
+alias postgresql-status='sudo service postgresql status'
+
+## -------------------------------------------------------------------
+## MEMCACHED SERVICE ALIASES
+## -------------------------------------------------------------------
+alias memcached-start='sudo service memcached start'
+alias memcached-stop='sudo service memcached stop'
+alias memcached-restart='sudo service memcached restart'
+alias memcached-status='sudo service memcached status'
+
+## -------------------------------------------------------------------
+## REDIS SERVICE ALIASES
+## -------------------------------------------------------------------
+alias redis-start='sudo service redis-server start'
+alias redis-stop='sudo service redis-server stop'
+alias redis-restart='sudo service redis-server restart'
+alias redis-status='sudo service redis-server status'
+
+## -------------------------------------------------------------------
+## MONGOD SERVICE ALIASES
+## -------------------------------------------------------------------
+alias mongod-start='sudo service mongod-server start'
+alias mongod-stop='sudo service mongod-server stop'
+alias mongod-restart='sudo service mongod-server restart'
+alias mongod-status='sudo service mongod-server status'
