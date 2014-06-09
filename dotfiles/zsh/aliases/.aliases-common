@@ -162,20 +162,6 @@ alias vp="vagrant provision"
 alias vpl="vagrant provision 2>&1 | tee vagrant.log"
 
 ## -------------------------------------------------------------------
-## APACHE ALIASES
-## -------------------------------------------------------------------
-alias apache-restart='sudo /etc/init.d/apache2 restart'
-alias apache-start='sudo /etc/init.d/apache2 start'
-alias apache-stop='sudo /etc/init.d/apache2 stop'
-
-## -------------------------------------------------------------------
-## MYSQL ALIASES
-## -------------------------------------------------------------------
-alias mysql-start='sudo /etc/init.d/mysql start'
-alias mysql-stop='sudo /etc/init.d/mysql stop'
-alias mysql-restart='sudo /etc/init.d/mysql restart'
-
-## -------------------------------------------------------------------
 ## SSH ALIASES
 ## -------------------------------------------------------------------
 alias ssh-showkeys="tail +1 ~/.ssh/*.pub"

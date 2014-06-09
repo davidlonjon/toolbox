@@ -52,7 +52,18 @@ source $ZSH/oh-my-zsh.sh
 [ -f "$HOME/toolbox/dotfiles/zsh/aliases/.aliases-common" ] && source $HOME/toolbox/dotfiles/zsh/aliases/.aliases-common
 [ -f "$HOME/toolbox/dotfiles/zsh/aliases/.aliases-darwin" ] && source $HOME/toolbox/dotfiles/zsh/aliases/.aliases-darwin
 [ -f "$HOME/toolbox/dotfiles/zsh/aliases/.aliases-linux" ] && source $HOME/toolbox/dotfiles/zsh/aliases/.aliases-linux
+[ -f "$HOME/toolbox/dotfiles/zsh/aliases/.aliases-linux-services" ] && source $HOME/toolbox/dotfiles/zsh/aliases/.aliases-linux-services
 [ -f "$HOME/toolbox/dotfiles/zsh/aliases/.aliases-git" ] && source $HOME/toolbox/dotfiles/zsh/aliases/.aliases-git
+
+
+# -------------------------------------------------------------------
+# FUNCTIONS
+# -------------------------------------------------------------------
+
+[ -f "$HOME/toolbox/dotfiles/zsh/functions/.functions-common" ] && source $HOME/toolbox/dotfiles/zsh/functions/.functions-common
+[ -f "$HOME/toolbox/dotfiles/zsh/functions/.functions-common-path-helpers" ] && source $HOME/toolbox/dotfiles/zsh/functions/.functions-common-path-helpers
+[ -f "$HOME/toolbox/dotfiles/zsh/functions/.functions-darwin" ] && source $HOME/toolbox/dotfiles/zsh/functions/.functions-darwin
+[ -f "$HOME/toolbox/dotfiles/zsh/functions/.functions-linux" ] && source $HOME/toolbox/dotfiles/zsh/functions/.functions-linux
 
 
 # -------------------------------------------------------------------
@@ -182,17 +193,6 @@ setopt HIST_VERIFY
 
 # Don’t write over existing files with >, use >! instead
 setopt NOCLOBBER
-
-
-# -------------------------------------------------------------------
-# FUNCTIONS
-# -------------------------------------------------------------------
-
-[ -f "$HOME/toolbox/dotfiles/zsh/functions/.functions-common" ] && source $HOME/toolbox/dotfiles/zsh/functions/.functions-common
-[ -f "$HOME/toolbox/dotfiles/zsh/functions/.functions-common-path-helpers" ] && source $HOME/toolbox/dotfiles/zsh/functions/.functions-common-path-helpers
-[ -f "$HOME/toolbox/dotfiles/zsh/functions/.functions-darwin" ] && source $HOME/toolbox/dotfiles/zsh/functions/.functions-darwin
-[ -f "$HOME/toolbox/dotfiles/zsh/functions/.functions-linux" ] && source $HOME/toolbox/dotfiles/zsh/functions/.functions-linux
-
 
 # -------------------------------------------------------------------
 # KEYS BINDING

@@ -1,0 +1,24 @@
+# Linux-only stuff. Abort if not Linux.
+[[ '$OSTYPE' =~ ^linux ]] || return 1
+
+## -------------------------------------------------------------------
+## SERVICES ALIASES
+## Inspired from
+## from https://github.com/jimeh/dotfiles/blob/master/shell/services.sh
+## -------------------------------------------------------------------
+
+## -------------------------------------------------------------------
+## APACHE ALIASES
+## -------------------------------------------------------------------
+alias apache-restart='sudo service apache2 restart'
+alias apache-start='sudo service apache2 start'
+alias apache-stop='sudo service apache2 stop'
+alias apache-status='sudo service apache2 status'
+
+## -------------------------------------------------------------------
+## MYSQL ALIASES
+## -------------------------------------------------------------------
+alias mysql-start='sudo service mysql start'
+alias mysql-stop='sudo service mysql stop'
+alias mysql-restart='sudo service mysql restart'
+alias mysql-status='sudo service mysql status'
