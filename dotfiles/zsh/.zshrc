@@ -92,6 +92,9 @@ elif  [[ $OSTYPE == 'darwin' ]]; then
   # export DYLD_LIBRARY_PATH="$HOME/source/boost_install/lib:${DYLD_LIBRARY_PATH}"
 
   export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
+
+  # Needed for Cairo which in turns is needed by css-sprite npm module
+  export PKG_CONFIG_PATH=/opt/X11/lib/pkgconfig
 fi
 
 if [[ -e "/usr/local/bin/virtualenvwrapper.sh" ]]; then
