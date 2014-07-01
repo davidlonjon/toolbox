@@ -56,3 +56,7 @@ alias spoton="sudo mdutil -a -i on"
 
 # Show open tcp ports
 alias ports='netstat -tulanp tcp'
+
+# Copy and paste current directory
+alias cdc='pwd | pbcopy'
+alias cdp='cd `pbpaste`'
