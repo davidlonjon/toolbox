@@ -1,0 +1,22 @@
+# Always sort the files
+--sort-files
+
+# Always color, even if piping to a another program
+--color
+
+# Use "less -r" as my pager
+--pager=less -r
+
+# File type search options
+
+## CSSs
+--type-set=csss=.css,.sass,.scss,.less
+
+## jade
+--type-set=jade=.jade
+
+## htmls
+--type-set=htmls=.haml,.html,.htm,.jade,.ejs,.erb
+
+## Haml
+--type-set=haml=.haml

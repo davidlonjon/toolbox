@@ -86,3 +86,11 @@ if [[ -f ~/.ctags ]]; then
 fi
 echo "Creating symlink to .ctags in home directory."
 ln -s -f $dotfiles_dir/ctags/.ctags ~/.ctags
+
+# .ackrc
+if [[ -f ~/.ackrc ]]; then
+    echo "Moving ackrc dotfile from $HOME to $dotfiles_backup_dir"
+    mv ~/.ackrc $dotfiles_backup_dir
+fi
+echo "Creating symlink to .ackrc in home directory."
+ln -s -f $dotfiles_dir/ack/.ackrc ~/.ackrc
