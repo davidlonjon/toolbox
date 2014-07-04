@@ -28,6 +28,11 @@ for their ingeniosity and hard effort in making awesome setups, scripts and plen
 + https://gist.github.com/jerrykrinock/6618003
 + https://coderwall.com/p/jpj_6q
 
+Good Aliases
++ https://coderwall.com/p/_-ypzq
++ https://coderwall.com/p/7jbwww
++ https://coderwall.com/p/xq-98g
+
 ctags from
 + https://github.com/myfreeweb/dotfiles/
 + https://github.com/whiteinge/dotfiles/
@@ -35,3 +40,6 @@ ctags from
 Git Scripts
 + https://git.wiki.kernel.org/index.php/ExampleScripts
 + https://github.com/pengwynn/
+
+Misc
+ + https://gist.github.com/mkelley33/9422177
