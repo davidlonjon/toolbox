@@ -303,7 +303,7 @@ function vsshr () {
 }
 
 # Search alias
-function salias
+function aliasg
 {
     alias | grep $*
 }
