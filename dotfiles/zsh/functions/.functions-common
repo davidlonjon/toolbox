@@ -303,9 +303,9 @@ function vsshr () {
 }
 
 # Search alias
-function aliasg
-{
-    alias | grep $*
+# https://coderwall.com/p/xq-98g
+aliass() {
+  alias|ack "$*"
 }
 
 # Taken from https://github.com/jimeh/dotfiles/blob/master/shell/aliases.sh
