@@ -230,6 +230,8 @@ fi
 # MISC
 # -------------------------------------------------------------------
 
+# teamocil autocompletion
+compctl -g '~/.teamocil/*(:t:r)' teamocil
 
 # This is at the end to avoid messing up the color highligting
 # Taken from https://github.com/matijs/dotfiles/blob/master/.bash_profile
