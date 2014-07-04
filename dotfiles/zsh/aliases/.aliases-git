@@ -21,6 +21,7 @@ alias gl='git pull'
 alias gpu='git pull'
 alias ggpull='git pull origin $(current_branch)'
 alias ggpush='git push origin $(current_branch)'
+alias ggpnp='git pull origin $(current_branch) && git push origin $(current_branch)'
 # Taken from https://github.com/mathiasbynens/dotfiles/blob/master/.gitconfig
 # Pull in remote changes for the current repository and all its submodules
 alias ggpulls="git pull origin $(current_branch); git submodule foreach git pull origin master"
@@ -33,6 +34,10 @@ alias glgns="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Crese
 #alias glg='git log'
 #alias glgs='git log --stat --max-count=5'
 #alias glgg='git log --graph --max-count=5'
+
+# https://coderwall.com/p/7jbwww
+# List what you have done today
+alias gtoday="git log --graph --all --since=midnight --author=\"$(git config user.name)\" --oneline"
 
 # Find out who is currently active on the repository
 # Displays committers in descending order of number of commits
@@ -148,3 +153,14 @@ alias gf='git reflog'
 # Taken from https://github.com/holman/dotfiles/blob/master/git/aliases.zsh
 alias grm="git status | grep deleted | awk '{\$1=\$2=\"\"; print \$0}' | \
            sed 's/^[ \t]*//' | sed 's/ /\\\\ /g' | xargs git rm"
+
+# From https://coderwall.com/p/_-ypzq
+# these alias ignore changes to file
+alias gignore='git update-index --assume-unchanged'
+alias gunignore='git update-index --no-assume-unchanged'
+# list temporarily ignored files
+alias gignored='git ls-files -v | grep "^[[:lower:]]"'
+
+# Will cd into the top of the current repository
+# or submodule.
+alias grt='cd $(git rev-parse --show-toplevel || echo ".")'
