@@ -170,6 +170,7 @@ alias vrldp="vagrant reload --provision"
 alias vrldpl="vagrant reload --provision 2>&1 | tee vagrant.log"
 alias vssh="vagrant ssh"
 alias vstat="vagrant status"
+alias vst="vagrant status"
 alias vp="vagrant provision"
 alias vpl="vagrant provision 2>&1 | tee vagrant.log"
 
