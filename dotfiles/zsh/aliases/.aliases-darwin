@@ -60,3 +60,7 @@ alias ports='netstat -tulanp tcp'
 # Copy and paste current directory
 alias cdc='pwd | pbcopy'
 alias cdp='cd `pbpaste`'
+
+# Show back to my mac FQDN
+# http://onethingwell.org/post/27835796928/remote-ssh-bact-to-my-mac
+alias showbtmm="echo show Setup:/Network/BackToMyMac | scutil | sed -n 's/.* : *\(.*\).$/\1/p'"
