@@ -10,6 +10,9 @@ OSTYPE=$( uname | tr '[:upper:]' '[:lower:]')
 # dotfiles directory
 dotfiles_dir="$HOME/toolbox/dotfiles"
 
+# private dotfiles directory
+private_dotfiles_dir="$HOME/toolbox/private/dotfiles"
+
 # old dotfiles backup directory
 dotfiles_backup_dir="$HOME/toolbox/dotfiles/_backup"
 
@@ -53,7 +56,7 @@ if [[ -f ~/.ssh/config ]]; then
     mv ~/.ssh/config $dotfiles_backup_dir
 fi
 echo "Creating symlink to config in .ssh directory."
-ln -s -f $dotfiles_dir/ssh/config ~/.ssh/config
+ln -s -f $private_dotfiles_dir/ssh/config ~/.ssh/config
 
 # .wgetrc
 if [[ -f ~/.wgetrc ]]; then
