@@ -267,3 +267,7 @@ function git_prompt_info() {
 # Taken from https://github.com/robbyrussell/oh-my-zsh/blob/master/plugins/mosh/mosh.plugin.zsh
 # Allow SSH tab completion for mosh hostnames
 compdef mosh=ssh
+
+# https://news.ycombinator.com/item?id=3535600
+# if there are no matches for globs, leave them alone and execute the command
+setopt no_nomatch
