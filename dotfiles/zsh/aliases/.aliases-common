@@ -258,3 +258,8 @@ alias psg="ps aux | grep "
 # https://github.com/skwp/dotfiles/blob/master/zsh/aliases.zsh
 # Gem install
 alias sgi='sudo gem install --no-ri --no-rdoc'
+
+# Add noglob for rsync and spc
+# Taken from https://github.com/sorin-ionescu/prezto/issues/232
+alias rsync='noglob rsync'
+alias scp='noglob scp'
