@@ -18,13 +18,13 @@ session:
       options:
         synchronize-panes: false
       panes:
-        - cmd: "ls"
+        - cmd: "ll"
     - name: "ssh_cafe24"
       root: "/Users/david/projects/dev/shared/www/vatoskorea.dev"
       options:
         synchronize-panes: false
       panes:
-        - cmd: "ssh dev"
+        - cmd: "ssh vatos_cafe24"
     - name: "ssh_stage_atom31"
       root: "/Users/david/projects/dev/shared/www/vatoskorea.dev"
       options:
