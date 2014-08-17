@@ -1,0 +1,9 @@
+session:
+  name: "repos"
+  windows:
+    - name: "git"
+      root: "~/repos"
+      options:
+        synchronize-panes: false
+      panes:
+        - cmd: "ll"
