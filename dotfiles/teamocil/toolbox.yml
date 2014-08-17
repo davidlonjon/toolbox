@@ -1,0 +1,9 @@
+session:
+  name: "toolbox"
+  windows:
+    - name: "git"
+      root: "~/toolbox"
+      options:
+        synchronize-panes: false
+      panes:
+        - cmd: "gst"
