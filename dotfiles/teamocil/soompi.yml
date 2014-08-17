@@ -2,19 +2,19 @@ session:
   name: "soompi"
   windows:
     - name: "git"
-      root: "/Users/david/projects/soompi_dev/shared/www/soompi.dev"
+      root: "/Users/david/projects/soompi_dev/shared/www/soompi.com"
       options:
         synchronize-panes: false
       panes:
         - cmd: "gst"
     - name: "ssh"
-      root: "/Users/david/projects/soompi_dev/shared/www/soompi.dev"
+      root: "/Users/david/projects/soompi_dev/shared/www/soompi.com"
       options:
         synchronize-panes: false
       panes:
         - cmd: "ssh dev"
     - name: "gulp"
-      root: "/Users/david/projects/soompi_dev/shared/www/soompi.dev/"
+      root: "/Users/david/projects/soompi_dev/shared/www/soompi.com/"
       options:
         synchronize-panes: false
       panes:
