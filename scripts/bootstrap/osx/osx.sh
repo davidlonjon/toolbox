@@ -26,11 +26,11 @@ ln -s $dotfiles_dir/hushlogin/.hushlogin ~/.hushlogin
 #   sudo xcode-select -switch /usr/bin
 # fi
 
-# # Install Homebrew.
-# if [[ ! "$(type -P brew)" ]]; then
-#   e_arrow "Installing Homebrew"
-#   # true | /usr/bin/ruby -e "$(/usr/bin/curl -fsSL https://raw.github.com/mxcl/homebrew/master/Library/Contributions/install_homebrew.rb)"
-# fi
+# Install Homebrew.
+if [[ ! "$(type -P brew)" ]]; then
+  e_arrow "Installing Homebrew"
+  # true | /usr/bin/ruby -e "$(/usr/bin/curl -fsSL https://raw.github.com/mxcl/homebrew/master/Library/Contributions/install_homebrew.rb)"
+fi
 
 # if [[ "$(type -P brew)" ]]; then
 #   e_arrow "Updating Homebrew"
