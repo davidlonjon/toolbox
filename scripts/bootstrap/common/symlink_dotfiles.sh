@@ -97,3 +97,11 @@ if [[ -f ~/.ackrc ]]; then
 fi
 echo "Creating symlink to .ackrc in home directory."
 ln -s -f $dotfiles_dir/ack/.ackrc ~/.ackrc
+
+# .teamocil
+if [[ -d ~/.teamocil ]]; then
+    echo "Moving teamocil config files from $HOME to $dotfiles_backup_dir"
+    mv ~/.teamocil $dotfiles_backup_dir
+fi
+echo "Creating symlink to .ackrc in home directory."
+ln -s -f $dotfiles_dir/teamocil ~/.teamocil
