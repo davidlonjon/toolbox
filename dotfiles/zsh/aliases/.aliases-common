@@ -20,6 +20,9 @@ alias wwwl="cd ~/projects/dev/shared/www"
 # Quick access to my www project on remote vagrant dev machine
 alias wwwr="cd /srv/www"
 
+# Alias for Bower
+alias bower='noglob bower'
+
 ### -------------------------------------------------------------------
 ## ZSH ALIASES
 ### -------------------------------------------------------------------
