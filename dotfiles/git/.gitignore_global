@@ -90,3 +90,8 @@ Desktop.ini
 .hg/
 .svn/
 CVS/
+
+# Sublime Text 2
+sublime/
+*.sublime-project
+*.sublime-workspace
