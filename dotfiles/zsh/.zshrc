@@ -84,6 +84,8 @@ if [[ $OSTYPE == 'linux' ]]; then
     # Example taken from https://gist.github.com/4177779
     export AWS_ACCESS_KEY=$( awk -F= '/AccessKey/ {print $2}' $AWS_CREDENTIAL_FILE )
     export AWS_SECRET_KEY=$( awk -F= '/SecretKey/ {print $2}' $AWS_CREDENTIAL_FILE )
+
+    export NODE_PATH=/usr/lib/node_modules
   fi
 
 elif  [[ $OSTYPE == 'darwin' ]]; then
