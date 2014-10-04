@@ -62,3 +62,13 @@ alias mongod-start='sudo service mongod-server start'
 alias mongod-stop='sudo service mongod-server stop'
 alias mongod-restart='sudo service mongod-server restart'
 alias mongod-status='sudo service mongod-server status'
+
+## -------------------------------------------------------------------
+## PHP5-FPM SERVICE ALIASES
+## -------------------------------------------------------------------
+alias phpfpm-start='sudo service php5-fpm start'
+alias phpfpm-stop='sudo service php5-fpm stop'
+alias phpfpm-restart='sudo service php5-fpm restart'
+alias phpfpm-status='sudo service php5-fpm status'
+alias phpfpm-reload='sudo service php5-fpm reload'
+alias phpfpm-freload='sudo service php5-fpm force-reload'
