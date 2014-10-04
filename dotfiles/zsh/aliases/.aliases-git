@@ -80,6 +80,8 @@ alias gco='git checkout'
 alias gcob='git checkout -b' # create and switch to a new branch
 alias gcom='git checkout master'
 alias gcod='git checkout develop'
+alias gcos='git checkout staging'
+alias gcou='git checkout upstream'
 
 # Branch
 alias gb='git branch'
