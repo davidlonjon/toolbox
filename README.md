@@ -1,7 +1,8 @@
 toolbox
 =======
 
-This repo contains all scripts, hacks, dotfiles, etc to improve my productivity
+This repo contains all scripts, hacks, dotfiles, etc to improve my productivity.
+Please note that there are a lot of things being work in progress, particularly the scripts parts
 
 Credits
 =======
