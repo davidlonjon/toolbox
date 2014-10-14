@@ -1,0 +1,21 @@
+session:
+  name: "pragmaty"
+  windows:
+    - name: "git"
+      root: "/Users/david/projects/django_dev/shared/www/pragmaty"
+      options:
+        synchronize-panes: false
+      panes:
+        - cmd: "git status"
+    - name: "ssh"
+      root: "/Users/david/projects/django_dev/shared/www/pragmaty"
+      options:
+        synchronize-panes: false
+      panes:
+        - cmd: "ssh dev"
+    - name: "gulp"
+      root: "/Users/david/projects/django_dev/shared/www/pragmaty/"
+      options:
+        synchronize-panes: false
+      panes:
+        - cmd: "ls"
