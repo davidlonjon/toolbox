@@ -38,9 +38,9 @@ DISABLE_AUTO_TITLE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 if [[ $OSTYPE == 'linux' ]]; then
-  plugins=(git autojump vagrant screen tmux tmuxinator sublime git-extras virtualenvwrapper virtualenv history)
+  plugins=(git autojump vagrant screen tmux sublime git-extras virtualenvwrapper virtualenv history npm bower python django pip composer cpv docker fabric gem laravel4 mosh rsync sudo wp-cli zsh_reload)
 elif  [[ $OSTYPE == 'darwin' ]]; then
-  plugins=(git OSX vagrant screen tmux tmuxinator sublime git-extras brew virtualenvwrapper virtualenv history)
+  plugins=(git OSX vagrant screen tmux sublime git-extras brew virtualenvwrapper virtualenv history npm bower python django pip composer copydir copyfile cpv docker fabric gem laravel4 mosh rsync sudo wp-cli zsh_reload brew brew-cask)
 fi
 
 source $ZSH/oh-my-zsh.sh
