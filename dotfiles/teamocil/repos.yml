@@ -1,8 +1,8 @@
 session:
   name: "repos"
   windows:
-    - name: "git"
-      root: "~/repos"
+    - name: "toolbox"
+      root: "~/repos/toolbox"
       options:
         synchronize-panes: false
       panes:
