@@ -23,6 +23,8 @@ alias wwwr="cd /srv/www"
 # Alias for Bower
 alias bower='noglob bower'
 
+alias teal="ls ~/.teamocil"
+
 ### -------------------------------------------------------------------
 ## ZSH ALIASES
 ### -------------------------------------------------------------------
