@@ -1,0 +1,21 @@
+session:
+  name: "wordpress"
+  windows:
+    - name: "wp-deploy"
+      root: "/Users/david/repos/wordpress/wp-deploy"
+      options:
+        synchronize-panes: false
+      panes:
+        - cmd: "git status"
+    - name: "wp-deploy-original"
+      root: "/Users/david/repos/wordpress/wp-deploy-original"
+      options:
+        synchronize-panes: false
+      panes:
+        - cmd: "git status"
+    - name: "yondertheme"
+      root: "/Users/david/repos/wordpress/yondertheme/"
+      options:
+        synchronize-panes: false
+      panes:
+        - cmd: "git status"
