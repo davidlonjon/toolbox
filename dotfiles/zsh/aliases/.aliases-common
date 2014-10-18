@@ -179,6 +179,13 @@ alias vst="vagrant status"
 alias vp="vagrant provision"
 alias vpl="vagrant provision 2>&1 | tee vagrant.log"
 
+
+## -------------------------------------------------------------------
+## WP-CLI ALIASES
+## -------------------------------------------------------------------
+alias wps="wp plugin search --fields=name,slug,rating,version"
+
+
 ## -------------------------------------------------------------------
 ## SSH ALIASES
 ## -------------------------------------------------------------------
