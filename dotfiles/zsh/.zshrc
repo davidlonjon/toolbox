@@ -70,7 +70,7 @@ source $ZSH/oh-my-zsh.sh
 # PATH
 # -------------------------------------------------------------------
 if [[ $OSTYPE == 'linux' ]]; then
-  export PATH=/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/var/lib/gems/1.8/bin
+  export PATH=$PATH:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/var/lib/gems/1.8/bin
 
   if [[ -d "/usr/local/aws/ec2" ]]; then
     # AMAZON AWS TOOL PATH AND VARIABLE DEFINITION
@@ -90,6 +90,7 @@ if [[ $OSTYPE == 'linux' ]]; then
 
 elif  [[ $OSTYPE == 'darwin' ]]; then
   export PATH=$PATH:/opt/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/usr/X11/bin:/opt/local/binfi
+  export PATH=/usr/local/sbin:$PATH
   export MANPATH="/opt/local/share/man:$MANPATH"
   # export DYLD_LIBRARY_PATH="$HOME/source/boost_install/lib:${DYLD_LIBRARY_PATH}"
 
