@@ -246,6 +246,49 @@ function authme() {
     < ~/.ssh/id_rsa.pub
 }
 
+# For Vagrant, allow reverse port forwarding when ssh
+function vsshr () {
+  vagrant ssh -- -R $1\:localhost:$1
+}
+
+# Search alias
+# https://coderwall.com/p/xq-98g
+aliass() {
+  alias|ack "$*"
+}
+
+# Taken from https://github.com/jimeh/dotfiles/blob/master/shell/aliases.sh
+# Extract most common archives with single command.
+#  - from: http://alias.sh/extract-most-know-archives-one-command
+function extract () {
+    if [ -f $1 ] ; then
+      case $1 in
+        *.tar.bz2)   tar xvjf $1    ;;
+        *.tar.gz)    tar xvzf $1    ;;
+        *.tar.xz)    tar xvJf $1    ;;
+        *.bz2)       bunzip2 $1     ;;
+        *.rar)       unrar e $1     ;;
+        *.gz)        gunzip $1      ;;
+        *.tar)       tar xvf $1     ;;
+        *.tbz2)      tar xvjf $1    ;;
+        *.tbz)       tar xvjf $1    ;;
+        *.tgz)       tar xvzf $1    ;;
+        *.txz)       tar xvJf $1    ;;
+        *.zip)       unzip $1       ;;
+        *.Z)         uncompress $1  ;;
+        *.7z)        7z x $1        ;;
+        *)     echo "'$1' cannot be extracted via extract()" ;;
+         esac
+     else
+         echo "'$1' is not a valid file"
+     fi
+}
+alias ext=extract
+
+## -------------------------------------------------------------------
+## GIT FUNCTIONS
+## -------------------------------------------------------------------
+
 # https://github.com/chrishunt/dot-files/blob/master/.githelpers
 function git_weekly_summary() {
 
@@ -303,44 +346,54 @@ function git_delete_remote_merged_branches() {
   done
 }
 
-# For Vagrant, allow reverse port forwarding when ssh
-function vsshr () {
-  vagrant ssh -- -R $1\:localhost:$1
+# Generates changelog day by day for all
+# http://stackoverflow.com/questions/2976665/git-changelog-day-by-day
+function git_changelog_all() {
+  NEXT=$(date +%F)
+  echo "CHANGELOG"
+  echo ----------------------
+  git log --no-merges --format="%cd" --date=short | sort -u -r | while read DATE ; do
+      echo
+      echo [$DATE]
+      GIT_PAGER=cat git log --no-merges --format=" * %s" --since=$DATE --until=$NEXT
+      NEXT=$DATE
+  done
+}
+alias gcl="git_changelog_all | less"
+
+# Generates changelog day by day for a specific author
+# http://stackoverflow.com/questions/2976665/git-changelog-day-by-day
+function git_changelog_author() {
+  NEXT=$(date +%F)
+  AUTHOR=$1
+  echo AUTHOR
+  echo "CHANGELOG for $AUTHOR"
+  echo ----------------------
+  git log --no-merges --format="%cd" --date=short | sort -u -r | while read DATE ; do
+      echo
+      echo [$DATE]
+      GIT_PAGER=cat git log --no-merges --format=" * %s" --since=$DATE --until=$NEXT --author=$AUTHOR
+      NEXT=$DATE
+  done
 }
 
-# Search alias
-# https://coderwall.com/p/xq-98g
-aliass() {
-  alias|ack "$*"
+# Generates changelog day by day for me
+# http://stackoverflow.com/questions/2976665/git-changelog-day-by-day
+function git_changelog_me() {
+  NEXT=$(date +%F)
+  AUTHOR=$(git config user.name)
+  echo AUTHOR
+  echo "CHANGELOG for $AUTHOR"
+  echo ----------------------
+  git log --no-merges --format="%cd" --date=short | sort -u -r | while read DATE ; do
+      echo
+      echo [$DATE]
+      GIT_PAGER=cat git log --no-merges --format=" * %s" --since=$DATE --until=$NEXT --author=$AUTHOR
+      NEXT=$DATE
+  done
 }
 
-# Taken from https://github.com/jimeh/dotfiles/blob/master/shell/aliases.sh
-# Extract most common archives with single command.
-#  - from: http://alias.sh/extract-most-know-archives-one-command
-function extract () {
-    if [ -f $1 ] ; then
-      case $1 in
-        *.tar.bz2)   tar xvjf $1    ;;
-        *.tar.gz)    tar xvzf $1    ;;
-        *.tar.xz)    tar xvJf $1    ;;
-        *.bz2)       bunzip2 $1     ;;
-        *.rar)       unrar e $1     ;;
-        *.gz)        gunzip $1      ;;
-        *.tar)       tar xvf $1     ;;
-        *.tbz2)      tar xvjf $1    ;;
-        *.tbz)       tar xvjf $1    ;;
-        *.tgz)       tar xvzf $1    ;;
-        *.txz)       tar xvJf $1    ;;
-        *.zip)       unzip $1       ;;
-        *.Z)         uncompress $1  ;;
-        *.7z)        7z x $1        ;;
-        *)     echo "'$1' cannot be extracted via extract()" ;;
-         esac
-     else
-         echo "'$1' is not a valid file"
-     fi
-}
-alias ext=extract
+alias gclm="git_changelog_me | less"
 
 ## -------------------------------------------------------------------
 ## TMUX FUNCTIONS
