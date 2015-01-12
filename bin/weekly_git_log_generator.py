@@ -1,4 +1,5 @@
 #! /usr/bin/env python
+# Taken from https://gist.github.com/NahimNasser/4772132
 """
 Outputs a week by week commit log with one line commit messages for your entire git repository
 from start to finish

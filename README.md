@@ -44,3 +44,4 @@ Git Scripts
 
 Misc
  + https://gist.github.com/mkelley33/9422177
+ + https://gist.github.com/NahimNasser/4772132
