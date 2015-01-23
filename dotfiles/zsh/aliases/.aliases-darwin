@@ -15,9 +15,9 @@
 alias rm='nocorrect rm -i'
 alias rmd='nocorrect rm -rfi'
 
-# Taken from https://github.com/mathiasbynens/dotfiles/blob/master/.aliases
+# Taken from http://www.hongkiat.com/blog/how-to-clear-flush-dns-cache-in-os-x-yosemite/
 # Flush Directory Service cache
-alias flush="dscacheutil -flushcache && killall -HUP mDNSResponder"
+alias flush="sudo discoveryutil mdnsflushcache;sudo discoveryutil udnsflushcaches;say flushed"
 
 # Taken from https://github.com/mathiasbynens/dotfiles/blob/master/.aliases
 # Clean up LaunchServices to remove duplicates in the “Open With” menu
