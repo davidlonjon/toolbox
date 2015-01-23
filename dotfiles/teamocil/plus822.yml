@@ -1,0 +1,27 @@
+session:
+  name: "plus822"
+  windows:
+    - name: "git"
+      root: "/Users/david/projects/dev/shared/www/plus822.dev"
+      options:
+        synchronize-panes: false
+      panes:
+        - cmd: "gst"
+    - name: "ssh"
+      root: "/Users/david/projects/dev/shared/www/plus822.dev"
+      options:
+        synchronize-panes: false
+      panes:
+        - cmd: "ssh dev"
+    - name: "gulp"
+      root: "/Users/david/projects/dev/shared/www/plus822.dev/"
+      options:
+        synchronize-panes: false
+      panes:
+        - cmd: "ll"
+    - name: "ssh live"
+      root: "/Users/david/projects/dev/shared/www/plus822.dev"
+      options:
+        synchronize-panes: false
+      panes:
+        - cmd: "ssh site5_plus822_live"
