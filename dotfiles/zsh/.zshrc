@@ -91,6 +91,7 @@ if [[ $OSTYPE == 'linux' ]]; then
 elif  [[ $OSTYPE == 'darwin' ]]; then
   export PATH=$PATH:/opt/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/usr/X11/bin:/opt/local/binfi
   export PATH=/usr/local/sbin:$PATH
+  export PATH=/usr/local/phpcs/scripts:$PATH
   export MANPATH="/opt/local/share/man:$MANPATH"
   # export DYLD_LIBRARY_PATH="$HOME/source/boost_install/lib:${DYLD_LIBRARY_PATH}"
 
