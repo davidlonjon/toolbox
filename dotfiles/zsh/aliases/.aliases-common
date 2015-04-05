@@ -178,6 +178,8 @@ alias vstat="vagrant status"
 alias vst="vagrant status"
 alias vp="vagrant provision"
 alias vpl="vagrant provision 2>&1 | tee vagrant.log"
+alias vgra="vagrant gatling-rsync-auto"
+alias vra="vagrant rsync-auto"
 
 
 ## -------------------------------------------------------------------
