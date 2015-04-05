@@ -1,0 +1,9 @@
+## -------------------------------------------------------------------
+## ALIASES SPECIFIC TO SOME PROJECT
+## -------------------------------------------------------------------
+
+### -------------------------------------------------------------------
+## SPP PROJECT ALIASES
+### -------------------------------------------------------------------
+alias xwp-reset-dev="checkout-develop-branches.sh && quick-clone-repos.sh"
+alias xwp-checkout-dev="checkout-develop-branches.sh"
