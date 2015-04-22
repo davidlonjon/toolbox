@@ -5,3 +5,6 @@ dotfiles/_backup/*
 !dotfiles/_backup/README.md
 
 tmp/
+
+# Local aliases
+.aliases-local

@@ -55,6 +55,7 @@ source $ZSH/oh-my-zsh.sh
 [ -f "$HOME/toolbox/dotfiles/zsh/aliases/.aliases-linux-services" ] && source $HOME/toolbox/dotfiles/zsh/aliases/.aliases-linux-services
 [ -f "$HOME/toolbox/dotfiles/zsh/aliases/.aliases-git" ] && source $HOME/toolbox/dotfiles/zsh/aliases/.aliases-git
 [ -f "$HOME/toolbox/dotfiles/zsh/aliases/.aliases-project" ] && source $HOME/toolbox/dotfiles/zsh/aliases/.aliases-project
+[ -f "$HOME/toolbox/dotfiles/zsh/aliases/.aliases-local" ] && source $HOME/toolbox/dotfiles/zsh/aliases/.aliases-local
 
 
 # -------------------------------------------------------------------
