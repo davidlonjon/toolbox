@@ -64,3 +64,6 @@ alias cdp='cd `pbpaste`'
 # Show back to my mac FQDN
 # http://onethingwell.org/post/27835796928/remote-ssh-bact-to-my-mac
 alias showbtmm="echo show Setup:/Network/BackToMyMac | scutil | sed -n 's/.* : *\(.*\).$/\1/p'"
+
+alias fix-en0="sudo ifconfig en0 down; sudo route flush; sudo ifconfig en0 up"
+alias fix-en1="sudo ifconfig en1 down; sudo route flush; sudo ifconfig en1 up"
