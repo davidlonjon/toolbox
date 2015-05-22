@@ -169,3 +169,7 @@ alias gignored='git ls-files -v | grep "^[[:lower:]]"'
 # Will cd into the top of the current repository
 # or submodule.
 alias grt='cd $(git rev-parse --show-toplevel || echo ".")'
+
+
+alias tl-show-my-changes="tig HEAD --no-merges --not develop --author='David Lonjon'"
+alias gl-show-my-changes="git log HEAD --no-merges --not develop --author='David Lonjon'"
