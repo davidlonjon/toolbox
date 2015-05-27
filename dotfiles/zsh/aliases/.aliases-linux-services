@@ -46,6 +46,10 @@ alias memcached-start='sudo service memcached start'
 alias memcached-stop='sudo service memcached stop'
 alias memcached-restart='sudo service memcached restart'
 alias memcached-status='sudo service memcached status'
+# Flush memcached
+alias memcached-flush='echo "flush_all" | nc -q 2 127.0.0.1 11211'
+
+
 
 ## -------------------------------------------------------------------
 ## REDIS SERVICE ALIASES
