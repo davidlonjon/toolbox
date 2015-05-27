@@ -98,6 +98,7 @@ alias gta='git tag -a -m'
 alias grv='git remote -v' #verbose
 alias gra='git remote add'
 alias grr='git remote rm'
+alias grso='git remote show origin'
 
 # Rebase
 alias grb='git rebase'
