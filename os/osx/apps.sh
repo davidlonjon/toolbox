@@ -1,61 +1,40 @@
 #!/usr/bin/env bash
-set -eu
 
 #
 # Application installer (via brew-cask)
 #
 
-brew update
-
-brew_install_or_upgrade 'zsh'
-brew_install_or_upgrade 'git'
-brew_install_or_upgrade 'vim'
-brew_install_or_upgrade 'ctags'
-brew_install_or_upgrade 'tmux'
-brew_install_or_upgrade 'reattach-to-user-namespace'
-brew_install_or_upgrade 'imagemagick'
-brew_install_or_upgrade 'qt'
-brew_install_or_upgrade 'hub'
-brew_install_or_upgrade 'node'
-brew_install_or_upgrade 'rbenv'
-brew_install_or_upgrade 'ruby-build'
-
 # Apps
-apps=(
-  dropbox
-  google-chrome
-  qlcolorcode
-  screenflick
-  slack
-  transmit
-  appcleaner
-  firefox
-  hazel
-  qlmarkdown
-  seil
-  spotify
-  vagrant
-  arq
-  flash
+# apps=(
+#   dropbox
+#   google-chrome
+#   qlcolorcode
+#   slack
+#   appcleaner
+#   firefox
+#   hazel
+#   qlmarkdown
+#   seil
+#   vagrant
+#   arq
+#   flash
+#   iterm2
+#   qlprettypatch
+#   sublime-text3
+#   virtualbox
+#   atom
+#   flux
+#   qlstephen
+#   vlc
+#   cloudup
+#   quicklook-json
+#   skype
+#   transmission
+#   apikitchen
+# )
+
+dev_apps=(
   iterm2
-  qlprettypatch
-  shiori
-  sublime-text3
-  virtualbox
-  atom
-  flux
-  mailbox
-  qlstephen
-  sketch
-  tower
-  vlc
-  cloudup
-  nvalt
-  quicklook-json
-  skype
-  transmission
-  apikitchen
-  mamp
 )
 
 # fonts
@@ -65,86 +44,14 @@ fonts=(
   font-roboto
 )
 
-# Atom packages
-atom=(
-  advanced-railscasts-syntax
-  atom-beautify
-  cmd-9
-  color-picker
-  css-comb
-  docblockr
-  easy-motion
-  editor-stats
-  emmet
-  fancy-new-file
-  file-icons
-  git-history
-  highlight-selected
-  image-view
-  inc-dec-value
-  key-peek
-  language-jade
-  linter
-  markdown-preview
-  merge-conflicts
-  neutron-ui
-  npm-install
-  react
-  vim-mode
-  zentabs
-)
-
 # Specify the location of the apps
 appdir="/Applications"
 
 
-main() {
+# Iinstall general apps
+e_header "Installing development applications via homebrew cask..."
+brew cask install --appdir=$appdir ${dev_apps[@]}
 
-  # Ensure homebrew is installed
-  homebrew
-
-  # Install homebrew-cask
-  echo "installing cask..."
-  brew tap phinze/homebrew-cask
-  brew install brew-cask
-
-  # Tap alternative versions
-  brew tap caskroom/versions
-
-  # Tap the fonts
-  brew tap caskroom/fonts
-
-  # install apps
-  echo "installing apps..."
-  brew cask install --appdir=$appdir ${apps[@]}
-
-  # install fonts
-  echo "installing fonts..."
-  brew cask install ${fonts[@]}
-
-  # install atom plugins
-  echo "installing atom plugins..."
-  apm install ${atom[@]}
-
-  # link with alfred
-  alfred
-  cleanup
-}
-
-homebrew() {
-  if test ! $(which brew); then
-    echo "Installing homebrew..."
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-  fi
-}
-
-alfred() {
-  brew cask alfred link
-}
-
-cleanup() {
-  brew cleanup
-}
-
-main "$@"
-exit 0
+# install fonts
+# e_header "Installing fonts via homebrew cask..."
+# brew cask install ${fonts[@]}

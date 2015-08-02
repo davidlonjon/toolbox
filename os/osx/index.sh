@@ -55,6 +55,7 @@ brew_install_or_upgrade "brew-cask"
 
 # Run each program
 source "$osx/binaries.sh"
+source "$osx/apps.sh"
 set -e
 # sh "$osx/defaults.sh"
 # sh "$osx/binaries.sh"
