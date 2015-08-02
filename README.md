@@ -46,3 +46,6 @@ Misc
  + https://gist.github.com/mkelley33/9422177
  + https://gist.github.com/NahimNasser/4772132
  + http://www.hongkiat.com/blog/how-to-clear-flush-dns-cache-in-os-x-yosemite/
+
+Tmux
+ + https://robots.thoughtbot.com/tmux-copy-paste-on-os-x-a-better-future
