@@ -310,3 +310,6 @@ setopt no_nomatch
 #         start_agent;
 #     fi
 # fi
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+[[ -s "$HOME/.local/share/marker/marker.sh" ]] && source "$HOME/.local/share/marker/marker.sh"
