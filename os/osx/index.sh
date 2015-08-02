@@ -41,6 +41,8 @@ brew_tap "caskroom/fonts"
 e_success "caskroom/fonts tapped"
 brew_tap "phinze/homebrew-cask"
 e_success "phinze/homebrew-cask tapped"
+brew_tap "caskroom/versions"
+e_success "caskroom/versions tapped"
 brew_tap "homebrew/dupes"
 e_success "homebrew/dupes tapped"
 
