@@ -9,7 +9,9 @@ set -e
 version="0.0.1"
 
 function main() {
-  export dirname=$(dirname $(realpath $0))
+  # From http://stackoverflow.com/questions/59895/can-a-bash-script-tell-what-directory-its-stored-in
+  export dirname=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+
   export core_utils="$dirname/core_utils"
   export lib="$dirname/lib"
   export os="$dirname/os"
