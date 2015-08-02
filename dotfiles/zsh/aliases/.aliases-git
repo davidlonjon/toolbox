@@ -68,6 +68,8 @@ alias gc='git commit'
 alias gcm='git commit -m'
 alias gca='git commit -am'
 alias gcma='git commit -am'
+alias gcnm='git commit -nm'
+alias gcnma='git commit -nam'
 alias gcaa='git add -A && git commit -am' # Commit all the changes
 alias gcamend='git commit --amend'
 # Taken from
