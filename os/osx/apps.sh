@@ -13,28 +13,33 @@
 #   appcleaner
 #   firefox
 #   hazel
-#   qlmarkdown
 #   seil
-#   vagrant
 #   arq
 #   flash
-#   iterm2
-#   qlprettypatch
-#   sublime-text3
-#   virtualbox
-#   atom
 #   flux
-#   qlstephen
 #   vlc
 #   cloudup
-#   quicklook-json
 #   skype
 #   transmission
-#   apikitchen
 # )
 
 dev_apps=(
+  apikitchen
+  atom
+  dash
+  filezilla
+  google-chrome-canary
   iterm2
+  qlcolorcode
+  qlmarkdown
+  qlprettypatch
+  qlstephen
+  quicklook-json
+  sublime-text3
+  sequel-pro
+  tunnelblick
+  vagrant
+  virtualbox
 )
 
 # fonts
