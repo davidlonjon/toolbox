@@ -11,7 +11,7 @@ because it helps for portability [http://stackoverflow.com/questions/10376206/pr
 
 ### Scripts file extension
 
-For scripts, it is prefered to use .sh or .rb extensions so it is easier to batch manipulate them later
+For scripts, it is preferred to use .sh or .rb extensions so it is easier to batch manipulate them later
 [http://superuser.com/questions/344093/should-i-put-sh-and-rb-file-extensions-on-all-my-scripts](http://superuser.com/questions/344093/should-i-put-sh-and-rb-file-extensions-on-all-my-scripts)
 
 ### Checking the version of Tmux in a tmux.conf
