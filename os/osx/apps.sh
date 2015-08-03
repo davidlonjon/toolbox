@@ -8,7 +8,7 @@
 apps=(
   appcleaner
   bartender
-  bettertouchtoo
+  bettertouchtool
   # arq
   cloudup
   dropbox
@@ -23,13 +23,13 @@ apps=(
   seil
   skype
   spectacle
-  teamViewer
+  teamviewer
   timemachineeditor
   toggldesktop
   transmission
   the-unarchiver
   vlc
-  xtra-finder
+  xtrafinder
 )
 
 design_apps=(
@@ -56,7 +56,7 @@ dev_apps=(
   apikitchen
   atom
   cakebrew
-  charles
+  # charles
   dash
   filezilla
   firefoxdeveloperedition
