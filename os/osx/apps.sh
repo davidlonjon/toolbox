@@ -6,11 +6,17 @@
 
 # General Apps
 apps=(
+  # arq
   appcleaner
   bartender
   bettertouchtool
-  # arq
+  carbon-copy-cloner
+  cheatsheet #(http://www.mediaatelier.com/CheatSheet/ - Know your short cuts)
+  cleanmymac
   cloudup
+  cyberduck
+  diffmerge
+  diskmaker-x
   dropbox
   flash
   firefox
@@ -18,16 +24,28 @@ apps=(
   google-chrome
   google-drive
   google-hangouts
+  java
+  lastpass
   libreoffice
+  little-snitch
   # hazel
+  omnidisksweeper
+  osxfuse #(https://osxfuse.github.io/ - The easiest and fastest way to create file systems for OS X)
+  phpstorm
+  rescuetime
   seil
+  selfcontrol
   skype
+  slim-battery-monitor
+  sophos-anti-virus-home-edition
   spectacle
   teamviewer
   timemachineeditor
   toggldesktop
+  tomighty
   transmission
   the-unarchiver
+  unrarx
   vlc
   xtrafinder
 )
@@ -63,6 +81,8 @@ dev_apps=(
   github
   google-chrome-canary
   iterm2
+  karabiner
+  legit # Git For Human
   poedit
   qlcolorcode
   qlmarkdown
