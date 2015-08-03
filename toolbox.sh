@@ -15,6 +15,7 @@ function main() {
   export core_utils="$dirname/core_utils"
   export lib="$dirname/lib"
   export os="$dirname/os"
+  export scripts="$dirname/scripts"
 
   # parse options
   while [[ "$1" =~ ^- ]]; do
@@ -96,6 +97,23 @@ boot() {
     load_module "brew"
     e_header "Bootstraping OSX"
     source "$os/osx/index.sh"
+
+    # Install .oh-my-zsh if not already there
+    if [[ ! -f ~/.oh-my-zsh/oh-my-zsh.sh ]]; then
+        e_header "Installing .oh-my-zsh"
+        curl -L http://install.ohmyz.sh | sh
+    fi
+
+    case "$SHELL" in
+      */zsh) : ;;
+      *)
+        e_header "Changing your shell to zsh ..."
+        chsh -s "$(which zsh)"
+        ;;
+    esac
+
+    source "$scripts/bootstrap/common/symlink_dotfiles.sh"
+
     e_header "All done!"
   elif [ 1 -eq `ubuntu` ]; then
     e_header "Bootstraping Ubuntu"
