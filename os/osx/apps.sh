@@ -36,7 +36,7 @@ apps=(
   seil
   selfcontrol
   skype
-  slim-battery-monitor
+  slimbatterymonitor
   sophos-anti-virus-home-edition
   spectacle
   teamviewer
