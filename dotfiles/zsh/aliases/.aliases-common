@@ -192,7 +192,8 @@ alias wps="wp plugin search --fields=name,slug,rating,version"
 ## SSH ALIASES
 ## -------------------------------------------------------------------
 alias ssh-showkeys="tail +1 ~/.ssh/*.pub"
-alias ssl='ssh-add -l'
+alias ssh-delete_tmp="rm -f /tmp/ssh_mux_*"
+alias ssh-add='ssh-add -l'
 
 ## -------------------------------------------------------------------
 ## GENERAL ALIASES
