@@ -21,7 +21,7 @@ alias gl='git pull'
 alias gpu='git pull'
 alias ggpull='git pull origin $(current_branch)'
 alias ggpush='git push origin $(current_branch)'
-alias ggpnp='git pull origin $(current_branch) && git push origin $(current_branch)'
+alias ggpushpull='git pull origin $(current_branch) && git push origin $(current_branch)'
 # Taken from https://github.com/mathiasbynens/dotfiles/blob/master/.gitconfig
 # Pull in remote changes for the current repository and all its submodules
 alias ggpulls="git pull origin $(current_branch); git submodule foreach git pull origin master"

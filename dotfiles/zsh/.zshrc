@@ -52,7 +52,6 @@ source $ZSH/oh-my-zsh.sh
 # -------------------------------------------------------------------
 # ALIASES
 # -------------------------------------------------------------------
-
 [ -f "$HOME/toolbox/dotfiles/zsh/aliases/.aliases-common" ] && source $HOME/toolbox/dotfiles/zsh/aliases/.aliases-common
 [ -f "$HOME/toolbox/dotfiles/zsh/aliases/.aliases-darwin" ] && source $HOME/toolbox/dotfiles/zsh/aliases/.aliases-darwin
 [ -f "$HOME/toolbox/dotfiles/zsh/aliases/.aliases-linux" ] && source $HOME/toolbox/dotfiles/zsh/aliases/.aliases-linux
@@ -65,7 +64,6 @@ source $ZSH/oh-my-zsh.sh
 # -------------------------------------------------------------------
 # FUNCTIONS
 # -------------------------------------------------------------------
-
 [ -f "$HOME/toolbox/dotfiles/zsh/functions/.functions-common" ] && source $HOME/toolbox/dotfiles/zsh/functions/.functions-common
 [ -f "$HOME/toolbox/dotfiles/zsh/functions/.functions-common-path-helpers" ] && source $HOME/toolbox/dotfiles/zsh/functions/.functions-common-path-helpers
 [ -f "$HOME/toolbox/dotfiles/zsh/functions/.functions-darwin" ] && source $HOME/toolbox/dotfiles/zsh/functions/.functions-darwin
@@ -98,7 +96,7 @@ elif  [[ $OSTYPE == 'darwin' ]]; then
   export PATH=$PATH:/opt/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/usr/X11/bin:/opt/local/binfi
   export PATH=/usr/local/sbin:$PATH
   export PATH=/usr/local/phpcs/scripts:$PATH
-  export PATH=$PATH:/Users/david/projects/xwp/news-quickstart-20150521/vip-quickstart-config
+  export PATH=$PATH:/Users/davidlonjon/projects/xwp/news-quickstart-20150521/vip-quickstart-config
   export MANPATH="/opt/local/share/man:$MANPATH"
   # export DYLD_LIBRARY_PATH="$HOME/source/boost_install/lib:${DYLD_LIBRARY_PATH}"
 
@@ -122,25 +120,20 @@ if [[ -d "$HOME/.rvm/bin" ]]; then
 fi
 # export PATH=$PATH:/opt/vagrant/bin
 
-# set extra path:
-# check whether the Haskell binary directory exists and if so add it to the PATH
+# Set extra path
 [ -d "$HOME/toolbox/scripts" ] && export PATH=$PATH:$HOME/toolbox/scripts
 [ -d "$HOME/toolbox/bin" ] && export PATH=$PATH:$HOME/toolbox/bin
 
-# MAC specific path
-if [[ $OSTYPE == 'darwin' ]]; then
-fi
+# set -o vi
 
 # -------------------------------------------------------------------
 # SET EDITOR
 # -------------------------------------------------------------------
-
 if [[ $OSTYPE == 'darwin' ]]; then
   export EDITOR='subl'
 fi
 
 if [[ $OSTYPE == 'linux' ]]; then
-
   # https://github.com/skwp/dotfiles/blob/master/zsh/vi-mode.zsh
   # Set Vim as the default editor
   # set -o vi # Disabling as causing an error in ssh session for some reasons
@@ -151,14 +144,12 @@ fi
 # -------------------------------------------------------------------
 # PROMPT
 # -------------------------------------------------------------------
-
-# Disabling prompt and use a them instead
+# Disabling prompt and use a theme instead
 # [ -f "$HOME/toolbox/dotfiles/zsh/.prompt" ] && source $HOME/toolbox/dotfiles/zsh/.prompt
 
 # -------------------------------------------------------------------
 # GENERAL OPTIONS
 # -------------------------------------------------------------------
-
 # Set less options
 if [[ -x $(which less) ]]
 then
@@ -170,7 +161,6 @@ then
   export LESSOPEN
     fi
 fi
-
 
 # Say how long a command took, if it took more than 30 seconds
 export REPORTTIME=30
@@ -220,14 +210,12 @@ setopt NOCLOBBER
 # -------------------------------------------------------------------
 # KEYS BINDING
 # -------------------------------------------------------------------
-
 [ -f "$HOME/toolbox/dotfiles/zsh/.keys_binding" ] && source $HOME/toolbox/dotfiles/zsh/.keys_binding
 
 
 # -------------------------------------------------------------------
 # COMPLETION
 # -------------------------------------------------------------------
-
 [ -f "$HOME/toolbox/dotfiles/zsh/.completion" ] && source $HOME/toolbox/dotfiles/zsh/.completion
 
 
@@ -240,11 +228,10 @@ fi
 # -------------------------------------------------------------------
 # MISC
 # -------------------------------------------------------------------
-
 # teamocil autocompletion
 compctl -g '~/.teamocil/*(:t:r)' teamocil
 
-# This is at the end to avoid messing up the color highligting
+# This is at the end to avoid messing up the color highlighting
 # Taken from https://github.com/matijs/dotfiles/blob/master/.bash_profile
 # remove duplicates from the path
 export PATH=`awk -F: '{for(i=1;i<=NF;i++){if(!($i in a)){a[$i];printf s$i;s=":"}}}'<<<$PATH`;
@@ -283,7 +270,7 @@ compdef mosh=ssh
 # if there are no matches for globs, leave them alone and execute the command
 setopt no_nomatch
 
-# I am diabling this as it seems to be causing problem with ssh ahgent forwarding
+# I am disabling this as it seems to be causing problem with ssh agent forwarding
 # if [[ $OSTYPE == 'linux' ]]; then
 #     # Run ssh-agent on login
 #     # http://stackoverflow.com/questions/18880024/start-ssh-agent-on-login

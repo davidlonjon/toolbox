@@ -103,5 +103,13 @@ if [[ -d ~/.teamocil ]]; then
     echo "Moving teamocil config files from $HOME to $dotfiles_backup_dir"
     mv ~/.teamocil $dotfiles_backup_dir
 fi
-echo "Creating symlink to .ackrc in home directory."
+echo "Creating symlink to .teamocil in home directory."
 ln -s -f $dotfiles_dir/teamocil ~/.teamocil
+
+# .tigrc
+if [[ -d ~/.tigrc ]]; then
+    echo "Moving tigrc config files from $HOME to $dotfiles_backup_dir"
+    mv ~/.tigrc $dotfiles_backup_dir
+fi
+echo "Creating symlink to .tigrc in home directory."
+ln -s -f $dotfiles_dir/tig/.tigrc ~/.tigrc
