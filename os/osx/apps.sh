@@ -27,6 +27,7 @@ apps=(
   java
   lastpass
   libreoffice
+  # Fotor
   little-snitch
   # hazel
   omnidisksweeper
@@ -69,6 +70,12 @@ design_apps=(
 # Snappy
 # Skitch
 # Kindle
+# Bandwith+
+# Duplicate Cleaner For iPhoto
+# Fotor
+# Lost Photos
+# PhotoBulk
+# Photos Duplicate Cleaner
 
 dev_apps=(
   apikitchen
@@ -82,7 +89,7 @@ dev_apps=(
   google-chrome-canary
   iterm2
   karabiner
-  legit # Git For Human
+  macvim
   poedit
   qlcolorcode
   qlmarkdown
@@ -91,7 +98,7 @@ dev_apps=(
   quicklook-json
   sublime-text3
   sequel-pro
-  tunnelblick
+  # tunnelblick Not working - To install manually
   vagrant
   virtualbox
 )

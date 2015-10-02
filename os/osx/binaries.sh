@@ -40,6 +40,7 @@ brew_install_or_upgrade 'imagemagick'
 brew_install_or_upgrade "ios-sim"
 brew_install_or_upgrade "irssi"
 brew_install_or_upgrade "kdiff3"
+brew_install_or_upgrade "legit" # Git For Human
 brew_install_or_upgrade "libevent"
 brew_install_or_upgrade "libpng"
 brew_install_or_upgrade "libsodium"
@@ -50,6 +51,7 @@ brew_install_or_upgrade "ngrep"
 brew_install_or_upgrade "ngrok"
 brew_install_or_upgrade "node"
 brew_install_or_upgrade "openssl"
+brew_install_or_upgrade "pbzip2" # Require for Sublime Text dependency installs
 brew_install_or_upgrade "pv"
 brew_install_or_upgrade "python"
 brew_install_or_upgrade 'qt'
