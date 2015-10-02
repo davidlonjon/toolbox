@@ -51,3 +51,6 @@ Misc
 
 Tmux
  + https://robots.thoughtbot.com/tmux-copy-paste-on-os-x-a-better-future
+
+Zsh Tips
+ + http://dougblack.io/words/zsh-vi-mode.html

@@ -124,6 +124,7 @@ fi
 [ -d "$HOME/toolbox/scripts" ] && export PATH=$PATH:$HOME/toolbox/scripts
 [ -d "$HOME/toolbox/bin" ] && export PATH=$PATH:$HOME/toolbox/bin
 
+# set -o vi
 
 # -------------------------------------------------------------------
 # SET EDITOR
