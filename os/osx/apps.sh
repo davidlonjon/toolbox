@@ -101,6 +101,7 @@ dev_apps=(
   # tunnelblick Not working - To install manually
   vagrant
   virtualbox
+  ansible
 )
 
 # fonts
