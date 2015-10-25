@@ -4,6 +4,16 @@ toolbox
 This repo contains all scripts, hacks, dotfiles, etc to improve my productivity.
 Please note that there are a lot of things being work in progress, particularly the scripts parts
 
+How to install
+=======
+
+```
+$ git clone git@github.com:davidlonjon/toolbox.git --recursive
+$ ./toolbox/bootstrap.sh
+```
+
+Log of and log in again.
+
 Credits
 =======
 This is the list of all the people who should be credited
