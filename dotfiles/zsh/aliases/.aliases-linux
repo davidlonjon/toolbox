@@ -121,6 +121,5 @@ alias "v=xclip -o"
 ## -------------------------------------------------------------------
 ## GENERAL ALIASES
 ## -------------------------------------------------------------------
-#turn screen off
-alias screenoff="xset dpms force off"
-
+# get ubuntu version
+alias ubuntu_get_version="lsb_release -a"
