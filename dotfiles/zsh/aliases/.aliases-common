@@ -241,8 +241,8 @@ alias mount='mount |column -t'
 
 # https://github.com/jbleuzen/dotfiles/blob/master/zsh/aliases.zsh
 # Get current public IP
-alias ip='dig +short myip.opendns.com @resolver1.opendns.com'
-
+# alias ip='dig +short myip.opendns.com @resolver1.opendns.com'
+alias ip='curl ipecho.net/plain ; echo'
 # IP addresses
 # Taken from https://github.com/mathiasbynens/dotfiles/blob/master/.aliases
 alias localip="ipconfig getifaddr en1"
