@@ -11,6 +11,7 @@ if [ -z "$1" ];
 fi
 
 HOSTNAME=$1
+HOSTNAME=$(echo "$HOSTNAME" | sed "s#\\.#\\-#g")
 
 # Set the host name
 hostname $HOSTNAME
