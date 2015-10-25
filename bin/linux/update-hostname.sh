@@ -16,4 +16,4 @@ HOSTNAME=$1
 hostname $HOSTNAME
 echo $HOSTNAME > /etc/hostname
 
-sed -i "127.0.1.1 $HOSTNAME" /etc/hosts
+sed -i "2i127.0.1.1 $HOSTNAME" /etc/hosts
