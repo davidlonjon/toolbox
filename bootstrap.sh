@@ -17,12 +17,23 @@ Usage: $(basename "$0")
 HELP
 exit; fi
 
+OSTYPE=$( uname | tr '[:upper:]' '[:lower:]')
+
+command -v zsh >/dev/null 2>&1 || {
+  e_header "Installing zsh"
+  if [[ $OSTYPE == 'linux' ]]; then
+    sudo apt-get update
+    sudo apt-get install zsh
+  elif  [[ $OSTYPE == 'darwin' ]]; then
+    brew install zsh
+  fi
+  chsh -s $(which zsh)
+}
 
 # Install .oh-my-zsh if not already there
 if [[ ! -f ~/.oh-my-zsh/oh-my-zsh.sh ]]; then
     e_header "Installing .oh-my-zsh"
-    curl -L http://install.ohmyz.sh | sh
-    chsh -s /bin/zsh
+    sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 fi
 
 # Create symblinks for dotfiles
