@@ -8,6 +8,12 @@ function e_success()  { echo -e " \033[1;32m✔\033[0m  $@"; }
 function e_error()    { echo -e " \033[1;31m✖\033[0m  $@"; }
 function e_arrow()    { echo -e " \033[1;33m➜\033[0m  $@"; }
 
+set -e
+
+cd "$( dirname $0 )"
+script_directory="$( pwd )"
+cd "$script_directory"
+
 e_header 'Bootstraping - "Lucky" David Lonjon'
 
 if [[ "$1" == "-h" || "$1" == "--help" ]]; then cat <<HELP
