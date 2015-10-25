@@ -120,8 +120,14 @@ fi
 # export PATH=$PATH:/opt/vagrant/bin
 
 # Set extra path
+if [[ $OSTYPE == 'linux' ]]; then
+  [ -d "$HOME/toolbox/bin/linux" ] && export PATH=$PATH:$HOME/toolbox/bin/linux
+elif  [[ $OSTYPE == 'darwin' ]]; then
+  [ -d "$HOME/toolbox/bin/osx" ] && export PATH=$PATH:$HOME/toolbox/bin/osx
+fi
+
+[ -d "$HOME/toolbox/bin/common" ] && export PATH=$PATH:$HOME/toolbox/bin/common
 [ -d "$HOME/toolbox/scripts" ] && export PATH=$PATH:$HOME/toolbox/scripts
-[ -d "$HOME/toolbox/bin" ] && export PATH=$PATH:$HOME/toolbox/bin
 
 # set -o vi
 
