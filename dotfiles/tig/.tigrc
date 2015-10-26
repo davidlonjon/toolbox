@@ -26,6 +26,8 @@ bind tree x !@sh -c "git show %(branch):%(file) > %(file)"
 # bind generic S :source ~/.tigrc
 
 bind generic c !git checkout %(commit)
+
+bind status N !git commit --no-verify
 #bind generic P !%(commit) | pbcopy
 
 
