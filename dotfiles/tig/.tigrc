@@ -27,7 +27,7 @@ bind tree x !@sh -c "git show %(branch):%(file) > %(file)"
 
 bind generic c !git checkout %(commit)
 
-bind status N !git commit --no-verify
+bind status n !git commit --no-verify
 #bind generic P !%(commit) | pbcopy
 
 
