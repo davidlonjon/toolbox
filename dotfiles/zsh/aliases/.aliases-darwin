@@ -67,3 +67,10 @@ alias showbtmm="echo show Setup:/Network/BackToMyMac | scutil | sed -n 's/.* : *
 
 alias fix-en0="sudo ifconfig en0 down; sudo route flush; sudo ifconfig en0 up"
 alias fix-en1="sudo ifconfig en1 down; sudo route flush; sudo ifconfig en1 up"
+
+# Focus aliases
+alias focus="open focus://focus"
+alias focus15="open focus://focus?minutes=15"
+alias focis25="open focus://focus?minutes=25"
+alias focus1="open focus://focus?minutes=60"
+alias focust="open focus://toggle"
