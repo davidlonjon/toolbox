@@ -59,3 +59,7 @@ remote-paste() {
     sleep 1
   done
 }
+
+function jcurl() {
+    "$@" | underscore print --color
+}
