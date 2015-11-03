@@ -68,6 +68,7 @@ source $ZSH/oh-my-zsh.sh
 [ -f "$HOME/toolbox/dotfiles/zsh/functions/.functions-common-path-helpers" ] && source $HOME/toolbox/dotfiles/zsh/functions/.functions-common-path-helpers
 [ -f "$HOME/toolbox/dotfiles/zsh/functions/.functions-darwin" ] && source $HOME/toolbox/dotfiles/zsh/functions/.functions-darwin
 [ -f "$HOME/toolbox/dotfiles/zsh/functions/.functions-linux" ] && source $HOME/toolbox/dotfiles/zsh/functions/.functions-linux
+[ -f "$HOME/toolbox/dotfiles/zsh/functions/.functions-projects" ] && source $HOME/toolbox/dotfiles/zsh/functions/.functions-projects
 
 
 # -------------------------------------------------------------------
