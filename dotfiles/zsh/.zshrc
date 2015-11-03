@@ -43,10 +43,10 @@ DISABLE_AUTO_TITLE="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 if [[ $OSTYPE == 'linux' ]]; then
   # plugins=(git autojump vagrant screen tmux sublime git-extras virtualenvwrapper virtualenv history npm bower python django pip composer cpv docker fabric gem laravel4 mosh rsync sudo wp-cli zsh_reload)
-  plugins=(git)
+  plugins=(git autojump)
 elif  [[ $OSTYPE == 'darwin' ]]; then
   # plugins=(git OSX autojump vagrant screen tmux sublime git-extras brew virtualenvwrapper virtualenv history npm bower python django pip composer copydir copyfile cpv docker fabric gem laravel4 mosh rsync sudo wp-cli zsh_reload brew brew-cask)
-  plugins=(git)
+  plugins=(git autojump)
 fi
 
 source $ZSH/oh-my-zsh.sh
