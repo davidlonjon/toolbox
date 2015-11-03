@@ -431,6 +431,10 @@ function __tmux-sessions() {
 }
 compdef __tmux-sessions tm
 
+# Kill tmux
+function tmux-kill() {
+    tmux list-panes -s -F "#{pane_pid} #{pane_current_command}" | grep -v tmux | awk '{print $1}' | xargs kill -9
+}
 
 # fh - repeat history
 fh() {
