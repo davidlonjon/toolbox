@@ -115,6 +115,15 @@ if [[ -e "/usr/local/bin/virtualenvwrapper.sh" ]]; then
   source /usr/local/bin/virtualenvwrapper.sh
 fi
 
+# Path for GO
+if [[ -d "/usr/local/opt/go/libexec/bin" ]]; then
+  if [[ -d "$HOME/work" ]]; then
+    mkdir $HOME/work
+fi
+  export GOPATH=$HOME/work
+  export PATH=$PATH:/usr/local/opt/go/libexec/bin
+fi
+
 if [[ -d "$HOME/.rvm/bin" ]]; then
   export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
   [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
