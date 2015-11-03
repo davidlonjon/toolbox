@@ -95,6 +95,7 @@ if [[ $OSTYPE == 'linux' ]]; then
 
 elif  [[ $OSTYPE == 'darwin' ]]; then
   export PATH=$PATH:/opt/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/usr/X11/bin:/opt/local/binfi
+  export PATH=$HOME/bin:$PATH
   export PATH=/usr/local/sbin:$PATH
   export PATH=/usr/local/phpcs/scripts:$PATH
   export PATH=$PATH:/Users/davidlonjon/projects/xwp/news-quickstart-20150521/vip-quickstart-config
