@@ -25,6 +25,7 @@ bindkey '^w' backward-kill-word
 
 # ctrl-r starts searching history backward
 bindkey '^r' history-incremental-search-backward
+bindkey '^f' history-incremental-pattern-search-forward
 
 bindkey '\e[A'  up-line-or-history
 bindkey '\e[B'  down-line-or-history
