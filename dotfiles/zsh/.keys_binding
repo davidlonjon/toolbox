@@ -46,3 +46,6 @@ bindkey ' ' magic-space    # also do history expansion on space
 bindkey '^I' complete-word # complete on tab, leave expansion to _expand
 
 #bindkey '"\C-]":"\C-e\C-u pbcopy <<"EOF"\n\C-y\nEOF\n"'
+
+zle -N SPP_getJiraNumberFromGitBranch
+bindkey '^s' 'SPP_getJiraNumberFromGitBranch'
