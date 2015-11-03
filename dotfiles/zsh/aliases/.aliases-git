@@ -65,6 +65,7 @@ alias gmnff='git merge --no-ff'
 
 # Commit
 alias gc='git commit'
+alias gcn='git commit -n'
 alias gcm='git commit -m'
 alias gca='git commit -am'
 alias gcma='git commit -am'
@@ -83,6 +84,7 @@ alias gcob='git checkout -b' # create and switch to a new branch
 alias gcom='git checkout master'
 alias gcod='git checkout develop'
 alias gcos='git checkout staging'
+alias gcot='git checkout test'
 alias gcou='git checkout upstream'
 
 # Branch
