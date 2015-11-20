@@ -22,10 +22,14 @@ bindkey '^h' backward-delete-char
 
 # ctrl-w removed word backwards
 bindkey '^w' backward-kill-word
+bindkey '^e' kill-word
 
 # ctrl-r starts searching history backward
 bindkey '^r' history-incremental-search-backward
 bindkey '^f' history-incremental-pattern-search-forward
+
+bindkey '^[[1~'  beginning-of-line
+bindkey '^[[4~'  end-of-line
 
 bindkey '\e[A'  up-line-or-history
 bindkey '\e[B'  down-line-or-history
@@ -36,11 +40,18 @@ bindkey '\eOB'  down-line-or-history
 bindkey '\eOC'  forward-char
 bindkey '\eOD'  backward-char
 
-bindkey "^?" backward-delete-char
+# Taken from https://github.com/twam/.dotfiles/blob/master/zsh/key-bindings.zsh
+# Make the delete key (or Fn + Delete on the Mac) work instead of outputting a ~
+bindkey '^?' backward-delete-char
+bindkey "^[[3~" delete-char
+bindkey "^[3;5~" delete-char
+bindkey "\e[3~" delete-char
+
 bindkey '^[OH' beginning-of-line
 bindkey '^[OF' end-of-line
 bindkey '^[[5~' up-line-or-history
 bindkey '^[[6~' down-line-or-history
+
 bindkey "^r" history-incremental-search-backward
 bindkey ' ' magic-space    # also do history expansion on space
 bindkey '^I' complete-word # complete on tab, leave expansion to _expand
