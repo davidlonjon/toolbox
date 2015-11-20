@@ -108,6 +108,14 @@ elif  [[ $OSTYPE == 'darwin' ]]; then
 
   # Needed for Cairo which in turns is needed by css-sprite npm module
   export PKG_CONFIG_PATH=/opt/X11/lib/pkgconfig
+
+  # JAVA HOME
+  export JAVA_HOME=$(/usr/libexec/java_home)
+
+  # EC2 TOOL
+  export EC2_HOME=/usr/local/ec2/ec2-api-tools-1.7.5.1
+  export PATH=$PATH:$EC2_HOME/bin
+
 fi
 
 if [[ -e "/usr/local/bin/virtualenvwrapper.sh" ]]; then
@@ -318,3 +326,7 @@ setopt no_nomatch
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 [[ -s "$HOME/.local/share/marker/marker.sh" ]] && source "$HOME/.local/share/marker/marker.sh"
+
+# AWS CLI autocompletion
+[[ -x $(brew --prefix awscli)/libexec/bin/aws_zsh_completer.sh ]] && source $(brew --prefix awscli)/libexec/bin/aws_zsh_completer.sh
+

@@ -278,3 +278,6 @@ alias sgi='sudo gem install --no-ri --no-rdoc'
 # Taken from https://github.com/sorin-ionescu/prezto/issues/232
 alias rsync='noglob rsync'
 alias scp='noglob scp'
+
+# AWS EC2
+alias ec2="aws ec2"
