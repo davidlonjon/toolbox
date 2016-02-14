@@ -55,6 +55,7 @@ source $ZSH/oh-my-zsh.sh
 # ALIASES
 # -------------------------------------------------------------------
 [ -f "$HOME/toolbox/dotfiles/zsh/aliases/.aliases-common" ] && source $HOME/toolbox/dotfiles/zsh/aliases/.aliases-common
+[ -f "$HOME/toolbox/dotfiles/zsh/aliases/.aliases-common-vagrant" ] && source $HOME/toolbox/dotfiles/zsh/aliases/.aliases-common-vagrant
 [ -f "$HOME/toolbox/dotfiles/zsh/aliases/.aliases-darwin" ] && source $HOME/toolbox/dotfiles/zsh/aliases/.aliases-darwin
 [ -f "$HOME/toolbox/dotfiles/zsh/aliases/.aliases-linux" ] && source $HOME/toolbox/dotfiles/zsh/aliases/.aliases-linux
 [ -f "$HOME/toolbox/dotfiles/zsh/aliases/.aliases-linux-services" ] && source $HOME/toolbox/dotfiles/zsh/aliases/.aliases-linux-services
@@ -71,7 +72,6 @@ source $ZSH/oh-my-zsh.sh
 [ -f "$HOME/toolbox/dotfiles/zsh/functions/.functions-darwin" ] && source $HOME/toolbox/dotfiles/zsh/functions/.functions-darwin
 [ -f "$HOME/toolbox/dotfiles/zsh/functions/.functions-linux" ] && source $HOME/toolbox/dotfiles/zsh/functions/.functions-linux
 [ -f "$HOME/toolbox/dotfiles/zsh/functions/.functions-projects" ] && source $HOME/toolbox/dotfiles/zsh/functions/.functions-projects
-
 
 # -------------------------------------------------------------------
 # PATH

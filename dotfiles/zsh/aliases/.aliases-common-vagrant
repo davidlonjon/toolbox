@@ -1,0 +1,19 @@
+## -------------------------------------------------------------------
+## Vagrant aliases
+## -------------------------------------------------------------------
+alias vup="vagrant up"
+alias vd="vagrant destroy"
+alias vupl="vagrant up 2>&1 | tee vagrant.log"
+alias vh="vagrant halt"
+alias vs="vagrant suspend"
+alias vr="vagrant resume"
+alias vrld="vagrant reload"
+alias vrldp="vagrant reload --provision"
+alias vrldpl="vagrant reload --provision 2>&1 | tee vagrant.log"
+alias vssh="vagrant ssh"
+alias vstat="vagrant status"
+alias vst="vagrant status"
+alias vp="vagrant provision"
+alias vpl="vagrant provision 2>&1 | tee vagrant.log"
+alias vgra="vagrant gatling-rsync-auto"
+alias vra="vagrant rsync-auto"
