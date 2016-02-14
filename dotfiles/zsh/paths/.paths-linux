@@ -1,0 +1,27 @@
+## -------------------------------------------------------------------
+## Linux specific paths
+## -------------------------------------------------------------------
+
+# Linux-only stuff. Abort if not Linux.
+[[ $OSTYPE =~ 'linux' ]] || return 1
+
+export PATH=$PATH:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/var/lib/gems/1.8/bin
+
+if [[ -d "/usr/local/aws/ec2" ]]; then
+  # AMAZON AWS TOOL PATH AND VARIABLE DEFINITION
+  # This assumes that Java > 1.6 is installed
+  # Also that the AWS tool are installed in /usr/local/aws
+  # and that the credentials are set in $HOME/.aws-default
+  export JAVA_HOME=/usr
+  export EC2_HOME=/usr/local/aws/ec2
+  export PATH=$PATH:$EC2_HOME/bin
+  export AWS_CREDENTIAL_FILE=$HOME/.aws-default/aws-credential-file.txt
+  # Example taken from https://gist.github.com/4177779
+  export AWS_ACCESS_KEY=$( awk -F= '/AccessKey/ {print $2}' $AWS_CREDENTIAL_FILE )
+  export AWS_SECRET_KEY=$( awk -F= '/SecretKey/ {print $2}' $AWS_CREDENTIAL_FILE )
+fi
+
+export NODE_PATH=/usr/lib/node_modules
+
+# Paths for local scripts
+[ -d "$HOME/toolbox/bin/linux" ] && export PATH=$PATH:$HOME/toolbox/bin/linux
