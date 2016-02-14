@@ -1,11 +1,11 @@
 ## -------------------------------------------------------------------
-## ALIASES SPECIFIC TO SOME PROJECT
+## Projects specific aliases
 ## -------------------------------------------------------------------
 
 ### -------------------------------------------------------------------
-## SPP PROJECT ALIASES
+## SPP project
 ### -------------------------------------------------------------------
-alias xwp-reset-dev="checkout-develop-branches.sh && quick-clone-repos.sh"
-alias xwp-checkout-dev="checkout-develop-branches.sh"
-alias xwp-delete-merged-branch-into-develop="git checkout develop --quiet && git branch --merged | grep -v 'master' | grep -v 'develop' | xargs -n 1 git branch -d"
-alias xwp-list-merged-branch-into-develop="git checkout develop --quiet && git branch --merged | grep -v 'master' | grep -v 'develop'"
+alias spp-reset-dev="checkout-develop-branches.sh && quick-clone-repos.sh"
+alias spp-checkout-dev="checkout-develop-branches.sh"
+alias spp-delete-merged-branch-into-develop="git checkout develop --quiet && git branch --merged | grep -v 'master' | grep -v 'develop' | xargs -n 1 git branch -d"
+alias spp-list-merged-branch-into-develop="git checkout develop --quiet && git branch --merged | grep -v 'master' | grep -v 'develop'"
