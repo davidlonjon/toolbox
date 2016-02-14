@@ -17,7 +17,7 @@ Log of and log in again.
 Credits
 =======
 This is the list of all the people who should be credited
-for their ingeniosity and hard effort in making awesome setups, scripts and plenty of other stuff
+for their ingenuity and hard effort in making awesome setups, scripts and plenty of other stuff
 
 + https://github.com/mathiasbynens/dotfiles
 + https://github.com/cowboy/dotfiles/
