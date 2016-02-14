@@ -1,9 +1,9 @@
 ## -------------------------------------------------------------------
-## FUNCTIONS SPECIFIC TO SOME PROJECTS
+## Project specific functions
 ## -------------------------------------------------------------------
 
 ### -------------------------------------------------------------------
-## SPP PROJECT ALIASES
+## SPP project
 ### -------------------------------------------------------------------
 function SPP_getJiraNumberFromGitBranch() {
     BRANCH_NAME=$(git symbolic-ref -q HEAD)
@@ -11,4 +11,3 @@ function SPP_getJiraNumberFromGitBranch() {
     SHORT_BRANCH_NAME=`echo $SHORT_BRANCH_NAME | grep -oh "^SPP\-[0-9]*"`
     zle -U "$SHORT_BRANCH_NAME: ";
 }
-
