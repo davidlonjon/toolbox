@@ -84,5 +84,10 @@ zstyle ':completion:*:other-accounts' users-hosts $other_accounts
 # Autocompletion for AWS
 [ -f "/usr/local/share/zsh/site-functions/_aws" ] && source /usr/local/share/zsh/site-functions/_aws
 
+if [[ $OSTYPE == 'darwin' ]]; then
+  # AWS CLI autocompletion
+  [[ -x $(brew --prefix awscli)/libexec/bin/aws_zsh_completer.sh ]] && source $(brew --prefix awscli)/libexec/bin/aws_zsh_completer.sh
+fi
+
 # Autocompletion for fpath
  fpath=(/usr/local/share/zsh-completions $fpath)

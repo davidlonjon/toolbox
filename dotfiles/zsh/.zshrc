@@ -239,7 +239,3 @@ compdef mosh=ssh
 # https://news.ycombinator.com/item?id=3535600
 # if there are no matches for globs, leave them alone and execute the command
 setopt no_nomatch
-
-# AWS CLI autocompletion
-[[ -x $(brew --prefix awscli)/libexec/bin/aws_zsh_completer.sh ]] && source $(brew --prefix awscli)/libexec/bin/aws_zsh_completer.sh
-
