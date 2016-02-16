@@ -42,12 +42,8 @@ if [[ ! -f ~/.oh-my-zsh/oh-my-zsh.sh ]]; then
     sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 fi
 
-# Create symblinks for dotfiles
+# Create symlinks for dotfiles
 source ./scripts/bootstrap/common/symlink_dotfiles.sh
-
-# Work in progress so not done at the moment
-# source ./scripts/bootstrap/osx/osx.sh
-# source ./scripts/bootstrap/ubuntu/]ubuntu.sh
 
 # All done!
 e_header "All done!"
