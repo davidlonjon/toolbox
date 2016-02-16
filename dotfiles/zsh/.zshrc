@@ -12,16 +12,15 @@ OSTYPE=$( uname | tr '[:upper:]' '[:lower:]')
 
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
+ZSH_CUSTOM=$HOME/toolbox/oh-my-zsh/custom
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 # ZSH_THEME="lukerandall"
-ZSH_THEME="risto"
-
-# in Vagrant
-#ZSH_THEME="amuse"
+ZSH_THEME="custom_agnoster"
+DEFAULT_USER="$USER"
 
 # Set to this to use case-sensitive completion
 #CASE_SENSITIVE="true"
