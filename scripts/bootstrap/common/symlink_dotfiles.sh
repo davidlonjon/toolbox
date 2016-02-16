@@ -128,12 +128,12 @@ fi
 echo "Creating symlink to .teamocil in home directory."
 ln -s -f $dotfiles_dir/teamocil ~/.teamocil
 
-# .tigrc
-if [[ -f ~/.tigrc ]]; then
-    echo "Moving tigrc config files from $HOME to $dotfiles_backup_dir"
-    rm -f $dotfiles_backup_dir/.tigrc
-    cp ~/.tigrc $dotfiles_backup_dir
-    rm -f ~/.tigrc
+# .dir_colors
+if [[ -f ~/.dir_colors ]]; then
+    echo "Moving dir_colors config files from $HOME to $dotfiles_backup_dir"
+    rm -f $dotfiles_backup_dir/.dir_colors
+    cp ~/.dir_colors $dotfiles_backup_dir
+    rm -f ~/.dir_colors
 fi
-echo "Creating symlink to .tigrc in home directory."
-ln -s -f $dotfiles_dir/tig/.tigrc ~/.tigrc
+echo "Creating symlink to .dir_colors in home directory."
+ln -s -f $dotfiles_dir/dir_colors/.dir_colors ~/.dir_colors

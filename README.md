@@ -59,6 +59,7 @@ Misc
  + http://www.hongkiat.com/blog/how-to-clear-flush-dns-cache-in-os-x-yosemite/
  + http://stackoverflow.com/questions/59895/can-a-bash-script-tell-what-directory-its-stored-in
  + http://stackoverflow.com/questions/2176278/preview-a-git-push/2831135#2831135
+ + https://github.com/seebi/dircolors-solarized
 
 Tmux
  + https://robots.thoughtbot.com/tmux-copy-paste-on-os-x-a-better-future

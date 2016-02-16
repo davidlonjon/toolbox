@@ -51,6 +51,21 @@ fi
 
 source $ZSH/oh-my-zsh.sh
 
+# Setup dir colors for solarized theme
+# See https://github.com/seebi/dircolors-solarized#installation
+# See http://qiita.com/yoshi-naoyuki/items/68f65032dde46edf89fa
+if [[ $OSTYPE == 'darwin' ]]; then
+  eval "$(gdircolors ~/.dir_colors)"
+  alias ls='gls --color=auto'
+
+  # Tell ls to be colourful
+  export CLICOLOR=1
+  export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
+  # Tell grep to highlight matches
+  export GREP_OPTIONS='--color=auto'
+fi
+
+
 # -------------------------------------------------------------------
 # ALIASES
 # -------------------------------------------------------------------
