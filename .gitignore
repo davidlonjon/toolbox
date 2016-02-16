@@ -8,3 +8,9 @@ tmp/
 
 # Local aliases
 .aliases-local
+
+# Local functions
+.functions-local
+
+# Local paths
+.paths-local
