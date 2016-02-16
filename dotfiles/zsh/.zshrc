@@ -125,12 +125,6 @@ if [[ $OSTYPE == 'linux' ]]; then
 fi
 
 # -------------------------------------------------------------------
-# PROMPT
-# -------------------------------------------------------------------
-# Disabling prompt and use a theme instead
-# [ -f "$HOME/toolbox/dotfiles/zsh/.prompt" ] && source $HOME/toolbox/dotfiles/zsh/.prompt
-
-# -------------------------------------------------------------------
 # GENERAL OPTIONS
 # -------------------------------------------------------------------
 # Set less options
@@ -189,9 +183,6 @@ bindkey "^[[B" down-line-or-beginning-search # Down
 
 # Don’t write over existing files with >, use >! instead
 setopt NOCLOBBER
-
-# Symaps related environment variable
-export SYMAPS_AWS_PEM_FILE=/Users/davidlonjon/.ssh/tokyo.pem
 
 # set -o vi
 export TERM=screen-256color       # for a tmux -2 session (also for screen)
