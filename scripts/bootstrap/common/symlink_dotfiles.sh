@@ -129,7 +129,7 @@ echo "Creating symlink to .teamocil in home directory."
 ln -s -f $dotfiles_dir/teamocil ~/.teamocil
 
 # .tigrc
-if [[ -d ~/.tigrc ]]; then
+if [[ -f ~/.tigrc ]]; then
     echo "Moving tigrc config files from $HOME to $dotfiles_backup_dir"
     rm -f $dotfiles_backup_dir/.tigrc
     cp ~/.tigrc $dotfiles_backup_dir
