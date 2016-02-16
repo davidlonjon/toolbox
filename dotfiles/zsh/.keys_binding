@@ -58,5 +58,5 @@ bindkey '^I' complete-word # complete on tab, leave expansion to _expand
 
 #bindkey '"\C-]":"\C-e\C-u pbcopy <<"EOF"\n\C-y\nEOF\n"'
 
-zle -N SPP_getJiraNumberFromGitBranch
-bindkey '^s' 'SPP_getJiraNumberFromGitBranch'
+zle -N get-git-issue-number
+bindkey '^s' 'get-git-issue-number'

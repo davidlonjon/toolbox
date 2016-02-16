@@ -3,16 +3,6 @@
 ## -------------------------------------------------------------------
 
 ### -------------------------------------------------------------------
-## SPP project
-### -------------------------------------------------------------------
-function SPP_getJiraNumberFromGitBranch() {
-    BRANCH_NAME=$(git symbolic-ref -q HEAD)
-    SHORT_BRANCH_NAME=${BRANCH_NAME##*/}
-    SHORT_BRANCH_NAME=`echo $SHORT_BRANCH_NAME | grep -oh "^SPP\-[0-9]*"`
-    zle -U "$SHORT_BRANCH_NAME: ";
-}
-
-### -------------------------------------------------------------------
 ## Symaps project
 ### -------------------------------------------------------------------
 symaps_fix_tunnelblick() {
