@@ -118,16 +118,6 @@ fi
 echo "Creating symlink to .ackrc in home directory."
 ln -s -f $dotfiles_dir/ack/.ackrc ~/.ackrc
 
-# .teamocil
-if [[ -d ~/.teamocil ]]; then
-    echo "Moving teamocil config files from $HOME to $dotfiles_backup_dir"
-    rm -rf $dotfiles_backup_dir/.teamocil
-    cp -Lr ~/.teamocil $dotfiles_backup_dir
-    rm -rf ~/.teamocil
-fi
-echo "Creating symlink to .teamocil in home directory."
-ln -s -f $dotfiles_dir/teamocil ~/.teamocil
-
 # .dir_colors
 if [[ -f ~/.dir_colors ]]; then
     echo "Moving dir_colors config files from $HOME to $dotfiles_backup_dir"

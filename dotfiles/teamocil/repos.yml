@@ -1,9 +1,0 @@
-session:
-  name: "repos"
-  windows:
-    - name: "toolbox"
-      root: "~/repos/toolbox"
-      options:
-        synchronize-panes: false
-      panes:
-        - cmd: "ll"

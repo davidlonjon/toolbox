@@ -210,12 +210,6 @@ setopt NOCLOBBER
 if [[ $OSTYPE == 'linux' ]]; then
 fi
 
-# -------------------------------------------------------------------
-# MISC
-# -------------------------------------------------------------------
-# teamocil autocompletion
-compctl -g '~/.teamocil/*(:t:r)' teamocil
-
 # This is at the end to avoid messing up the color highlighting
 # Taken from https://github.com/matijs/dotfiles/blob/master/.bash_profile
 # remove duplicates from the path
