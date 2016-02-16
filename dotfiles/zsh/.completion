@@ -80,3 +80,6 @@ zstyle ':completion:*' hosts $ssh_hosts
 
 zstyle ':completion:*:my-accounts' users-hosts $my_accounts
 zstyle ':completion:*:other-accounts' users-hosts $other_accounts
+
+# Autocompletion for AWS
+[ -f "/usr/local/share/zsh/site-functions/_aws" ] && source /usr/local/share/zsh/site-functions/_aws
