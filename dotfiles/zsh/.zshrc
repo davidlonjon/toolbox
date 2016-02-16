@@ -74,6 +74,7 @@ source $ZSH/oh-my-zsh.sh
 [ -f "$HOME/toolbox/dotfiles/zsh/functions/.functions-projects" ] && source $HOME/toolbox/dotfiles/zsh/functions/.functions-projects
 [ -f "$HOME/toolbox/dotfiles/zsh/functions/.functions-local" ] && source $HOME/toolbox/dotfiles/zsh/functions/.functions-local
 
+
 # -------------------------------------------------------------------
 # PATHS
 # -------------------------------------------------------------------
@@ -82,8 +83,9 @@ source $ZSH/oh-my-zsh.sh
 [ -f "$HOME/toolbox/dotfiles/zsh/paths/.paths-linux" ] && source $HOME/toolbox/dotfiles/zsh/paths/.paths-linux
 [ -f "$HOME/toolbox/dotfiles/zsh/paths/.paths-projects" ] && source $HOME/toolbox/dotfiles/zsh/paths/.paths-projects
 
+
 # -------------------------------------------------------------------
-# Addons
+# ADDONS
 # -------------------------------------------------------------------
 [ -f "$HOME/toolbox/dotfiles/zsh/addons/.addons-darwin" ] && source $HOME/toolbox/dotfiles/zsh/addons/.addons-darwin
 
