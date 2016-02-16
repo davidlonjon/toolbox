@@ -261,3 +261,6 @@ alias scp='noglob scp'
 
 # AWS EC2
 alias ec2="aws ec2"
+
+# Alias for launching Ranger (file explorer in command line) in the current directory
+alias b="ranger ."
