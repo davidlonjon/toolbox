@@ -81,6 +81,11 @@ source $ZSH/oh-my-zsh.sh
 [ -f "$HOME/toolbox/dotfiles/zsh/paths/.paths-linux" ] && source $HOME/toolbox/dotfiles/zsh/paths/.paths-linux
 [ -f "$HOME/toolbox/dotfiles/zsh/paths/.paths-projects" ] && source $HOME/toolbox/dotfiles/zsh/paths/.paths-projects
 
+# -------------------------------------------------------------------
+# Addons
+# -------------------------------------------------------------------
+[ -f "$HOME/toolbox/dotfiles/zsh/addons/.addons-darwin" ] && source $HOME/toolbox/dotfiles/zsh/addons/.addons-darwin
+
 
 
 # Symaps related environment variable
