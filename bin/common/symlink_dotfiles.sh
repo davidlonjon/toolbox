@@ -127,3 +127,13 @@ if [[ -f ~/.dir_colors ]]; then
 fi
 echo "Creating symlink to .dir_colors in home directory."
 ln -s -f $dotfiles_dir/dir_colors/.dir_colors ~/.dir_colors
+
+# .gemrc
+if [[ -f ~/.gemrc ]]; then
+    echo "Moving gemrc config files from $HOME to $dotfiles_backup_dir"
+    rm -f $dotfiles_backup_dir/.gemrc
+    cp ~/.gemrc $dotfiles_backup_dir
+    rm -f ~/.gemrc
+fi
+echo "Creating symlink to .gemrc in home directory."
+ln -s -f $dotfiles_dir/gemrc/.gemrc ~/.gemrc
