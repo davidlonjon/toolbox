@@ -83,3 +83,6 @@ zstyle ':completion:*:other-accounts' users-hosts $other_accounts
 
 # Autocompletion for AWS
 [ -f "/usr/local/share/zsh/site-functions/_aws" ] && source /usr/local/share/zsh/site-functions/_aws
+
+# Autocompletion for fpath
+ fpath=(/usr/local/share/zsh-completions $fpath)
