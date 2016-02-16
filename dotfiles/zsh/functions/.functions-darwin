@@ -63,3 +63,9 @@ remote-paste() {
 function jcurl() {
     "$@" | underscore print --color
 }
+
+
+# Remove host route
+remove_host_route() {
+    sudo route delete $1
+}
