@@ -43,7 +43,7 @@ if [[ ! -f ~/.oh-my-zsh/oh-my-zsh.sh ]]; then
 fi
 
 # Create symlinks for dotfiles
-source ./scripts/bootstrap/common/symlink_dotfiles.sh
+source ./bin/common/symlink_dotfiles.sh
 
 # All done!
 e_header "All done!"
