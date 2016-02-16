@@ -78,3 +78,6 @@ alias focust="open focus://toggle"
 # Fix usr/local/bin & usr/local/share permissions
 alias fix-usr-local-bin="sudo chown -R `whoami`:admin /usr/local/bin"
 alias fix-usr-local-share="sudo chown -R `whoami`:admin /usr/local/share"
+
+# Sublime text alias
+alias s="subl"
