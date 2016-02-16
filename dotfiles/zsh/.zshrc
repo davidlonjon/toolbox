@@ -240,8 +240,6 @@ compdef mosh=ssh
 # if there are no matches for globs, leave them alone and execute the command
 setopt no_nomatch
 
-[[ -s "$HOME/.local/share/marker/marker.sh" ]] && source "$HOME/.local/share/marker/marker.sh"
-
 # AWS CLI autocompletion
 [[ -x $(brew --prefix awscli)/libexec/bin/aws_zsh_completer.sh ]] && source $(brew --prefix awscli)/libexec/bin/aws_zsh_completer.sh
 
