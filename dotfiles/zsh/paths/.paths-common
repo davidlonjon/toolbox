@@ -12,11 +12,12 @@ fi
 
 # Paths for GO
 if [[ -d "/usr/local/opt/go/libexec/bin" ]]; then
-  if [[ -d "$HOME/work" ]]; then
-    mkdir $HOME/work
+  if [[ -d "$HOME/goland" ]]; then
+    mkdir $HOME/goland
 fi
-  export GOPATH=$HOME/work
+  export GOPATH=$HOME/goland
   export PATH=$PATH:/usr/local/opt/go/libexec/bin
+  export PATH="$GOPATH/bin:$PATH"
 fi
 
 # Paths for RVM
