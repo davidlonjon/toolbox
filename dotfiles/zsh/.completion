@@ -91,3 +91,7 @@ fi
 
 # Autocompletion for fpath
  fpath=(/usr/local/share/zsh-completions $fpath)
+
+# Taken from https://github.com/robbyrussell/oh-my-zsh/blob/master/plugins/mosh/mosh.plugin.zsh
+# Allow SSH tab completion for mosh hostnames
+compdef mosh=ssh

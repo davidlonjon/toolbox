@@ -192,10 +192,6 @@ export TERM=screen-256color       # for a tmux -2 session (also for screen)
 # remove duplicates from the path
 export PATH=`awk -F: '{for(i=1;i<=NF;i++){if(!($i in a)){a[$i];printf s$i;s=":"}}}'<<<$PATH`;
 
-# Taken from https://github.com/robbyrussell/oh-my-zsh/blob/master/plugins/mosh/mosh.plugin.zsh
-# Allow SSH tab completion for mosh hostnames
-compdef mosh=ssh
-
 # https://news.ycombinator.com/item?id=3535600
 # if there are no matches for globs, leave them alone and execute the command
 setopt no_nomatch
