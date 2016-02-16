@@ -1,5 +1,5 @@
 *.log
-script/bootstrap/osx/backup/*.tgz
+bin/osx/backup/*.tgz
 
 dotfiles/_backup/*
 !dotfiles/_backup/README.md
