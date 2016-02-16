@@ -3,7 +3,7 @@
 # @file         .zshrc
 # @description  Configuration file for zsh
 # @author       David Lonjon
-# @version      20120124
+# @version      20160108
 #
 # ----------------------------------------------------------------------------------------------------
 
@@ -64,7 +64,6 @@ if [[ $OSTYPE == 'darwin' ]]; then
   export GREP_OPTIONS='--color=auto'
 fi
 
-
 # -------------------------------------------------------------------
 # ALIASES
 # -------------------------------------------------------------------
@@ -77,7 +76,6 @@ fi
 [ -f "$HOME/toolbox/dotfiles/zsh/aliases/.aliases-projects" ] && source $HOME/toolbox/dotfiles/zsh/aliases/.aliases-projects
 [ -f "$HOME/toolbox/dotfiles/zsh/aliases/.aliases-local" ] && source $HOME/toolbox/dotfiles/zsh/aliases/.aliases-local
 
-
 # -------------------------------------------------------------------
 # FUNCTIONS
 # -------------------------------------------------------------------
@@ -88,7 +86,6 @@ fi
 [ -f "$HOME/toolbox/dotfiles/zsh/functions/.functions-projects" ] && source $HOME/toolbox/dotfiles/zsh/functions/.functions-projects
 [ -f "$HOME/toolbox/dotfiles/zsh/functions/.functions-local" ] && source $HOME/toolbox/dotfiles/zsh/functions/.functions-local
 
-
 # -------------------------------------------------------------------
 # PATHS
 # -------------------------------------------------------------------
@@ -97,18 +94,20 @@ fi
 [ -f "$HOME/toolbox/dotfiles/zsh/paths/.paths-linux" ] && source $HOME/toolbox/dotfiles/zsh/paths/.paths-linux
 [ -f "$HOME/toolbox/dotfiles/zsh/paths/.paths-projects" ] && source $HOME/toolbox/dotfiles/zsh/paths/.paths-projects
 
-
 # -------------------------------------------------------------------
 # ADDONS
 # -------------------------------------------------------------------
 [ -f "$HOME/toolbox/dotfiles/zsh/addons/.addons-darwin" ] && source $HOME/toolbox/dotfiles/zsh/addons/.addons-darwin
 
+# -------------------------------------------------------------------
+# KEYS BINDING
+# -------------------------------------------------------------------
+[ -f "$HOME/toolbox/dotfiles/zsh/.keys_binding" ] && source $HOME/toolbox/dotfiles/zsh/.keys_binding
 
-
-# Symaps related environment variable
-export SYMAPS_AWS_PEM_FILE=/Users/davidlonjon/.ssh/tokyo.pem
-
-# set -o vi
+# -------------------------------------------------------------------
+# COMPLETION
+# -------------------------------------------------------------------
+[ -f "$HOME/toolbox/dotfiles/zsh/.completion" ] && source $HOME/toolbox/dotfiles/zsh/.completion
 
 # -------------------------------------------------------------------
 # SET EDITOR
@@ -191,16 +190,11 @@ bindkey "^[[B" down-line-or-beginning-search # Down
 # Don’t write over existing files with >, use >! instead
 setopt NOCLOBBER
 
-# -------------------------------------------------------------------
-# KEYS BINDING
-# -------------------------------------------------------------------
-[ -f "$HOME/toolbox/dotfiles/zsh/.keys_binding" ] && source $HOME/toolbox/dotfiles/zsh/.keys_binding
+# Symaps related environment variable
+export SYMAPS_AWS_PEM_FILE=/Users/davidlonjon/.ssh/tokyo.pem
 
-
-# -------------------------------------------------------------------
-# COMPLETION
-# -------------------------------------------------------------------
-[ -f "$HOME/toolbox/dotfiles/zsh/.completion" ] && source $HOME/toolbox/dotfiles/zsh/.completion
+# set -o vi
+export TERM=screen-256color       # for a tmux -2 session (also for screen)
 
 # This is at the end to avoid messing up the color highlighting
 # Taken from https://github.com/matijs/dotfiles/blob/master/.bash_profile
