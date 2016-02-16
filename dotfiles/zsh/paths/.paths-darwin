@@ -25,5 +25,10 @@ export JAVA_HOME=$(/usr/libexec/java_home)
 export EC2_HOME=/usr/local/ec2/ec2-api-tools-1.7.5.1
 export PATH=$PATH:$EC2_HOME/bin
 
+# Paths related to core utis
+PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+
 # Paths for local scripts
 [ -d "$HOME/toolbox/bin/osx" ] && export PATH=$PATH:$HOME/toolbox/bin/osx
+
