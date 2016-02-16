@@ -12,7 +12,7 @@ $ git clone git@github.com:davidlonjon/toolbox.git --recursive
 $ ./toolbox/bootstrap.sh
 ```
 
-Log of and log in again.
+Log off and log in again.
 
 Credits
 =======
