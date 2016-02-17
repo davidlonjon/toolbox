@@ -14,3 +14,6 @@ tmp/
 
 # Local paths
 .paths-local
+
+# Local options
+.options-local

@@ -196,3 +196,8 @@ export PATH=`awk -F: '{for(i=1;i<=NF;i++){if(!($i in a)){a[$i];printf s$i;s=":"}
 # https://news.ycombinator.com/item?id=3535600
 # if there are no matches for globs, leave them alone and execute the command
 setopt no_nomatch
+
+# -------------------------------------------------------------------
+# LOCAL OPTIONS
+# -------------------------------------------------------------------
+[ -f "$HOME/toolbox/dotfiles/zsh/options/.options-local" ] && source $HOME/toolbox/dotfiles/zsh/options/.options-local
