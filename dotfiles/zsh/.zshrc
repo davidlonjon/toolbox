@@ -93,6 +93,7 @@ fi
 [ -f "$HOME/toolbox/dotfiles/zsh/paths/.paths-darwin" ] && source $HOME/toolbox/dotfiles/zsh/paths/.paths-darwin
 [ -f "$HOME/toolbox/dotfiles/zsh/paths/.paths-linux" ] && source $HOME/toolbox/dotfiles/zsh/paths/.paths-linux
 [ -f "$HOME/toolbox/dotfiles/zsh/paths/.paths-projects" ] && source $HOME/toolbox/dotfiles/zsh/paths/.paths-projects
+[ -f "$HOME/toolbox/dotfiles/zsh/paths/.paths-local" ] && source $HOME/toolbox/dotfiles/zsh/paths/.paths-local
 
 # -------------------------------------------------------------------
 # ADDONS
