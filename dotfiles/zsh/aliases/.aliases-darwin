@@ -81,3 +81,6 @@ alias fix-usr-local-share="sudo chown -R `whoami`:admin /usr/local/share"
 
 # Sublime text alias
 alias s="subl"
+
+# wp-cli ssh alias
+alias wpv="wp  ssh --host=vagrant --require=/Users/davidlonjon/.wp-cli/vendor/x-team/wp-cli-ssh/wp-cli-ssh.php"
