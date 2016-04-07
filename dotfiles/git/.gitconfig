@@ -102,3 +102,5 @@
 	smudge = git media smudge %f
 [credential]
 	helper = osxkeychain
+[url "http://lonjond@stash.news.com.au/scm"]
+	insteadOf = ssh://git@stash.news.com.au
