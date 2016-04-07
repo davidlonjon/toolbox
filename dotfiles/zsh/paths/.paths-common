@@ -32,3 +32,7 @@ fi
 # Paths for local scripts
 [ -d "$HOME/toolbox/bin/common" ] && export PATH=$PATH:$HOME/toolbox/bin/common
 [ -d "$HOME/toolbox/scripts" ] && export PATH=$PATH:$HOME/toolbox/scripts
+
+# NVM path
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
