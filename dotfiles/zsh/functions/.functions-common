@@ -129,9 +129,7 @@ function gri() {
 
 # https://www.gitignore.io/docs
 # Get gitingore files
-function gi() {
-    curl -L -s https://www.gitignore.io/api/"$@"
-}
+function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
 
 # https://github.com/gf3/dotfiles/blob/master/.functions
 # DNS lookup
