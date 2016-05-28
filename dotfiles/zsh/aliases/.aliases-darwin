@@ -85,8 +85,8 @@ alias s="subl"
 # wp-cli ssh alias
 alias wpv="wp  ssh --host=vagrant --require=/Users/davidlonjon/.wp-cli/vendor/x-team/wp-cli-ssh/wp-cli-ssh.php"
 
-# Seoul weather using ansiweather
-alias sw="ansiweather -l seoul -a false"
+# Seoul weather using wttr.in
+alias sw="curl -4 wttr.in"
 
 # Rsync
 alias rsync_cust="rsync -aHAXxv --numeric-ids --delete --progress -e 'ssh -T -c arcfour -o Compression=no -x'"
