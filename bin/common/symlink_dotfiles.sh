@@ -137,3 +137,13 @@ if [[ -f ~/.gemrc ]]; then
 fi
 echo "Creating symlink to .gemrc in home directory."
 ln -s -f $dotfiles_dir/gemrc/.gemrc ~/.gemrc
+
+# .editorconfig
+if [[ -f ~/.editorconfig ]]; then
+    echo "Moving editorconfig config files from $HOME to $dotfiles_backup_dir"
+    rm -f $dotfiles_backup_dir/.editorconfig
+    cp ~/.editorconfig $dotfiles_backup_dir
+    rm -f ~/.editorconfig
+fi
+echo "Creating symlink to .editorconfig in home directory."
+ln -s -f $dotfiles_dir/editorconfig/.editorconfig ~/.editorconfig
