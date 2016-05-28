@@ -5,4 +5,4 @@
  [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 
 # For opam
-. /Users/davidlonjon/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+[[ -s /Users/davidlonjon/.opam/opam-init/init.zsh ]] && . /Users/davidlonjon/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
