@@ -95,3 +95,6 @@ fi
 # Taken from https://github.com/robbyrussell/oh-my-zsh/blob/master/plugins/mosh/mosh.plugin.zsh
 # Allow SSH tab completion for mosh hostnames
 compdef mosh=ssh
+
+# Allow SCP tab completion for rsync_cust
+compdef rsync=scp
