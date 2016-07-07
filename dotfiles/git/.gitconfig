@@ -1,10 +1,10 @@
 [user]
-    name = David Lonjon
-    email = david.lonjon@gmail.com
+	name = David Lonjon
+	email = david.lonjon@gmail.com
 
 [core]
     # editor = vi
-    excludesfile = /Users/davidlonjon/.gitignore_global
+	excludesfile = /Users/davidlonjon/.gitignore_global
     # Taken from http://nuclearsquid.com/writings/git-tricks-tips-workflows/
     whitespace = trailing-space,space-before-tab
     # Taken from https://help.github.com/articles/dealing-with-line-endings
@@ -110,7 +110,9 @@
 	required = true
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path =
+	path = 
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
+[commit]
+	template = /Users/davidlonjon/.stCommitMsg
