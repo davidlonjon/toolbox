@@ -32,3 +32,6 @@ MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 # Paths for local scripts
 [ -d "$HOME/toolbox/bin/osx" ] && export PATH=$PATH:$HOME/toolbox/bin/osx
 
+# NVM
+ export NVM_DIR="$HOME/.nvm"
+  . "$(brew --prefix nvm)/nvm.sh"
