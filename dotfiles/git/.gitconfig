@@ -1,10 +1,10 @@
 [user]
-	name = David Lonjon
-	email = david.lonjon@gmail.com
+    name = David Lonjon
+    email = david.lonjon@gmail.com
 
 [core]
     # editor = vi
-	excludesfile = /Users/davidlonjon/.gitignore_global
+    excludesfile = /Users/davidlonjon/.gitignore_global
     # Taken from http://nuclearsquid.com/writings/git-tricks-tips-workflows/
     whitespace = trailing-space,space-before-tab
     # Taken from https://help.github.com/articles/dealing-with-line-endings
@@ -92,10 +92,10 @@
     user = "davidlonjon"
 
 [url "git@github.com:"]
-  insteadOf = gh://
+    insteadOf = gh://
 
 [url "git@bitbucket.org:"]
-  insteadOf = bb://
+    insteadOf = bb://
 [filter "media"]
 	required = true
 	clean = git media clean %f
@@ -103,7 +103,7 @@
 [credential]
 	helper = osxkeychain
 [url "http://lonjond@stash.news.com.au/scm"]
-	insteadOf = ssh://git@stash.news.com.au
+    insteadOf = ssh://git@stash.news.com.au
 [filter "lfs"]
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f
