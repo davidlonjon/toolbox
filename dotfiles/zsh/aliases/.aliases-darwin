@@ -90,3 +90,9 @@ alias sw="curl -4 wttr.in"
 
 # Rsync
 alias rsync_cust="rsync -aHAXxv --numeric-ids --delete --progress -e 'ssh -T -c arcfour -o Compression=no -x'"
+
+# Lastpass
+alias lpl="lpass login david.lonjon@gmail.com"
+alias lpp="lpass show --sync=no -c --password"
+alias lps="lpass ls --sync=no | grep"
+alias lpsync="lpass sync"
