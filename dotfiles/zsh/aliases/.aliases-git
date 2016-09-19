@@ -21,7 +21,7 @@ alias gl='git pull'
 alias gpu='git pull'
 alias ggpull='git pull origin $(current_branch)'
 alias ggpush='git push origin $(current_branch)'
-alias ggpushpull='git pull origin $(current_branch) && git push origin $(current_branch)'
+alias ggpushp='git pull origin $(current_branch) && git push origin $(current_branch)'
 # Taken from https://github.com/mathiasbynens/dotfiles/blob/master/.gitconfig
 # Pull in remote changes for the current repository and all its submodules
 alias ggpulls='git pull origin $(current_branch); git submodule foreach git pull origin master'
@@ -86,6 +86,7 @@ alias gcod='git checkout develop'
 alias gcos='git checkout staging'
 alias gcot='git checkout test'
 alias gcou='git checkout upstream'
+alias gco-f='git fetch && git checkout'
 
 # Branch
 alias gb='git branch'
@@ -143,7 +144,7 @@ alias gshv='git stash show --text'
 
 # Clone
 alias gcl='git clone'
-alias gcr='git clone --recursive' # Clone a repository including all submodules
+alias gclr='git clone --recursive' # Clone a repository including all submodules
 
 # Config
 alias gconf='git config'
