@@ -69,3 +69,7 @@ function jcurl() {
 remove_host_route() {
     sudo route delete $1
 }
+
+# Composer xdebug fix
+# See https://getcomposer.org/doc/articles/troubleshooting.md#xdebug-impact-on-composer
+function composer() { COMPOSER="/usr/local/bin/composer" || { echo "Could not find composer in path" >&2 ; return 1 ; } && mv /usr/local/etc/php/7.0/conf.d/ext-xdebug.ini /usr/local/etc/php/7.0/ext-xdebug.ini.dis ; $COMPOSER "$@" ; STATUS=$? ; mv /usr/local/etc/php/7.0/ext-xdebug.ini.dis /usr/local/etc/php/7.0/conf.d/ext-xdebug.ini ; return $STATUS ; }
