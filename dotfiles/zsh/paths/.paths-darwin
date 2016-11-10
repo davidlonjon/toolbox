@@ -13,7 +13,11 @@ export PATH=/usr/local/phpcs/scripts:$PATH
 export MANPATH="/opt/local/share/man:$MANPATH"
 # export DYLD_LIBRARY_PATH="$HOME/source/boost_install/lib:${DYLD_LIBRARY_PATH}"
 
+#export PYTHONPATH=/usr/local/lib/python3.5/site-packages:/usr/local/bin/python:$PYTHONPATH
 export PYTHONPATH=/usr/local/lib/python2.7/site-packages:/usr/local/bin/python:$PYTHONPATH
+#export PYENV_ROOT="$HOME/.pyenv"
+#export PATH="$PYENV_ROOT/bin:$PATH"
+#eval "$(pyenv init -)"
 
 # Needed for Cairo which in turns is needed by css-sprite npm module
 export PKG_CONFIG_PATH=/opt/X11/lib/pkgconfig
