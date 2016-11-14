@@ -127,4 +127,4 @@ bindkey "^[[B" down-line-or-beginning-search # Down
 
 # https://news.ycombinator.com/item?id=3535600
 # if there are no matches for globs, leave them alone and execute the command
-# setopt no_nomatch
+setopt no_nomatch
