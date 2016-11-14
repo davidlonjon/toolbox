@@ -1,17 +1,14 @@
-# OSX-only stuff. Abort if not OSX.
-[[ $OSTYPE =~ ^darwin ]] || return 1
+# -------------------------------------------------------------------
+# MAC SPECIFIC GLOBAL ALIASES
+# -------------------------------------------------------------------
 
-## -------------------------------------------------------------------
-## MAC SPECIFIC GLOBAL ALIASES
-## -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# PLAY SAFE ALIASES
+# -------------------------------------------------------------------
+# the nocorrect is inspired from
+# http://dotfiles.org/~atom/.zshrc
 
-## -------------------------------------------------------------------
-## PLAY SAFE ALIASES
-## -------------------------------------------------------------------
-## the nocorrect is inspired from
-## http://dotfiles.org/~atom/.zshrc
-
-## Remove directories
+# Remove directories
 alias rm='nocorrect rm -i'
 alias rmd='nocorrect rm -rfi'
 
