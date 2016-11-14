@@ -39,6 +39,7 @@ for their ingenuity and hard effort in making awesome setups, scripts and plenty
 + https://gist.github.com/jerrykrinock/6618003
 + https://coderwall.com/p/jpj_6q
 + https://github.com/matthewmueller/dots/
++ https://github.com/zsh-users/zsh-syntax-highlighting
 
 Good Aliases
 + https://coderwall.com/p/_-ypzq
