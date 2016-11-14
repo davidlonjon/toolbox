@@ -1,3 +1,6 @@
 [submodule "private"]
 	path = private
 	url = git@bitbucket.org:davidlonjon/toolbox_private.git
+[submodule "pure"]
+	path = pure
+	url = https://github.com/sindresorhus/pure.git
