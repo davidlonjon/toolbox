@@ -1,8 +1,2 @@
-# OSX-only stuff. Abort if not OSX.
-[[ $OSTYPE =~ ^darwin ]] || return 1
-
- # For autojump
+ # Autojump setup
  [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
-
-# For opam
-[[ -s /Users/davidlonjon/.opam/opam-init/init.zsh ]] && . /Users/davidlonjon/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true

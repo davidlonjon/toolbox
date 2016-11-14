@@ -1,10 +1,6 @@
-## -------------------------------------------------------------------
-## Darwin specific paths
-## -------------------------------------------------------------------
-
-# OSX-only stuff. Abort if not OSX.
-# [[ '$OSTYPE' =~ ^darwin ]] || return 1
-[[ $OSTYPE =~ 'darwin' ]] || return 1
+# -------------------------------------------------------------------
+# Darwin specific paths
+# -------------------------------------------------------------------
 
 export PATH=$PATH:/opt/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/usr/X11/bin:/opt/local/binfi
 export PATH=$HOME/bin:$PATH

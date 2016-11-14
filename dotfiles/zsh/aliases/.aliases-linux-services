@@ -1,47 +1,44 @@
-# Linux-only stuff. Abort if not Linux.
-[[ $OSTYPE =~ ^linux ]] || return 1
+# -------------------------------------------------------------------
+# SERVICES ALIASES
+# Inspired from
+# from https://github.com/jimeh/dotfiles/blob/master/shell/services.sh
+# -------------------------------------------------------------------
 
-## -------------------------------------------------------------------
-## SERVICES ALIASES
-## Inspired from
-## from https://github.com/jimeh/dotfiles/blob/master/shell/services.sh
-## -------------------------------------------------------------------
-
-## -------------------------------------------------------------------
-## APACHE SERVICE ALIASES
-## -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# APACHE SERVICE ALIASES
+# -------------------------------------------------------------------
 alias apache-restart='sudo service apache2 restart'
 alias apache-start='sudo service apache2 start'
 alias apache-stop='sudo service apache2 stop'
 alias apache-status='sudo service apache2 status'
 
-## -------------------------------------------------------------------
-## NGINX SERVICE ALIASES
-## -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# NGINX SERVICE ALIASES
+# -------------------------------------------------------------------
 alias nginx-restart='sudo service nginx restart'
 alias nginx-start='sudo service nginx start'
 alias nginx-stop='sudo service nginx stop'
 alias nginx-status='sudo service nginx status'
 
-## -------------------------------------------------------------------
-## MYSQL SERVICE ALIASES
-## -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# MYSQL SERVICE ALIASES
+# -------------------------------------------------------------------
 alias mysql-start='sudo service mysql start'
 alias mysql-stop='sudo service mysql stop'
 alias mysql-restart='sudo service mysql restart'
 alias mysql-status='sudo service mysql status'
 
-## -------------------------------------------------------------------
-## POSTGRESQL SERVICE ALIASES
-## -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# POSTGRESQL SERVICE ALIASES
+# -------------------------------------------------------------------
 alias postgresql-start='sudo service postgresql start'
 alias postgresql-stop='sudo service postgresql stop'
 alias postgresql-restart='sudo service postgresql restart'
 alias postgresql-status='sudo service postgresql status'
 
-## -------------------------------------------------------------------
-## MEMCACHED SERVICE ALIASES
-## -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# MEMCACHED SERVICE ALIASES
+# -------------------------------------------------------------------
 alias memcached-start='sudo service memcached start'
 alias memcached-stop='sudo service memcached stop'
 alias memcached-restart='sudo service memcached restart'
@@ -49,27 +46,25 @@ alias memcached-status='sudo service memcached status'
 # Flush memcached
 alias memcached-flush='echo "flush_all" | nc -q 2 127.0.0.1 11211'
 
-
-
-## -------------------------------------------------------------------
-## REDIS SERVICE ALIASES
-## -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# REDIS SERVICE ALIASES
+# -------------------------------------------------------------------
 alias redis-start='sudo service redis-server start'
 alias redis-stop='sudo service redis-server stop'
 alias redis-restart='sudo service redis-server restart'
 alias redis-status='sudo service redis-server status'
 
-## -------------------------------------------------------------------
-## MONGOD SERVICE ALIASES
-## -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# MONGOD SERVICE ALIASES
+# -------------------------------------------------------------------
 alias mongod-start='sudo service mongod-server start'
 alias mongod-stop='sudo service mongod-server stop'
 alias mongod-restart='sudo service mongod-server restart'
 alias mongod-status='sudo service mongod-server status'
 
-## -------------------------------------------------------------------
-## PHP5-FPM SERVICE ALIASES
-## -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# PHP5-FPM SERVICE ALIASES
+# -------------------------------------------------------------------
 alias phpfpm-start='sudo service php5-fpm start'
 alias phpfpm-stop='sudo service php5-fpm stop'
 alias phpfpm-restart='sudo service php5-fpm restart'

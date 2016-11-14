@@ -1,12 +1,9 @@
-## -------------------------------------------------------------------
-## GLOBAL ALIASES
-## Inspired from
-## from http://www.cyberciti.biz/tips/bash-aliases-mac-centos-linux-unix.html
-## -------------------------------------------------------------------
+# from http://www.cyberciti.biz/tips/bash-aliases-mac-centos-linux-unix.html
+# -------------------------------------------------------------------
 
-## -------------------------------------------------------------------
-## MISC ALIASES
-### -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# MISC ALIASES
+# -------------------------------------------------------------------
 
 # Quick access to my toolbox
 alias toolbox="cd ~/toolbox"
@@ -25,26 +22,26 @@ alias bower='noglob bower'
 
 alias teal="ls ~/.teamocil"
 
-### -------------------------------------------------------------------
-## ZSH ALIASES
-### -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# ZSH ALIASES
+# -------------------------------------------------------------------
 alias zshconfig='vi ~/.zshrc'
 alias ohmyzsh='vi ~/.oh-my-zsh/oh-my-zsh.sh'
 
 # https://github.com/skwp/dotfiles/blob/master/zsh/aliases.zsh
 alias zr='source ~/.zshrc'
 
-## -------------------------------------------------------------------
-## TERM RESIZING ALIASES
-## -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# TERM RESIZING ALIASES
+# -------------------------------------------------------------------
 alias hide='echo -en "\033]50;nil2\007"'
 alias tiny='echo -en "\033]50;-misc-fixed-medium-r-normal--8-80-75-75-c-50-iso10646-1\007"'
 alias small='echo -en "\033]50;6x10\007"'
 alias default='echo -e "\033]50;-misc-fixed-medium-r-semicondensed--13-*-*-*-*-*-iso10646-1\007"'
 alias medium='echo -en "\033]50;-misc-fixed-medium-r-normal--13-120-75-75-c-80-iso10646-1\007"'
 alias large='echo -en "\033]50;-misc-fixed-medium-*-*-*-15-*-*-*-*-*-iso10646-1\007"'
-## This is a large font that has a corresponding double-width font for
-## CJK and other characters, useful for full-on utf-8 goodness.
+# This is a large font that has a corresponding double-width font for
+# CJK and other characters, useful for full-on utf-8 goodness.
 alias larger='echo -en "\033]50;-misc-fixed-medium-r-normal--18-*-*-*-*-*-iso10646-1\007"'
 alias huge='echo -en "\033]50;-misc-fixed-medium-r-normal--20-200-75-75-c-100-iso10646-1\007"'
 alias normal=default
@@ -52,18 +49,18 @@ if [ "$TERM" = "xterm" ] && [ "$LINES" -ge 50 ] && [ "$COLUMNS" -ge 100 ]; then
   large
 fi
 
-## -------------------------------------------------------------------
-## NAVIGATION & LISTING ALIASES
-## -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# NAVIGATION & LISTING ALIASES
+# -------------------------------------------------------------------
 
-## Long list,show almost all,show type,human readable
+# Long list,show almost all,show type,human readable
 alias la='ls -lAFh'
 alias ll='ls -lAFh'
 
-## Sorted by date,recursive,show type,human readable
+# Sorted by date,recursive,show type,human readable
 alias lr='ls -tRFh'
 
-## Long list,sorted by date,show type,human readable
+# Long list,sorted by date,show type,human readable
 alias lt='ls -ltFh'
 
 alias ldot='ls -ld .*'
@@ -72,7 +69,7 @@ alias ldot='ls -ld .*'
 # show me files matching "ls grep"
 alias lsg='ll | grep'
 
-## A quick way to get out of current directory ##
+# A quick way to get out of current directory
 # alias ..='cd ..'
 # alias ...='cd ../../../'
 # alias ....='cd ../../../../'
@@ -80,7 +77,7 @@ alias lsg='ll | grep'
 # alias .4='cd ../../../../'
 # alias .5='cd ../../../../..'
 
-## Found on http://www.cyberciti.biz/tips/bash-aliases-mac-centos-linux-unix.html
+# Found on http://www.cyberciti.biz/tips/bash-aliases-mac-centos-linux-unix.html
 dotSlash=""
 for i in 1 2 3 4
 do
@@ -89,72 +86,72 @@ do
     alias $baseName="cd ${dotSlash}"
 done
 
-## Typing errors...
+# Typing errors...
 alias 'cd..=cd ..'
 alias 'cd~=cd ~'
 
-## -------------------------------------------------------------------
-## VIM  ALIASES
-## -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# VIM  ALIASES
+# -------------------------------------------------------------------
 alias vi=vim
 alias svi='sudo vi'
 alias vis='vim "+set si"'
 alias edit='vim'
 
-## -------------------------------------------------------------------
-## GENERAL ROOT ALIASES
-## -------------------------------------------------------------------
-## If user is not root, pass all commands via sudo
+# -------------------------------------------------------------------
+# GENERAL ROOT ALIASES
+# -------------------------------------------------------------------
+# If user is not root, pass all commands via sudo
 if [ $UID -ne 0 ]; then
 
-  ## Reboot / halt / poweroff
+  # Reboot / halt / poweroff
   alias reboot='sudo /sbin/reboot'
   alias poweroff='sudo /sbin/poweroff'
   alias halt='sudo /sbin/halt'
   alias shutdown='sudo /sbin/shutdown'
-  ## Become root #
+  # Become root #
   alias root='sudo -i'
   alias su='sudo -i'
 fi
 
-## -------------------------------------------------------------------
-## PLAY SAFE ALIASES
-## -------------------------------------------------------------------
-## the nocorrect is inspired from
-## http://dotfiles.org/~atom/.zshrc
+# -------------------------------------------------------------------
+# PLAY SAFE ALIASES
+# -------------------------------------------------------------------
+# the nocorrect is inspired from
+# http://dotfiles.org/~atom/.zshrc
 alias 'mv=nocorrect mv -i'
 alias 'cp=nocorrect cp -i'
 alias 'cpd=cp -ri'
 
-## For convenience
+# For convenience
 alias 'mkdir=nocorrect mkdir -pv'
 alias 'dus=du -sckxh * | sort -nr'
 
-## -------------------------------------------------------------------
-## NETWORKING ALIASES
-## -------------------------------------------------------------------
-## Stop after sending count ECHO_REQUEST packets #
+# -------------------------------------------------------------------
+# NETWORKING ALIASES
+# -------------------------------------------------------------------
+# Stop after sending count ECHO_REQUEST packets #
 alias ping='ping -c 5'
 
-## -------------------------------------------------------------------
-## MEMCACHED ALIASES
-## -------------------------------------------------------------------
-## Memcached server status  ##
-## alias mcdstats='/usr/bin/memcached-tool 10.10.27.11:11211 stats'
-## alias mcdshow='/usr/bin/memcached-tool 10.10.27.11:11211 display'
+# -------------------------------------------------------------------
+# MEMCACHED ALIASES
+# -------------------------------------------------------------------
+# Memcached server status
+# alias mcdstats='/usr/bin/memcached-tool 10.10.27.11:11211 stats'
+# alias mcdshow='/usr/bin/memcached-tool 10.10.27.11:11211 display'
 
-## quickly flush out memcached server ##
-## alias flushmcd='echo "flush_all" | nc 10.10.27.11 11211'
+# quickly flush out memcached server
+# alias flushmcd='echo "flush_all" | nc 10.10.27.11 11211'
 
-## -------------------------------------------------------------------
-## AWS COMMAND LINE TOOL SPECIAL ALIASES
-## -------------------------------------------------------------------
-## Alias to AWS SSH tool
+# -------------------------------------------------------------------
+# AWS COMMAND LINE TOOL SPECIAL ALIASES
+# -------------------------------------------------------------------
+# Alias to AWS SSH tool
 alias ec2ssh='ec2ssh.sh'
 
-## -------------------------------------------------------------------
-## TMUX ALIASES
-## -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# TMUX ALIASES
+# -------------------------------------------------------------------
 alias tml="tmux list-sessions"
 alias tma="tmux attach-session -t || tmux new-session -t"
 alias tmc="clear && tmux clear-history"
@@ -162,22 +159,22 @@ alias tmk="tmux kill-session"
 alias tms='tmux new-session -s'
 
 
-## -------------------------------------------------------------------
-## WP-CLI ALIASES
-## -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# WP-CLI ALIASES
+# -------------------------------------------------------------------
 alias wps="wp plugin search --fields=name,slug,rating,version"
 
 
-## -------------------------------------------------------------------
-## SSH ALIASES
-## -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# SSH ALIASES
+# -------------------------------------------------------------------
 alias ssh-showkeys="tail +1 ~/.ssh/*.pub"
 alias ssh-delete_tmp="rm -f /tmp/ssh_mux_*"
 alias ssh-add='ssh-add -l'
 
-## -------------------------------------------------------------------
-## GENERAL ALIASES
-## -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# GENERAL ALIASES
+# -------------------------------------------------------------------
 alias -g H='| head'
 alias -g T='| tail'
 alias -g G='| grep'
@@ -188,7 +185,7 @@ alias -g CA="2>&1 | cat -A"
 alias -g NE="2> /dev/null"
 alias -g NUL="> /dev/null 2>&1"
 
-## Colorize the grep command output for ease of use (good for log files)
+# Colorize the grep command output for ease of use (good for log files)
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
@@ -205,16 +202,16 @@ alias now='date +"%T'
 alias nowtime=now
 alias nowdate='date +"%d-%m-%Y"'
 
-## get web server headers #
+# get web server headers #
 alias header='curl -I'
 
-## find out if remote server supports gzip / mod_deflate or not #
+# find out if remote server supports gzip / mod_deflate or not #
 alias headerc='curl -I --compress'
 
-## Resume wget ##
+# Resume wget
 alias wget='wget -c'
 
-## Found on http://www.cyberciti.biz/tips/bash-aliases-mac-centos-linux-unix.html
+# Found on http://www.cyberciti.biz/tips/bash-aliases-mac-centos-linux-unix.html
 alias nocomment='grep -Ev '\''^(#|$)'\'''
 
 alias mount='mount |column -t'

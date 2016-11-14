@@ -1,6 +1,4 @@
-## -------------------------------------------------------------------
-## Vagrant aliases
-## -------------------------------------------------------------------
+# Vagrant aliases
 alias vup="vagrant up"
 alias vd="vagrant destroy"
 alias vupl="vagrant up 2>&1 | tee vagrant.log"

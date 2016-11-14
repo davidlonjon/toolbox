@@ -1,10 +1,10 @@
-## -------------------------------------------------------------------
-## Projects specific aliases
-## -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Projects specific aliases
+# -------------------------------------------------------------------
 
-### -------------------------------------------------------------------
-## SPP project
-### -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# SPP project
+# -------------------------------------------------------------------
 alias spp-reset-dev="checkout-develop-branches.sh && quick-clone-repos.sh"
 alias spp-checkout-dev="checkout-develop-branches.sh"
 alias spp-delete-merged-branch-into-develop="git checkout develop --quiet && git branch --merged | grep -v 'master' | grep -v 'develop' | xargs -n 1 git branch -d"
