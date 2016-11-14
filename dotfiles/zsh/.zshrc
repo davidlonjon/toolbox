@@ -18,6 +18,9 @@ ZSH_CUSTOM=$HOME/toolbox/oh-my-zsh/custom
 # ZSH_THEME="robbyrussell"
 ZSH_THEME="pure"
 
+# Set pure options (See https://github.com/sindresorhus/pure):
+PURE_GIT_PULL=0
+
 # Set oh-my-zsh plugins
 if [[ $OSTYPE == 'darwin' ]]; then
   plugins=(git autojump wp-cli virtualenvwrapper virtualenv git-extras history npm bower python django pip composer cpv docker zsh_reload brew brew-cask)
