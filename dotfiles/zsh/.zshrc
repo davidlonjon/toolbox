@@ -125,11 +125,6 @@ bindkey "^[[B" down-line-or-beginning-search # Down
 # set -o vi
 # export TERM=screen-256color       # for a tmux -2 session (also for screen)
 
-# This is at the end to avoid messing up the color highlighting
-# Taken from https://github.com/matijs/dotfiles/blob/master/.bash_profile
-# remove duplicates from the path
-# export PATH=`awk -F: '{for(i=1;i<=NF;i++){if(!($i in a)){a[$i];printf s$i;s=":"}}}'<<<$PATH`;
-
 # https://news.ycombinator.com/item?id=3535600
 # if there are no matches for globs, leave them alone and execute the command
 # setopt no_nomatch
