@@ -8,7 +8,7 @@ How to install
 =======
 
 ```
-$ git clone git@github.com:davidlonjon/toolbox.git --recursive
+$ git clone --recursive git@github.com:davidlonjon/toolbox.git
 $ ./toolbox/bootstrap.sh
 ```
 
@@ -66,3 +66,6 @@ Tmux
 
 Zsh Tips
  + http://dougblack.io/words/zsh-vi-mode.html
+
+Theme:
+  + https://github.com/sindresorhus/pure
