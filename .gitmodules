@@ -1,6 +1,6 @@
 [submodule "private"]
 	path = private
 	url = git@bitbucket.org:davidlonjon/toolbox_private.git
-[submodule "antigen"]
-	path = antigen
-	url = https://github.com/zsh-users/antigen.git
+[submodule "pure"]
+	path = pure
+	url = https://github.com/sindresorhus/pure.git
