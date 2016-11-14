@@ -12,7 +12,7 @@ fi
 
 # Paths for GO
 if [[ -d "/usr/local/opt/go/libexec/bin" ]]; then
-  if [[ -d "$HOME/goland" ]]; then
+  if [[ ! -d "$HOME/goland" ]]; then
     mkdir $HOME/goland
 fi
   export GOPATH=$HOME/goland
