@@ -129,3 +129,32 @@ bindkey "^[[B" down-line-or-beginning-search # Down
 # https://news.ycombinator.com/item?id=3535600
 # if there are no matches for globs, leave them alone and execute the command
 setopt no_nomatch
+
+# Setup dir colors for solarized theme
+# See https://github.com/seebi/dircolors-solarized#installation
+# See http://qiita.com/yoshi-naoyuki/items/68f65032dde46edf89fa
+if [[ $OSTYPE == 'darwin' ]]; then
+  eval "$(gdircolors ~/.dir_colors)"
+  alias ls='gls --color=auto'
+
+  # Tell ls to be colourful
+  export CLICOLOR=1
+  export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
+  # Tell grep to highlight matches
+  export GREP_OPTIONS='--color=auto'
+fi
+
+# Set less options
+if [[ -x $(which less) ]]
+then
+    export PAGER="less"
+    export LESS="--ignore-case --LONG-PROMPT --QUIET --chop-long-lines -Sm --RAW-CONTROL-CHARS --quit-if-one-screen --no-init"
+    if [[ -x $(which lesspipe.sh) ]]
+    then
+  LESSOPEN="| lesspipe.sh %s"
+  export LESSOPEN
+    fi
+fi
+
+# set -o vi
+export TERM=screen-256color       # for a tmux -2 session (also for screen)
