@@ -14,17 +14,12 @@ OSTYPE=$( uname | tr '[:upper:]' '[:lower:]')
 ZSH=$HOME/.oh-my-zsh
 ZSH_CUSTOM=$HOME/toolbox/oh-my-zsh/custom
 
-# Set the theme
-# ZSH_THEME="robbyrussell"
-ZSH_THEME="pure"
-
-# Set pure options (See https://github.com/sindresorhus/pure):
-PURE_GIT_PULL=0
-
-# Set oh-my-zsh plugins
+# Set oh-my-zsh theme & plugins
 if [[ $OSTYPE == 'darwin' ]]; then
+  ZSH_THEME="pure"
   plugins=(git autojump wp-cli virtualenvwrapper virtualenv git-extras history npm bower python django pip composer cpv docker zsh_reload brew brew-cask)
 elif [[ $OSTYPE == 'linux' ]]; then
+  ZSH_THEME="robbyrussell"
   plugins=(git autojump wp-cli virtualenvwrapper virtualenv git-extras history npm bower python django pip composer cpv docker zsh_reload)
 fi
 

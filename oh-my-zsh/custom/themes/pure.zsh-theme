@@ -1,1 +1,1 @@
-pure/pure.zsh
+/Users/davidlonjon/toolbox/pure/pure.zsh
