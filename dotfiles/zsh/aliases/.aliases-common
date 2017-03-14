@@ -170,7 +170,7 @@ alias wps="wp plugin search --fields=name,slug,rating,version"
 # -------------------------------------------------------------------
 alias ssh-showkeys="tail +1 ~/.ssh/*.pub"
 alias ssh-delete_tmp="rm -f /tmp/ssh_mux_*"
-alias ssh-add='ssh-add -l'
+#alias ssh-add='ssh-add -l'
 
 # -------------------------------------------------------------------
 # GENERAL ALIASES
