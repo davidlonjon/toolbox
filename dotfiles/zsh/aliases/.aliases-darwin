@@ -93,3 +93,6 @@ alias lpl="lpass login david.lonjon@gmail.com"
 alias lpp="lpass show --sync=no -c --password"
 alias lps="lpass ls --sync=no | grep"
 alias lpsync="lpass sync"
+
+# ssh add
+alias sshadd='eval "$(ssh-agent -s)" && ssh-add -K ~/.ssh/id_rsa'
