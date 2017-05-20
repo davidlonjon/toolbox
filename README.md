@@ -70,3 +70,6 @@ Zsh Tips
 
 Theme:
   + https://github.com/sindresorhus/pure
+
+Docker:
+  + https://github.com/tcnksm/docker-alias/blob/master/zshrc
