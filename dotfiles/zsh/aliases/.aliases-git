@@ -77,6 +77,7 @@ alias gcamend='git commit --amend'
 # https://github.com/mathiasbynens/dotfiles/blob/master/.gitconfig
 # # Credit an author on the latest commit
 alias gccredit="!c() { git commit --amend --author \"$1 <$2>\" -C HEAD; }; c"
+gcmnv='git commit --no-verify -m’
 
 # Checkout
 alias gco='git checkout'
