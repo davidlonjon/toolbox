@@ -33,5 +33,14 @@ MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 [ -d "$HOME/toolbox/bin/osx" ] && export PATH=$PATH:$HOME/toolbox/bin/osx
 
 # NVM
- export NVM_DIR="$HOME/.nvm"
-  . "$(brew --prefix nvm)/nvm.sh"
+export NVM_DIR="$HOME/.nvm"
+. "$(brew --prefix nvm)/nvm.sh"
+
+# PHPCS 2.9
+export PATH="/usr/local/opt/php-code-sniffer@2.9/bin:$PATH"
+
+export PATH="$HOME/.rbenv/bin:$PATH"
+
+# amazon-ecr-credential-helper
+# See https://github.com/awslabs/amazon-ecr-credential-helper
+export PATH="$HOME/goland/src/github.com/awslabs/amazon-ecr-credential-helper/bin/local:$PATH"
