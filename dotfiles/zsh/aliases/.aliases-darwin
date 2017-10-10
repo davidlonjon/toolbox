@@ -94,5 +94,25 @@ alias lpp="lpass show --sync=no -c --password"
 alias lps="lpass ls --sync=no | grep"
 alias lpsync="lpass sync"
 
-# ssh add
+# SSH helper
 alias sshadd='eval "$(ssh-agent -s)" && ssh-add -K ~/.ssh/id_rsa'
+alias sshaddxwp='eval "$(ssh-agent -s)" && ssh-add -K ~/.ssh/id_rsa_xwp'
+alias sshclear="rm /tmp/ssh_mux_* -f && echo SSH connection cache cleared;"
+alias sshlist="echo Currently open ssh connections && echo && l /tmp/ssh_mux_*"
+
+# Taken from https://github.com/antonbabenko/awsp
+alias awsall="_awsListAll"
+alias awsp="_awsSwitchProfile"
+alias awswho="aws configure list"
+complete -W "$(cat $HOME/.aws/credentials | grep -Eo '\[.*\]' | tr -d '[]')" _awsSwitchProfile
+
+
+# Found at https://www.digitalocean.com/community/questions/what-are-your-favorite-bash-aliases
+alias brew-update='brew update && brew upgrade --all && brew cask update && brew cleanup && brew cask cleanup'
+
+# Found at http://zsmith.co/aliases.html
+alias D='cd ~/Desktop'
+alias W='cd ~/Downloads'
+
+alias V='cd /Volumes'
+alias v='diskutil list' # list volumes
