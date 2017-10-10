@@ -14,14 +14,19 @@ OSTYPE=$( uname | tr '[:upper:]' '[:lower:]')
 ZSH=$HOME/.oh-my-zsh
 ZSH_CUSTOM=$HOME/toolbox/oh-my-zsh/custom
 
+
+# Zplug https://github.com/zplug/zplug
+export ZPLUG_HOME=/usr/local/opt/zplug
+[ -f "$ZPLUG_HOME/init.zsh" ] && source $ZPLUG_HOME/init.zsh
+
 # Set oh-my-zsh theme & plugins
 if [[ $OSTYPE == 'darwin' ]]; then
   # ZSH_THEME="pure"
   ZSH_THEME="robbyrussell"
-  plugins=(git autojump wp-cli virtualenvwrapper virtualenv git-extras history npm bower python django pip composer cpv docker zsh_reload brew brew-cask)
+  plugins=(git autojump wp-cli virtualenvwrapper virtualenv git-extras history npm python django pip composer cpv docker zsh_reload brew brew-cask)
 elif [[ $OSTYPE == 'linux' ]]; then
   ZSH_THEME="robbyrussell"
-  plugins=(git autojump wp-cli virtualenvwrapper virtualenv git-extras history npm bower python django pip composer cpv docker zsh_reload)
+  plugins=(git autojump wp-cli virtualenvwrapper virtualenv git-extras history npm python django pip composer cpv docker zsh_reload)
 fi
 
 # Boostrap oh-my-zsh
@@ -35,7 +40,9 @@ source $HOME/toolbox/dotfiles/zsh/paths/.paths-projects
 # Set aliases
 source $HOME/toolbox/dotfiles/zsh/aliases/.aliases-common
 source $HOME/toolbox/dotfiles/zsh/aliases/.aliases-common-vagrant
-source $HOME/toolbox/dotfiles/zsh/aliases/.aliases-common-docker
+# source $HOME/toolbox/dotfiles/zsh/aliases/.aliases-common-docker
+# From https://github.com/akarzim/zsh-docker-aliases
+zplug "akarzim/zsh-docker-aliases"
 source $HOME/toolbox/dotfiles/zsh/aliases/.aliases-git
 source $HOME/toolbox/dotfiles/zsh/aliases/.aliases-projects
 [ -f "$HOME/toolbox/dotfiles/zsh/aliases/.aliases-local" ] && source $HOME/toolbox/dotfiles/zsh/aliases/.aliases-local
@@ -158,3 +165,16 @@ export TERM=screen-256color       # for a tmux -2 session (also for screen)
 
 # zsh-syntax-highlighting (see https://github.com/zsh-users/zsh-syntax-highlighting)
 source $HOME/toolbox/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+eval "$(rbenv init -)"
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+[ -f "$HOME/.bluestrap" ] && source $HOME/.bluestrap # via cli-bluestrap provision
+
+if ! zplug check; then
+    zplug install
+fi
+
+# source plugins and add commands to the PATH
+zplug load
