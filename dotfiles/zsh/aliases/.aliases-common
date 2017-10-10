@@ -17,10 +17,10 @@ alias wwwl="cd ~/projects/dev/shared/www"
 # Quick access to my www project on remote vagrant dev machine
 alias wwwr="cd /srv/www"
 
-# Alias for Bower
-alias bower='noglob bower'
-
 alias teal="ls ~/.teamocil"
+
+# Found at https://www.digitalocean.com/community/questions/what-are-your-favorite-bash-aliases
+alias sudo='sudo '
 
 # -------------------------------------------------------------------
 # ZSH ALIASES
@@ -64,6 +64,10 @@ alias lr='ls -tRFh'
 alias lt='ls -ltFh'
 
 alias ldot='ls -ld .*'
+
+# List directory and pipe output to less. Makes viewing of large directory easy
+# https://labbots.com/my-favorite-bash-aliases-that-increases-productivity/
+alias lsl="ls -lhFA | less"
 
 # https://github.com/skwp/dotfiles/blob/master/zsh/aliases.zsh
 # show me files matching "ls grep"
@@ -222,8 +226,10 @@ alias mount='mount |column -t'
 alias ip='curl ipecho.net/plain ; echo'
 # IP addresses
 # Taken from https://github.com/mathiasbynens/dotfiles/blob/master/.aliases
-alias localip="ipconfig getifaddr en1"
+alias iploc="ifconfig en0 | grep --word-regexp inet | awk '{print $2}'"
 alias ips="ifconfig -a | grep -o 'inet6\? \(\([0-9]\+\.[0-9]\+\.[0-9]\+\.[0-9]\+\)\|[a-fA-F0-9:]\+\)' | sed -e 's/inet6* //'"
+alias ipinfo='curl ipinfo.io'
+
 
 # Taken from https://github.com/mathiasbynens/dotfiles/blob/master/.aliases
 # Gzip-enabled `curl`
@@ -261,3 +267,7 @@ alias ec2="aws ec2"
 
 # Alias for launching Ranger (file explorer in command line) in the current directory
 alias b="ranger ."
+
+# Found in https://www.digitalocean.com/community/questions/what-are-your-favorite-bash-aliases
+alias drives='df -h'
+alias usage='du -h -d1'
