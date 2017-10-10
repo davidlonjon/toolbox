@@ -55,21 +55,27 @@ Git Scripts
 + https://github.com/pengwynn/
 
 Misc
- + https://gist.github.com/mkelley33/9422177
- + https://gist.github.com/NahimNasser/4772132
- + http://www.hongkiat.com/blog/how-to-clear-flush-dns-cache-in-os-x-yosemite/
- + http://stackoverflow.com/questions/59895/can-a-bash-script-tell-what-directory-its-stored-in
- + http://stackoverflow.com/questions/2176278/preview-a-git-push/2831135#2831135
- + https://github.com/seebi/dircolors-solarized
++ https://gist.github.com/mkelley33/9422177
++ https://gist.github.com/NahimNasser/4772132
++ http://www.hongkiat.com/blog/how-to-clear-flush-dns-cache-in-os-x-yosemite/
++ http://stackoverflow.com/questions/59895/can-a-bash-script-tell-what-directory-its-stored-in
++ http://stackoverflow.com/questions/2176278/preview-a-git-push/2831135#2831135
++ https://github.com/seebi/dircolors-solarized
++ https://www.digitalocean.com/community/questions/what-are-your-favorite-bash-aliases
++ http://zsmith.co/aliases.html
++ https://www.networkworld.com/article/3085495/linux/unix-aliases-for-good-and-evil.html
 
 Tmux
- + https://robots.thoughtbot.com/tmux-copy-paste-on-os-x-a-better-future
++ https://robots.thoughtbot.com/tmux-copy-paste-on-os-x-a-better-future
 
 Zsh Tips
- + http://dougblack.io/words/zsh-vi-mode.html
++ http://dougblack.io/words/zsh-vi-mode.html
 
 Theme:
-  + https://github.com/sindresorhus/pure
++ https://github.com/sindresorhus/pure
 
 Docker:
-  + https://github.com/tcnksm/docker-alias/blob/master/zshrc
++ https://github.com/tcnksm/docker-alias/blob/master/zshrc
+
+AWS
++ https://github.com/antonbabenko/awsp
