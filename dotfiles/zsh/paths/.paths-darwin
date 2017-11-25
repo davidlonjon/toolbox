@@ -32,12 +32,6 @@ MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 # Paths for local scripts
 [ -d "$HOME/toolbox/bin/osx" ] && export PATH=$PATH:$HOME/toolbox/bin/osx
 
-# NVM
-export NVM_DIR="$HOME/.nvm"
-. "$(brew --prefix nvm)/nvm.sh"
-
-# PHPCS 2.9
-export PATH="/usr/local/opt/php-code-sniffer@2.9/bin:$PATH"
 
 export PATH="$HOME/.rbenv/bin:$PATH"
 
