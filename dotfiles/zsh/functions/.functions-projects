@@ -10,6 +10,28 @@ symaps_fix_tunnelblick() {
 }
 
 
+
+# -------------------------------------------------------------------
+# Wanderable project
+# -------------------------------------------------------------------
+function wand-pr() {
+	ggpush
+	current_branch=$(git rev-parse --abbrev-ref HEAD)
+	created_pr=$(hub pull-request -m "$current_branch" -b staging)
+	open $created_pr
+}
+
+
+# -------------------------------------------------------------------
+# Evasion project
+# -------------------------------------------------------------------
+function eva-pr() {
+	ggpush
+	current_branch=$(git rev-parse --abbrev-ref HEAD)
+	created_pr=$(hub pull-request -m "$current_branch")
+	open $created_pr
+}
+
 # -------------------------------------------------------------------
 # Fairfax project
 # -------------------------------------------------------------------
@@ -45,7 +67,6 @@ function bs-start() {
 	cd "$current_dir"
 	echo ''
 	sleep 1
-	bs hosts --private-key=/root/.ssh/id_rsa_xwp
 }
 
 function bs-stop() {
@@ -77,7 +98,6 @@ function bs-stop() {
 	cd "$current_dir"
 	echo ''
 	sleep 1
-	bs hosts --private-key=/root/.ssh/id_rsa_xwp
 }
 
 function bs-update() {
