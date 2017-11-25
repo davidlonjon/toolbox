@@ -35,9 +35,8 @@ source $HOME/toolbox/dotfiles/zsh/paths/.paths-projects
 # Set aliases
 source $HOME/toolbox/dotfiles/zsh/aliases/.aliases-common
 source $HOME/toolbox/dotfiles/zsh/aliases/.aliases-common-vagrant
-# source $HOME/toolbox/dotfiles/zsh/aliases/.aliases-common-docker
-# From https://github.com/akarzim/zsh-docker-aliases
-zplug "akarzim/zsh-docker-aliases"
+source $HOME/toolbox/dotfiles/zsh/aliases/.aliases-common-docker
+
 source $HOME/toolbox/dotfiles/zsh/aliases/.aliases-git
 source $HOME/toolbox/dotfiles/zsh/aliases/.aliases-projects
 [ -f "$HOME/toolbox/dotfiles/zsh/aliases/.aliases-local" ] && source $HOME/toolbox/dotfiles/zsh/aliases/.aliases-local
