@@ -3,7 +3,7 @@
 # @file         .zshrc
 # @description  Configuration file for zsh
 # @author       David Lonjon
-# @version      20161114
+# @version      20171125
 #
 # ----------------------------------------------------------------------------------------------------
 
