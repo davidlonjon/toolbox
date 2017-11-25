@@ -34,6 +34,7 @@ alias glgns="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Crese
 #alias glg='git log'
 #alias glgs='git log --stat --max-count=5'
 #alias glgg='git log --graph --max-count=5'
+alias gluf="git --no-pager diff --name-only --diff-filter=U"
 
 # https://coderwall.com/p/7jbwww
 # List what you have done today
@@ -161,6 +162,7 @@ alias gassumed='git ls-files -v | grep -w h | cut -c 3-'
 # Misc
 alias gcp='git cherry-pick -x' # grab a change from a branch
 alias gf='git reflog'
+alias gcbn='git rev-parse --abbrev-ref HEAD | pbcopy'
 
 # Taken from https://github.com/holman/dotfiles/blob/master/git/aliases.zsh
 alias grm="git status | grep deleted | awk '{\$1=\$2=\"\"; print \$0}' | \
