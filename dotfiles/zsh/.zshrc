@@ -121,9 +121,6 @@ bindkey "^[[B" down-line-or-beginning-search # Down
 # Don’t write over existing files with >, use >! instead
 # setopt NOCLOBBER
 
-# set -o vi
-# export TERM=screen-256color       # for a tmux -2 session (also for screen)
-
 # https://news.ycombinator.com/item?id=3535600
 # if there are no matches for globs, leave them alone and execute the command
 setopt no_nomatch
