@@ -14,11 +14,6 @@ OSTYPE=$( uname | tr '[:upper:]' '[:lower:]')
 ZSH=$HOME/.oh-my-zsh
 ZSH_CUSTOM=$HOME/toolbox/oh-my-zsh/custom
 
-
-# Zplug https://github.com/zplug/zplug
-export ZPLUG_HOME=/usr/local/opt/zplug
-[ -f "$ZPLUG_HOME/init.zsh" ] && source $ZPLUG_HOME/init.zsh
-
 # Set oh-my-zsh theme & plugins
 if [[ $OSTYPE == 'darwin' ]]; then
   # ZSH_THEME="pure"
@@ -172,9 +167,4 @@ eval "$(rbenv init -)"
 export PATH="$PATH:$HOME/.rvm/bin"
 [ -f "$HOME/.bluestrap" ] && source $HOME/.bluestrap # via cli-bluestrap provision
 
-if ! zplug check; then
-    zplug install
-fi
 
-# source plugins and add commands to the PATH
-zplug load
