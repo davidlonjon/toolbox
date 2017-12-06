@@ -331,16 +331,16 @@ _is_git() {
 # Check if the current directory is in a Mercurial repository.
 # USAGE:
 #   _is_hg
-_is_hg() {
-  local root="$(pwd -P)"
+# _is_hg() {
+#   local root="$(pwd -P)"
 
-  while [[ $root && ! -d $root/.hg ]]
-  do
-    root="${root%/*}"
-  done
+#   while [[ $root && ! -d $root/.hg ]]
+#   do
+#     root="${root%/*}"
+#   done
 
-  [[ -n "$root" ]] &>/dev/null
-}
+#   [[ -n "$root" ]] &>/dev/null
+# }
 
 # Draw prompt section (bold is used as default)
 # USAGE:
