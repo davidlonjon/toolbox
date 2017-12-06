@@ -797,20 +797,20 @@ spaceship_swift() {
 # GOLANG
 # Show current version of Go
 spaceship_golang() {
-  [[ $SPACESHIP_GOLANG_SHOW == false ]] && return
+  # [[ $SPACESHIP_GOLANG_SHOW == false ]] && return
 
-  # If there are Go-specific files in current directory, or current directory is under the GOPATH
-  [[ -d Godeps || -f glide.yaml || -n *.go(#qN^/) || -f Gopkg.yml || -f Gopkg.lock || ( $GOPATH && $PWD =~ $GOPATH ) ]] || return
+  # # If there are Go-specific files in current directory, or current directory is under the GOPATH
+  # [[ -d Godeps || -f glide.yaml || -n *.go(#qN^/) || -f Gopkg.yml || -f Gopkg.lock || ( $GOPATH && $PWD =~ $GOPATH ) ]] || return
 
-  _exists go || return
+  # _exists go || return
 
-  local go_version=$(go version | grep --colour=never -oE '[[:digit:]].[[:digit:]]')
+  # local go_version=$(go version | grep --colour=never -oE '[[:digit:]].[[:digit:]]')
 
-  _prompt_section \
-    "$SPACESHIP_GOLANG_COLOR" \
-    "$SPACESHIP_GOLANG_PREFIX" \
-    "${SPACESHIP_GOLANG_SYMBOL}v${go_version}" \
-    "$SPACESHIP_GOLANG_SUFFIX"
+  # _prompt_section \
+  #   "$SPACESHIP_GOLANG_COLOR" \
+  #   "$SPACESHIP_GOLANG_PREFIX" \
+  #   "${SPACESHIP_GOLANG_SYMBOL}v${go_version}" \
+  #   "$SPACESHIP_GOLANG_SUFFIX"
 }
 
 # PHP
