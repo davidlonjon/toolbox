@@ -65,11 +65,11 @@
 
     # https://github.com/whiteinge/dotfiles/blob/master/.gitconfig
     # Compare local branches to remote branches (without doing a fetch!)
-    # Takes (optional) remote name as an argument; default: "upstream".
-    # FIXME: branches that are ahead of upstream will also be shown.
+    # Takes (optional) remote name as an argument; default: "origin".
+    # FIXME: branches that are ahead of origin will also be shown.
     showstale = "!bash -c 'join -j 2 \
         <(git show-ref --heads) \
-        <(git ls-remote --heads ${1:-upstream}) \
+        <(git ls-remote --heads ${1:-origin}) \
         | awk '\\''{ if ($2 != $3) print $1 }'\\''' -"
 
     # https://github.com/whiteinge/dotfiles/blob/master/.gitconfig
