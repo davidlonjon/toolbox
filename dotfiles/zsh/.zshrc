@@ -157,7 +157,11 @@ export TERM=screen-256color       # for a tmux -2 session (also for screen)
 # zsh-syntax-highlighting (see https://github.com/zsh-users/zsh-syntax-highlighting)
 source $HOME/toolbox/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-eval "$(rbenv init -)"
+if [[ -x $(which rbenv) ]]
+then
+    eval "$(rbenv init -)"
+fi
+
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
