@@ -157,7 +157,7 @@ export TERM=screen-256color       # for a tmux -2 session (also for screen)
 # zsh-syntax-highlighting (see https://github.com/zsh-users/zsh-syntax-highlighting)
 source $HOME/toolbox/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-if [[ -x $(which rbenv) ]]
+if [[ -x $(command -v rbenv) ]]
 then
     eval "$(rbenv init -)"
 fi
