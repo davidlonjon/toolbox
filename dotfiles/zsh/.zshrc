@@ -16,8 +16,8 @@ ZSH_CUSTOM=$HOME/toolbox/oh-my-zsh/custom
 
 # Set oh-my-zsh theme & plugins
 if [[ $OSTYPE == 'darwin' ]]; then
-  # ZSH_THEME="pure"
-  ZSH_THEME="robbyrussell"
+  ZSH_THEME="spaceship"
+  # ZSH_THEME="robbyrussell"
   plugins=(git autojump wp-cli virtualenvwrapper virtualenv git-extras history npm python django pip composer cpv docker zsh_reload brew brew-cask)
 elif [[ $OSTYPE == 'linux' ]]; then
   ZSH_THEME="robbyrussell"
