@@ -182,3 +182,5 @@ alias grt='cd $(git rev-parse --show-toplevel || echo ".")'
 
 alias tl-show-my-changes="tig HEAD --no-merges --not develop --author='David Lonjon'"
 alias gl-show-my-changes="git log HEAD --no-merges --not develop --author='David Lonjon'"
+
+alias gsubup="git submodule update --recursive --remote"
