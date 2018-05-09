@@ -64,6 +64,7 @@ Misc
 + https://www.digitalocean.com/community/questions/what-are-your-favorite-bash-aliases
 + http://zsmith.co/aliases.html
 + https://www.networkworld.com/article/3085495/linux/unix-aliases-for-good-and-evil.html
++ https://www.voorhoede.nl/en/blog/13-command-line-tools-to-up-your-front-end-game/
 
 Tmux
 + https://robots.thoughtbot.com/tmux-copy-paste-on-os-x-a-better-future
