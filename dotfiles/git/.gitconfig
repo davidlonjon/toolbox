@@ -3,8 +3,8 @@
     email = david.lonjon@gmail.com
 
 [core]
-    # editor = vi
-    excludesfile = /Users/davidlonjon/.gitignore_global
+    editor = /usr/local/bin/vim
+	excludesfile = /Users/davidlonjon/.gitignore_global
     # Taken from http://nuclearsquid.com/writings/git-tricks-tips-workflows/
     whitespace = trailing-space,space-before-tab
     # Taken from https://help.github.com/articles/dealing-with-line-endings
