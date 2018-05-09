@@ -116,3 +116,15 @@ alias W='cd ~/Downloads'
 
 alias V='cd /Volumes'
 alias v='diskutil list' # list volumes
+
+# https://www.voorhoede.nl/en/blog/13-command-line-tools-to-up-your-front-end-game/
+alias l="exa --all --long --color=always --group-directories-first"
+
+# Kubertenes
+alias k="kubectl"
+
+# Minikube
+alias mk="minikube"
+
+# Terraform
+alias tf="terraform"
