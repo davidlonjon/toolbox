@@ -20,7 +20,9 @@ alias wwwr="cd /srv/www"
 alias teal="ls ~/.teamocil"
 
 # Found at https://www.digitalocean.com/community/questions/what-are-your-favorite-bash-aliases
-alias sudo='sudo '
+# alias sudo='sudo '
+
+alias sudo='noglob sudo'
 
 # -------------------------------------------------------------------
 # ZSH ALIASES
