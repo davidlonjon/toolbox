@@ -2,6 +2,4 @@
 # Projects specific paths
 # -------------------------------------------------------------------
 
-if [[ $OSTYPE == 'darwin' ]]; then
-  export PATH=$PATH:/Users/davidlonjon/projects/xwp/news-quickstart-20150521/vip-quickstart-config
-fi
+
