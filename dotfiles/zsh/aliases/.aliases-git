@@ -184,3 +184,25 @@ alias tl-show-my-changes="tig HEAD --no-merges --not develop --author='David Lon
 alias gl-show-my-changes="git log HEAD --no-merges --not develop --author='David Lonjon'"
 
 alias gsubup="git submodule update --recursive --remote"
+
+
+###############
+# fzf related git aliases
+###############
+
+# Reset files
+alias fgr='git checkout $(git status --porcelain | cut -c4- | fzf -m)'
+
+# Add files
+alias fga='git add $(git status --porcelain | cut -c4- | fzf -m)'
+
+# Diff
+alias fgd='git diff $(git status --porcelain | cut -c4- | fzf -m)'
+
+# Diff cached
+alias fgdc='git diff --cached $(git status --porcelain | cut -c4- | fzf -m)'
+
+# Diff cached
+alias fgbc='git branch -a | cut -c3- | fzf -m | pbcopy'
+
+
