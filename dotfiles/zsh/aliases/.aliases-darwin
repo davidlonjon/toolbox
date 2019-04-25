@@ -128,3 +128,12 @@ alias mk="minikube"
 
 # Terraform
 alias tf="terraform"
+
+# Lastpass
+alias ffp='lpass show -c --password $(lpass ls  | fzf | awk "{print $(NF)}" | sed "s/\]//g")'
+
+# Python 3
+alias python="python3"
+
+# Python 3
+alias pip="pip3"
