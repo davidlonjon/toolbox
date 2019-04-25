@@ -255,6 +255,11 @@ aliass() {
   alias|ack "$*"
 }
 
+# Search alias new
+fas() {
+  alias| fzf
+}
+
 # Taken from https://github.com/jimeh/dotfiles/blob/master/shell/aliases.sh
 # Extract most common archives with single command.
 #  - from: http://alias.sh/extract-most-know-archives-one-command
@@ -408,6 +413,14 @@ function gbout {
     git log $1.. --no-merges --format='%h | Author:%an | Date:%ad | %s' --date=local
 }
 
+function tigin {
+    tig ..$1 --no-merges
+}
+
+function tigout {
+    tig $1.. --no-merges
+}
+
 ## -------------------------------------------------------------------
 ## TMUX FUNCTIONS
 ## -------------------------------------------------------------------
@@ -437,4 +450,16 @@ function tmux-kill() {
 # Get git issue number
 function get-git-issue-number() {
     zle -U "$(get_git_issue_number.py)";
+}
+
+
+## -------------------------------------------------------------------
+## PORTAINER FUNCTIONS
+## -------------------------------------------------------------------
+function portainer_start() {
+	docker run -d --name portainer -p 9999:9000 -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer
+}
+
+function portainer_stop() {
+	docker stop portainer && docker rm portainer
 }
