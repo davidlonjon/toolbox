@@ -8,7 +8,9 @@
     # Taken from http://nuclearsquid.com/writings/git-tricks-tips-workflows/
     whitespace = trailing-space,space-before-tab
     # Taken from https://help.github.com/articles/dealing-with-line-endings
-    autocrlf = input
+	autocrlf = false
+	eol = LF
+	fileMode = false
 
 [color]
     branch = auto
@@ -46,7 +48,7 @@
     default = matching
 
 [push]
-    default = matching
+	default = current
 
 [diff]
     tool = vimdiff
@@ -55,6 +57,7 @@
     mnemonicprefix = true
     # Taken from http://nuclearsquid.com/writings/git-tricks-tips-workflows/
     renames = copies
+	renamelimit = 5000
 
 [alias]
     # https://github.com/whiteinge/dotfiles/blob/master/.gitconfig
@@ -116,3 +119,5 @@
 	trustExitCode = true
 [commit]
 	template = /Users/davidlonjon/.stCommitMsg
+[ghq]
+	root = /Users/davidlonjon/projects
