@@ -2,14 +2,6 @@
 # Common paths
 # -------------------------------------------------------------------
 
-# Paths for virtualenvwrapper
-if [[ -e "/usr/local/bin/virtualenvwrapper.sh" ]]; then
-  # http://virtualenvwrapper.readthedocs.org/en/latest/tips.html
-  export WORKON_HOME=$HOME/.virtualenvs
-  export PROJECT_HOME=$HOME/Devel
-  source /usr/local/bin/virtualenvwrapper.sh
-fi
-
 # Paths for GO
 if [[ -d "/usr/local/opt/go/libexec/bin" ]]; then
   if [[ ! -d "$HOME/goland" ]]; then
