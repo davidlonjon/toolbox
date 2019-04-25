@@ -60,3 +60,10 @@ bindkey '^I' complete-word # complete on tab, leave expansion to _expand
 
 zle -N get-git-issue-number
 bindkey '^s' 'get-git-issue-number'
+
+# Taken from https://github.com/tomsquest/dotfiles/blob/master/zsh/bindkey.zsh
+# ctrl+b/f or ctrl+left/right : move word by word (backward/forward)
+bindkey '^b' backward-word
+bindkey '^f' forward-word
+bindkey '^[[1;5D' backward-word
+bindkey '^[[1;5C' forward-word
