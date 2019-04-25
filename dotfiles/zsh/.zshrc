@@ -7,6 +7,18 @@
 #
 # ----------------------------------------------------------------------------------------------------
 
+
+SPACESHIP_PROMPT_ORDER=(
+  time          # Time stampts section
+  user          # Username section
+  host          # Hostname section
+  dir           # Current directory section
+  git           # Git section (git_branch + git_status)
+  line_sep      # Line break
+  vi_mode       # Vi-mode indicator
+  char          # Prompt character
+)
+
 # Get the OS
 OSTYPE=$( uname | tr '[:upper:]' '[:lower:]')
 
@@ -18,7 +30,7 @@ ZSH_CUSTOM=$HOME/toolbox/oh-my-zsh/custom
 if [[ $OSTYPE == 'darwin' ]]; then
   ZSH_THEME="spaceship"
   # ZSH_THEME="robbyrussell"
-  plugins=(git autojump wp-cli virtualenvwrapper virtualenv git-extras history npm python django pip composer cpv docker zsh_reload brew brew-cask kubectl)
+  plugins=(git autojump wp-cli virtualenvwrapper virtualenv git-extras history npm python django pip composer cpv docker zsh_reload brew brew-cask kubectl zsh-autosuggestions)
 elif [[ $OSTYPE == 'linux' ]]; then
   ZSH_THEME="robbyrussell"
   plugins=(git autojump wp-cli virtualenvwrapper virtualenv git-extras history npm python django pip composer cpv docker zsh_reload)
@@ -59,7 +71,7 @@ source $HOME/toolbox/dotfiles/zsh/.completion
 if [[ $OSTYPE == 'darwin' ]]; then
 
   # Set Editor
-  export EDITOR='subl'
+  export EDITOR='vi'
 
   # Set Paths
   source $HOME/toolbox/dotfiles/zsh/paths/.paths-darwin
@@ -163,9 +175,6 @@ then
 fi
 
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
-
 # tabtab source for serverless package
 # uninstall by removing these lines or running `tabtab uninstall serverless`
 [[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
@@ -177,3 +186,9 @@ export PATH="$HOME/.yarn/bin:$PATH"
 # Pyenv
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; eval "$(pyenv virtualenv-init -)"; fi
 
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+# Perl
+eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib=$HOME/perl5)"
