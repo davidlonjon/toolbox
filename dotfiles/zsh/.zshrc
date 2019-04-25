@@ -140,16 +140,16 @@ setopt no_nomatch
 # Setup dir colors for solarized theme
 # See https://github.com/seebi/dircolors-solarized#installation
 # See http://qiita.com/yoshi-naoyuki/items/68f65032dde46edf89fa
-if [[ $OSTYPE == 'darwin' ]]; then
-  eval "$(gdircolors ~/.dir_colors)"
-  alias ls='gls --color=auto'
+# if [[ $OSTYPE == 'darwin' ]]; then
+  # eval "$(gdircolors ~/.dir_colors)"
+  # alias ls='gls --color=auto'
 
   # Tell ls to be colourful
-  export CLICOLOR=1
-  export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
+  # export CLICOLOR=1
+  # export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
   # Tell grep to highlight matches
-  export GREP_OPTIONS='--color=auto'
-fi
+  # export GREP_OPTIONS='--color=auto'
+# fi
 
 # Set less options
 if [[ -x $(which less) ]]
