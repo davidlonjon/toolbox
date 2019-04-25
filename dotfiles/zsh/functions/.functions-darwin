@@ -124,3 +124,7 @@ function _awsSwitchProfile() {
        aws configure list
    fi
 };
+
+gscf() {
+	git diff --name-status $1 | cut -c3- | fzf -m | pbcopy
+}
