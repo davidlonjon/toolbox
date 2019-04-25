@@ -18,6 +18,8 @@ bind branch M !@git branch %(prompt)
 
 bind branch O !@git checkout %(branch)
 bind tree V !subl %(file)
+bind diff P !pstorm %(file)
+bind diff C !@sh -c "echo %(file) | pbcopy"
 bind tree c !@sh -c "git show %(branch):%(file) | pbcopy"
 bind tree x !@sh -c "git show %(branch):%(file) > %(file)"
 
