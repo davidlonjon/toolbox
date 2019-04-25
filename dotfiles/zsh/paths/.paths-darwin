@@ -13,12 +13,14 @@ export PYTHONPATH=/usr/local/bin/python
 #export PYTHONPATH=/usr/local/lib/python2.7/site-packages:/usr/local/bin/python:$PYTHONPATH
 
 # Paths for virtualenvwrapper
-if [[ -e "/usr/local/bin/virtualenvwrapper.sh" ]]; then
-  # http://virtualenvwrapper.readthedocs.org/en/latest/tips.html
-  export VIRTUALENVWRAPPER_PYTHON="/Users/davidlonjon/.pyenv/shims/python3"
-  export WORKON_HOME=$HOME/.virtualenvs
-  export PROJECT_HOME=$HOME/Devel
-  source /usr/local/bin/virtualenvwrapper.sh
+if [[ -f "/usr/local/bin/virtualenvwrapper.sh" ]]; then
+  if [[ -f "/Users/davidlonjon/.pyenv/shims/python3" ]]; then
+    # http://virtualenvwrapper.readthedocs.org/en/latest/tips.html
+    export VIRTUALENVWRAPPER_PYTHON="/Users/davidlonjon/.pyenv/shims/python3"
+    export WORKON_HOME=$HOME/.virtualenvs
+    export PROJECT_HOME=$HOME/Devel
+    source /usr/local/bin/virtualenvwrapper.sh
+  fi
 fi
 
 #export PYENV_ROOT="$HOME/.pyenv"

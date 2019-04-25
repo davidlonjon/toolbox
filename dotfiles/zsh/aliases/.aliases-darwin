@@ -101,7 +101,7 @@ alias sshclear="rm /tmp/ssh_mux_* -f && echo SSH connection cache cleared;"
 alias sshlist="echo Currently open ssh connections && echo && l /tmp/ssh_mux_*"
 
 # Taken from https://github.com/antonbabenko/awsp
-if [ ! -f $HOME/.aws/credentials ]; then
+if [[ -f $HOME/.aws/credentials ]]; then
     alias awsall="_awsListAll"
     alias awsp="_awsSwitchProfile"
     alias awswho="aws configure list"
