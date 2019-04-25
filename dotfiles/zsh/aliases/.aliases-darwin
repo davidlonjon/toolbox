@@ -101,10 +101,13 @@ alias sshclear="rm /tmp/ssh_mux_* -f && echo SSH connection cache cleared;"
 alias sshlist="echo Currently open ssh connections && echo && l /tmp/ssh_mux_*"
 
 # Taken from https://github.com/antonbabenko/awsp
-alias awsall="_awsListAll"
-alias awsp="_awsSwitchProfile"
-alias awswho="aws configure list"
-complete -W "$(cat $HOME/.aws/credentials | grep -Eo '\[.*\]' | tr -d '[]')" _awsSwitchProfile
+if [ ! -f $HOME/.aws/credentials ]; then
+    alias awsall="_awsListAll"
+    alias awsp="_awsSwitchProfile"
+    alias awswho="aws configure list"
+    complete -W "$(cat $HOME/.aws/credentials | grep -Eo '\[.*\]' | tr -d '[]')" _awsSwitchProfile
+fi
+
 
 
 # Found at https://www.digitalocean.com/community/questions/what-are-your-favorite-bash-aliases
