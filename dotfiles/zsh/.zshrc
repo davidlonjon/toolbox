@@ -30,7 +30,7 @@ ZSH_CUSTOM=$HOME/toolbox/oh-my-zsh/custom
 if [[ $OSTYPE == 'darwin' ]]; then
   ZSH_THEME="spaceship"
   # ZSH_THEME="robbyrussell"
-  plugins=(git autojump wp-cli virtualenvwrapper virtualenv git-extras history npm python django pip composer cpv docker zsh_reload brew brew-cask kubectl zsh-autosuggestions)
+  plugins=(git autojump wp-cli virtualenvwrapper virtualenv git-extras history npm python django pip composer docker zsh_reload brew kubectl zsh-autosuggestions)
 elif [[ $OSTYPE == 'linux' ]]; then
   ZSH_THEME="robbyrussell"
   plugins=(git autojump wp-cli virtualenvwrapper virtualenv git-extras history npm python django pip composer cpv docker zsh_reload)
