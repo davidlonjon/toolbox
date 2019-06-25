@@ -273,3 +273,5 @@ alias b="ranger ."
 # Found in https://www.digitalocean.com/community/questions/what-are-your-favorite-bash-aliases
 alias drives='df -h'
 alias usage='du -h -d1'
+
+alias bm='bin/manage'
