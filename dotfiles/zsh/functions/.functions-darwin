@@ -128,3 +128,8 @@ function _awsSwitchProfile() {
 gscf() {
 	git diff --name-status $1 | cut -c3- | fzf -m | pbcopy
 }
+
+gcof() {
+    branch=`git branch -a | cut -c3- | fzf -m | pbcopy`
+    git checkout $(pbpaste)
+}
