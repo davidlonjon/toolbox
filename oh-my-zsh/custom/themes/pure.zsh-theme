@@ -1,1 +1,0 @@
-/Users/davidlonjon/toolbox/pure/pure.zsh
