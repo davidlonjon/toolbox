@@ -17,3 +17,5 @@ tmp/
 
 # Local options
 .options-local
+
+.vscode
