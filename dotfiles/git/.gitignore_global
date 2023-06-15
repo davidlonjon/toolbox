@@ -59,7 +59,6 @@ gen/
 
 # Logs and databases #
 ######################
-log/
 *.log
 *.sql
 *.sqlite
@@ -69,7 +68,6 @@ log/
 .DS_Store
 .DS_Store?
 ehthumbs.db
-Icon?
 Thumbs.db
 Desktop.ini
 ._*
@@ -143,3 +141,8 @@ DerivedData
 sublime/
 *.sublime-project
 *.sublime-workspace
+
+
+# Ruby #
+##############
+.ruby-version
