@@ -1,6 +1,6 @@
 [user]
-    name = David Lonjon
-    email = david.lonjon@gmail.com
+	name = David Lonjon
+	email = david.lonjon@gmail.com
 
 [core]
     editor = /usr/local/bin/vim
@@ -8,9 +8,10 @@
     # Taken from http://nuclearsquid.com/writings/git-tricks-tips-workflows/
     whitespace = trailing-space,space-before-tab
     # Taken from https://help.github.com/articles/dealing-with-line-endings
-	autocrlf = false
+	autocrlf = input
 	eol = LF
 	fileMode = false
+	pager = diff-so-fancy | less --tabs=4 -RFX
 
 [color]
     branch = auto
@@ -35,7 +36,7 @@
     # ff = only
     summary=true
     stat = true
-    tool = vimdiff
+	tool = Kaleidoscope
 
 [rerere]
     # Remember my merges
@@ -46,12 +47,13 @@
 # the usual default is to push all branches
 [pull]
     default = matching
+	rebase = false
 
 [push]
-	default = current
+	default = matching
 
 [diff]
-    tool = vimdiff
+	tool = Kaleidoscope
     # Git diff will use (i)ndex, (w)ork tree, (c)ommit and (o)bject
     # instead of a/b/c/d as prefixes for patches
     mnemonicprefix = true
@@ -108,16 +110,27 @@
 [url "http://lonjond@stash.news.com.au/scm"]
     insteadOf = ssh://git@stash.news.com.au
 [filter "lfs"]
-	clean = git-lfs clean %f
-	smudge = git-lfs smudge %f
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
 	required = true
+	process = git-lfs filter-process
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
 [mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 [commit]
 	template = /Users/davidlonjon/.stCommitMsg
 [ghq]
 	root = /Users/davidlonjon/projects
+[difftool "Kaleidoscope"]
+	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+[difftool]
+	prompt = false
+	trustExitCode = true
+[mergetool "Kaleidoscope"]
+	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+	trustExitCode = true
+[mergetool]
+	prompt = false
