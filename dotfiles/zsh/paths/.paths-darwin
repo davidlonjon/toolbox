@@ -14,9 +14,9 @@ export PYTHONPATH=/usr/local/bin/python
 
 # Paths for virtualenvwrapper
 if [[ -f "/usr/local/bin/virtualenvwrapper.sh" ]]; then
-  if [[ -f "/Users/davidlonjon/.pyenv/shims/python3" ]]; then
+  if [[ -f "/usr/local/bin/python2" ]]; then
     # http://virtualenvwrapper.readthedocs.org/en/latest/tips.html
-    export VIRTUALENVWRAPPER_PYTHON="/Users/davidlonjon/.pyenv/shims/python3"
+    export VIRTUALENVWRAPPER_PYTHON="/usr/local/bin/python2"
     export WORKON_HOME=$HOME/.virtualenvs
     export PROJECT_HOME=$HOME/Devel
     source /usr/local/bin/virtualenvwrapper.sh
@@ -34,12 +34,12 @@ export PKG_CONFIG_PATH=/opt/X11/lib/pkgconfig
 export JAVA_HOME=$(/usr/libexec/java_home)
 
 # EC2 TOOL
-export EC2_HOME=/usr/local/ec2/ec2-api-tools-1.7.5.1
-export PATH=$PATH:$EC2_HOME/bin
+#export EC2_HOME=/usr/local/ec2/ec2-api-tools-1.7.5.1
+# export PATH=$PATH:$EC2_HOME/bin
 
 # Paths related to core utis
-PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+# PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+# MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
 # Paths for local scripts
 [ -d "$HOME/toolbox/bin/osx" ] && export PATH=$PATH:$HOME/toolbox/bin/osx
@@ -49,13 +49,46 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 
 # amazon-ecr-credential-helper
 # See https://github.com/awslabs/amazon-ecr-credential-helper
-export PATH="$HOME/goland/src/github.com/awslabs/amazon-ecr-credential-helper/bin/local:$PATH"
+#export PATH="$HOME/goland/src/github.com/awslabs/amazon-ecr-credential-helper/bin/local:$PATH"
 
 # Ruby
 export PATH="/usr/local/opt/ruby/bin:$PATH"
+export PATH="/usr/local/lib/ruby/gems/3.0.0/bin:$PATH"
 export LDFLAGS="-L/usr/local/opt/ruby/lib"
 export CPPFLAGS="-I/usr/local/opt/ruby/include"
 export PKG_CONFIG_PATH="/usr/local/opt/ruby/lib/pkgconfig"
 
 # Flutter
 export PATH="$PATH:/Users/davidlonjon/flutter/bin"
+
+# Rust
+export PATH="$HOME/.cargo/bin:$PATH"
+
+# icu4c
+# export PATH="/usr/local/opt/icu4c/bin:$PATH"
+# export PATH="/usr/local/opt/icu4c/sbin:$PATH"
+# export LDFLAGS="-L/usr/local/opt/icu4c/lib"
+# export CPPFLAGS="-I/usr/local/opt/icu4c/include"
+# export PKG_CONFIG_PATH="/usr/local/opt/icu4c/lib/pkgconfig"
+
+
+# PHPEnv (https://github.com/phpenv/phpenv)
+export PATH="$HOME/.phpenv/bin:$PATH"
+eval "$(phpenv init -)"
+
+# NVM
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Android
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin
+
+
+# export PATH="$HOME/.jenv/bin:$PATH"
+# eval "$(jenv init -)"
