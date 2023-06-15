@@ -92,11 +92,11 @@ alias rsync_cust="rsync -aHAXxv --numeric-ids --delete --progress -e 'ssh -T -c 
 alias lpl="lpass login david.lonjon@gmail.com"
 alias lpp="lpass show --sync=no -c --password"
 alias lps="lpass ls --sync=no | grep"
-alias lpsync="lpass sync"
+alias lpsync="lpass sync"sh/id_rsa
 
 # SSH helper
-alias sshadd='eval "$(ssh-agent -s)" && ssh-add -K ~/.ssh/id_rsa'
-alias sshaddxwp='eval "$(ssh-agent -s)" && ssh-add -K ~/.ssh/id_rsa_xwp'
+alias sshadd='eval "$(ssh-agent -s)" && ssh-add --apple-use-keychain ~/.ssh/id_rsa'
+alias sshaddshuttle='eval "$(ssh-agent -s)" && ssh-add --apple-use-keychain ~/.ssh/shuttle-bitbucket'
 alias sshclear="rm /tmp/ssh_mux_* -f && echo SSH connection cache cleared;"
 alias sshlist="echo Currently open ssh connections && echo && l /tmp/ssh_mux_*"
 
@@ -140,3 +140,9 @@ alias python="python3"
 
 # Python 3
 alias pip="pip3"
+
+# VNC MAc Mini ubuntu
+alias vnc-mac-mini="ssh -L 59000:localhost:5901 -C -N -l mini 172.30.1.51"
+
+# Laravel Sail
+alias sail='[ -f sail ] && bash sail || bash vendor/bin/sail'

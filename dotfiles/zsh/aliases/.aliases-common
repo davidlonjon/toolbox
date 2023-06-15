@@ -181,15 +181,15 @@ alias ssh-delete_tmp="rm -f /tmp/ssh_mux_*"
 # -------------------------------------------------------------------
 # GENERAL ALIASES
 # -------------------------------------------------------------------
-alias -g H='| head'
-alias -g T='| tail'
-alias -g G='| grep'
-alias -g L="| less"
-alias -g M="| most"
-alias -g LL="2>&1 | less"
-alias -g CA="2>&1 | cat -A"
-alias -g NE="2> /dev/null"
-alias -g NUL="> /dev/null 2>&1"
+# alias -g H='| head'
+# alias -g T='| tail'
+# alias -g G='| grep'
+# alias -g L="| less"
+# alias -g M="| most"
+# alias -g LL="2>&1 | less"
+# alias -g CA="2>&1 | cat -A"
+# alias -g NE="2> /dev/null"
+# alias -g NUL="> /dev/null 2>&1"
 
 # Colorize the grep command output for ease of use (good for log files)
 alias grep='grep --color=auto'
@@ -199,7 +199,7 @@ alias fgrep='fgrep --color=auto'
 alias cls='clear'
 
 alias f='find . -name'
-alias fd='find . -type d -name'
+# alias fd='find . -type d -name'
 alias ff='find . -type f -name'
 
 # alias h='history'
@@ -268,10 +268,30 @@ alias scp='noglob scp'
 alias ec2="aws ec2"
 
 # Alias for launching Ranger (file explorer in command line) in the current directory
-alias b="ranger ."
+alias b=". ranger"
 
 # Found in https://www.digitalocean.com/community/questions/what-are-your-favorite-bash-aliases
 alias drives='df -h'
 alias usage='du -h -d1'
 
 alias bm='bin/manage'
+
+
+unalias gg
+# Taken from https://words.knowlerkno.ws/gg-a-git-directory-jumping-helper/
+
+# Go to Git root
+gitr() {
+  cd `git rev-parse --show-toplevel`
+}
+
+# Go to sub-directory
+fgod() {
+  cd `
+    fd --type d --hidden --follow --exclude .git \
+    | fzf --preview "ls -Ap {}"
+  `
+}
+
+# Go to a directory within the current Git repository
+alias gg="gitr && fgod"
