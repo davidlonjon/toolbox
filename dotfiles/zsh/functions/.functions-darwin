@@ -128,3 +128,101 @@ function _awsSwitchProfile() {
 gscf() {
 	git diff --name-status $1 | cut -c3- | fzf -m | pbcopy
 }
+
+rga-fzf() {
+	RG_PREFIX="rga --files-with-matches"
+	local file
+	file="$(
+		FZF_DEFAULT_COMMAND="$RG_PREFIX '$1'" \
+			fzf --sort --preview="[[ ! -z {} ]] && rga --pretty --context 5 {q} {}" \
+				--phony -q "$1" \
+				--bind "change:reload:$RG_PREFIX {q}" \
+				--preview-window="70%:wrap"
+	)" &&
+	echo "opening $file" &&
+	phpstorm "$file"
+}
+
+
+function fzf-aliases-functions() {
+    CMD=$(
+        (
+            (alias)
+            (functions | grep "()" | cut -d ' ' -f1 | grep -v "^_" )
+        ) | fzf | cut -d '=' -f1
+    );
+
+    eval $CMD
+}
+
+function fzf-git-status() {
+    git rev-parse --git-dir > /dev/null 2>&1 || { echo "You are not in a git repository" && return }
+    local selected
+    selected=$(git -c color.status=always status --short |
+        fzf --height 50% "$@" --border -m --ansi --nth 2..,.. \
+        --preview '(git diff --color=always -- {-1} | sed 1,4d; cat {-1}) | head -500' |
+        cut -c4- | sed 's/.* -> //')
+            if [[ $selected ]]; then
+                for prog in $(echo $selected);
+                do; pbcopy $prog; done;
+            fi
+    }
+
+
+function fzf-checkout(){
+    if git rev-parse --git-dir > /dev/null 2>&1; then
+        if [[ "$#" -eq 0 ]]; then
+            local branches branch
+            branches=$(git branch -a) &&
+            branch=$(echo "$branches" |
+            fzf-tmux -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
+            git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
+        elif [ `git rev-parse --verify --quiet $*` ] || \
+             [ `git branch --remotes | grep  --extended-regexp "^[[:space:]]+origin/${*}$"` ]; then
+            echo "Checking out to existing branch"
+            git checkout "$*"
+        else
+            echo "Creating new branch"
+            git checkout -b "$*"
+        fi
+    else
+        echo "Can't check out or create branch. Not in a git repo"
+    fi
+}
+
+function q() {
+    echo `history |tail -n2 |head -n1` | sed 's/[0-9]* //' | pbcopy
+}
+
+nnn_cd()                                                                                                   
+{
+    if ! [ -z "$NNN_PIPE" ]; then
+        printf "%s\0" "0c${PWD}" > "${NNN_PIPE}" !&
+    fi  
+}
+
+
+# See https://betterprogramming.pub/boost-your-command-line-productivity-with-fuzzy-finder-985aa162ba5d
+# Select a docker container enter it with bash
+function de() {
+  local cid
+  cid=$(docker ps | sed 1d | fzf -1 -q "$1" | awk '{print $1}')
+
+  [ -n "$cid" ] && docker exec -it "$cid" /bin/bash
+}
+
+# Select a running docker container to stop
+function ds() {
+  local cid
+  cid=$(docker ps | sed 1d | fzf -q "$1" | awk '{print $1}')
+
+  [ -n "$cid" ] && docker stop "$cid"
+}
+
+# Select a docker container to remove
+# function drm() {
+#   local cid
+#   cid=$(docker ps -a | sed 1d | fzf -q "$1" | awk '{print $1}')
+
+#   [ -n "$cid" ] && docker rm "$cid"
+# }

@@ -1,3 +1,15 @@
 # -------------------------------------------------------------------
 # Projects specific functions
 # -------------------------------------------------------------------
+
+function rei-ray(){
+    docker exec -it --user www-data viprei-php-1 composer global require spatie/global-ray
+    docker exec -it viprei-php-1 php /home/www-data/.config/composer/vendor/bin/global-ray install -n --ini=/etc/php/8.0/fpm/php.ini
+	docker restart viprei-php-1
+}
+
+function thedacare-ray(){
+    docker exec -it --user www-data thedacare_php_1 composer global require spatie/global-ray
+    docker exec -it thedacare_php_1 php /root/.config/composer/vendor/bin/global-ray install -n --ini=/etc/php/8.0/fpm/php.ini
+	docker restart thedacare_php_1
+}
