@@ -226,3 +226,7 @@ function ds() {
 
 #   [ -n "$cid" ] && docker rm "$cid"
 # }
+gcof() {
+    branch=`git branch -a | cut -c3- | fzf -m | pbcopy`
+    git checkout $(pbpaste)
+}
