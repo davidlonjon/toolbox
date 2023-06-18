@@ -1,11 +1,9 @@
 [submodule "private"]
 	path = private
-	url = git@bitbucket.org:davidlonjon/toolbox_private.git
+	url = git@github.com:davidlonjon/toolbox_private.git
 [submodule "pure"]
 	path = pure
 	url = https://github.com/sindresorhus/pure.git
 [submodule "zsh-syntax-highlighting"]
 	path = zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
-[submodule "private/"]
-	url = git@github.com:davidlonjon/toolbox_private.git
