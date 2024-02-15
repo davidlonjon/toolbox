@@ -11,7 +11,11 @@ alias bm="bin/manage"
 # -------------------------------------------------------------------
 # SPP project
 # -------------------------------------------------------------------
-alias spp-reset-dev="checkout-develop-branches.sh && quick-clone-repos.sh"
-alias spp-checkout-dev="checkout-develop-branches.sh"
-alias spp-delete-merged-branch-into-develop="git checkout develop --quiet && git branch --merged | grep -v 'master' | grep -v 'develop' | xargs -n 1 git branch -d"
-alias spp-list-merged-branch-into-develop="git checkout develop --quiet && git branch --merged | grep -v 'master' | grep -v 'develop'"
+alias bs='/Users/davidlonjon/projects/shuttle-delivery/shuttledelivery/bin/shuttle'
+alias bsc='/Users/davidlonjon/projects/shuttle-delivery/shuttledelivery/bin/shuttle dc exec web composer --working-dir=application --ignore-platform-req=ext-mcrypt'
+alias bsb='/Users/davidlonjon/projects/shuttle-delivery/shuttledelivery/bin/shuttle dc exec web /bin/bash'
+alias bst='/Users/davidlonjon/projects/shuttle-delivery/shuttledelivery/bin/shuttle dc exec web tail -f /var/www/html/tmp/log/debug.log'
+alias bsdb='/Users/davidlonjon/projects/shuttle-delivery/shuttledelivery/bin/shuttle db'
+alias bsg='/Users/davidlonjon/projects/shuttle-delivery/shuttledelivery/bin/shuttle gulp watch'
+alias bsp='/Users/davidlonjon/projects/shuttle-delivery/shuttledelivery/bin/shuttle phpunit'
+
